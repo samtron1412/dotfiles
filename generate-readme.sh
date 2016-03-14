@@ -1,4 +1,10 @@
 #!/bin/bash
+#
+# generate-readme.sh
+# Generate README.md file for this repository
+#
+# Brandon Amos
+# https://github.com/bamos/dotfiles/blob/master/generate-readme.sh
 
 set -x -e +H
 cd "$(dirname "$0")"
