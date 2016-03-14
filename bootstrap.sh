@@ -39,7 +39,6 @@ for DOTFILE in $(find . -maxdepth 1 -name '.?*'); do
     && [[ $DOTFILE != "./.gitmodules" ]] \
     && [[ $DOTFILE != "./.gitignore" ]] \
     && [[ $DOTFILE != "./.config" ]] \
-    && [[ $DOTFILE != "./screenshots" ]] \
     && [[ ! $DOTFILE =~ swp$ ]] \
     && link_file "$HOME/$DOTFILE" "$PWD/$DOTFILE"
 done
