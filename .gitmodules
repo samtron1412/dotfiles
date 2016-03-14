@@ -1,3 +1,6 @@
 [submodule ".config/vifm/colors"]
 	path = .config/vifm/colors
 	url = https://github.com/vifm/vifm-colors
+[submodule ".oh-my-zsh"]
+	path = .oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh
