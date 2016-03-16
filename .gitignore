@@ -10,6 +10,7 @@
 !.gnupg/gpg.conf
 .config/mpv/watch_later
 .config/vifm/vifminfo
+.config/vifm/vifm-help.txt
 .mutt/private
 .mutt/cache
 .mutt/certificates
