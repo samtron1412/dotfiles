@@ -57,25 +57,25 @@ plugins=(git)
 # User configuration
 
   export PATH="/home/glider/.pyenv/plugins/pyenv-virtualenv/shims:/home/glider/.pyenv/libexec:/home/glider/.pyenv/plugins/python-build/bin:/home/glider/.pyenv/plugins/pyenv-virtualenv/bin:/home/glider/.pyenv/plugins/pyenv-update/bin:/home/glider/.pyenv/plugins/pyenv-installer/bin:/home/glider/.pyenv/plugins/pyenv-doctor/bin:/home/glider/.pyenv/shims:/home/glider/.pyenv/bin:/home/glider/.pyenv/plugins/pyenv-virtualenv/shims:/home/glider/.pyenv/libexec:/home/glider/.pyenv/plugins/python-build/bin:/home/glider/.pyenv/plugins/pyenv-virtualenv/bin:/home/glider/.pyenv/plugins/pyenv-update/bin:/home/glider/.pyenv/plugins/pyenv-installer/bin:/home/glider/.pyenv/plugins/pyenv-doctor/bin:/home/glider/.pyenv/shims:/home/glider/.pyenv/bin:/home/glider/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
-# export MANPATH="/usr/local/man:$MANPATH"
+export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='subl3'
+fi
 
 # Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+export SSH_KEY_PATH="~/.ssh/id_rsa"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
