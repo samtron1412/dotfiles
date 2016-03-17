@@ -83,8 +83,7 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zshconfig="subl3 ~/.zshrc"
 
 export PATH="/home/glider/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
