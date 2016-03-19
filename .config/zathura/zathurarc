@@ -20,3 +20,6 @@ set adjust-open width
 # set recolor-darkcolor "#FFFFFF"
 # set recolor-lightcolor "#000000"
 # set recolor true
+
+# Use clipboard instead of the X11 primary selection
+set selection-clipboard clipboard
