@@ -230,11 +230,18 @@ fileviewer *.[1-8] man ./%c | col -b
 " Image
 filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
         \ {View in sxiv}
-        \ sxiv,
+        \ sxiv %c,
         \ {View in gpicview}
-        \ gpicview %c,
+        \ viewnior %c,
         \ {View in shotwell}
-        \ shotwell,
+        \ eog %c,
+
+filextype *.ico
+        \ {View in viewnior}
+        \ viewnior %f,
+        \ {View in eog}
+        \ eog %c,
+
 fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm convert -identify %f -verbose /dev/null
 
 " MD5
