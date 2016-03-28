@@ -37,9 +37,6 @@ fi
 # xterm -geometry 80x20+494-0 &
 # exec xterm -geometry 80x66+0+0 -name login
 
-# Start redshift-gtk
-redshift-gtk &
-
 # Start fcitx
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
@@ -49,6 +46,9 @@ fcitx &
 # Kill all ssh-agent before start new one
 killall -q ssh-agent
 eval $(ssh-agent)
+
+# Start redshift
+redshift &
 
 # Start syndaemon to disable touch pad when typing
 # -i 2: wait 1 second after the last key press before enabling the touch pad.
