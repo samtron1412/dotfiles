@@ -29,115 +29,13 @@ URxvt*scrollTtyOutput: 0
 URxvt*scrollWithBuffer: 1
 URxvt*scrollTtyKeypress: 1
 
-! Compile frills: Disable the usage of the built-in block
-! URxvt*skipBuiltinGlyphs: boolean
-
-! Specifies the terminal type name to be set in the TERM
-! URxvt*termName: termname
-
-! True: handle Meta (Alt) + keypress to set the 8th bit.
-! URxvt*meta8: boolean
-
-! True: the mouse wheel scrolls a page full. False: the mouse
-! URxvt*mouseWheelScrollPage: boolean
-
-! True: store tabs as wide characters. False: interpret tabs
-! URxvt*pastableTabs: boolean
-
-! True: blink the cursor. False: do not blink the cursor
-! URxvt*cursorBlink: boolean
-
-! True: Make the cursor underlined. False: Make the cursor a
-! URxvt*cursorUnderline: boolean
-
-! True: blank the pointer when a key is pressed or after a set
-! URxvt*pointerBlank: boolean
-
-! Mouse pointer foreground colour.
-! URxvt*pointerColor: colour
-
-! Mouse pointer background colour.
-! URxvt*pointerColor2: colour
-
-! Specifies number of seconds before blanking the pointer
-! URxvt*pointerBlankDelay: number
-
-! The string to send when the backspace key is pressed. If set
-! URxvt*backspacekey: string
-
-! The string to send when the delete key (not the keypad
-! URxvt*deletekey: string
-
-! The characters used as delimiters for double-click word
-! URxvt*cutchars: string
-
-!
-! URxvt*{|}
-
-! OverTheSpot, OffTheSpot, Root; option -pt.
-! URxvt*preeditType: style
-
-! name of inputMethod to use; option -im.
-! URxvt*inputMethod: name
-
-! The locale to use for opening the IM. You can use an
-! URxvt*imLocale: name
-
-! Specify the font-set used for XIM styles "OverTheSpot" or
-! URxvt*imFont: fontset
-
-! Change the meaning of triple-click selection with the left
-! URxvt*tripleclickwords: boolean
-
-! Enables "insecure" mode. Rxvt-unicode offers some escape
-! URxvt*insecure: boolean
-
-! Set the key to be interpreted as the Meta key to: alt, meta,
-! URxvt*modifier: modifier
-
-! Specify the reply rxvt-unicode sends to the shell when an
-! URxvt*answerbackString: string
+URxvt*cursorBlink: 1
 
 URxvt*secondaryScreen: 1
 URxvt*secondaryScroll: 0
 
-! Turn on/off hold window after exit support. If enabled,
-! URxvt*hold: boolean
-
-! Sets the working directory for the shell (or the command
-! URxvt*chdir: path
-
-! Compile frills: Associate action with keysym sym. The
-! URxvt*keysym.sym: action
-
 URxvt*perl-ext-common: default,matcher,font-size
-
-! Comma-separated list(s) of perl extension scripts (default:
-! URxvt*perl-ext: string
-
-! Perl code to be evaluated when all extensions have been
-! URxvt*perl-eval: string
-
-! Colon-separated list of additional directories that hold
-! URxvt*perl-lib: path
-
-! Additional selection patterns, see the urxvtperl(3) manpage
-! URxvt*selection.pattern-idx: perl-regex
-
-! Selection auto-transform patterns, see the urxvtperl(3)
-! URxvt*selection-autotransform.idx: perl-transform
-
-! This resource is deprecated and will be removed. Use a
-! URxvt*searchable-scrollback: keysym *DEPRECATED*
-
 URxvt*url-launcher: /usr/bin/chromium
-
-! Compile frills: Sets the WM_TRANSIENT_FOR property to the
-! URxvt*transient-for: windowid
-
-! Compile frills: Sets override-redirect for the terminal
-! URxvt*override-redirect: boolean
-
 URxvt*matcher.button: 1
 
 URxvt*iso14755: 0
