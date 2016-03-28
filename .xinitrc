@@ -50,9 +50,6 @@ fcitx &
 killall -q ssh-agent
 eval $(ssh-agent)
 
-# If want to use x11-ssh-askpass
-# export SSH_ASKPASS=x11-ssh-askpass
-
 # Start syndaemon to disable touch pad when typing
 # -i 2: wait 1 second after the last key press before enabling the touch pad.
 # -t: Only disable tapping and scrolling, not mouse movements
@@ -60,7 +57,7 @@ eval $(ssh-agent)
 # -d: Start as a daemon
 syndaemon -i 2 -t -K -d
 
-# start window manager
+# Start window manager
 session=${1:-i3}
 case $session in
 # i3                ) exec i3 -V >> ~/.i3/i3log 2>&1;;
