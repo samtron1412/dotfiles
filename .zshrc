@@ -89,4 +89,10 @@ export PATH="/home/glider/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-export CCACHE_DIR="/ramdisk/ccache"
+# Add this line if want to use ramdisk or SSD
+# export CCACHE_DIR="/path/to/directory"
+# export CCACHE_DIR="/tmp/ccache"
+# export CCACHE_DIR="/home/ssd/ccache"
+
+# Enable compiling your code from command line
+# export PATH="/usr/lib/ccache/bin/:$PATH"
