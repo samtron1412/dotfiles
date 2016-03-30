@@ -41,9 +41,6 @@ fcitx &
 killall -q ssh-agent
 eval $(ssh-agent)
 
-# Start redshift
-redshift &
-
 # Start syndaemon to disable touch pad when typing
 # -i 2: wait 1 second after the last key press before enabling the touch pad.
 # -t: Only disable tapping and scrolling, not mouse movements

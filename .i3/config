@@ -254,6 +254,9 @@ bindsym $mod+Escape mode "$mode_system"
 # APPS
 #
 #######################################################################
+# Start redshift
+exec --no-startup-id redshift
+
 # Auto start applications using layout saving
 # (Being a command-line utility, i3-msg does not support startup notifications,
 #  hence the exec --no-startup-id.)
