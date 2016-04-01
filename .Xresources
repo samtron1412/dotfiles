@@ -26,9 +26,9 @@ XTerm*color15: white
 XTerm*pointerColor: white
 XTerm*pointerColorBackground: black
 XTerm*cursorColor: yellow
-XTerm*cursorBlink: true
+XTerm*cursorBlink: 1
 
-XTerm*selectToClipboard: true
+XTerm*selectToClipboard: 1
 
 XTerm*SaveLines: 9000
 
