@@ -54,11 +54,10 @@ URxvt*highlightTextColor: magenta
 URxvt*cursorColor: cyan
 URxvt*cursorColor2: white
 
-URxvt.font: xft:Bitstream Vera Sans Mono:pixelsize=12
-URxvt*font: xft:SourceCodePro:size=10
-URxvt*boldFont: xft:SourceCodePro:bold:size=11
-URxvt*italicFont: xft:SourceCodePro:italic:size=11
-! URxvt*boldItalicFont: fontlist
+URxvt*font: xft:Bitstream Vera Sans Mono:pixelsize=12
+URxvt*boldFont: xft:Bitstream Vera Sans Mono:style=bold:pixelsize=12
+URxvt*italicFont: xft:Bitstream Vera Sans Mono:style=italic:pixelsize=12
+URxvt*boldItalicFont: xft:Bitstream Vera Sans Mono:style=bolditalic:pixelsize=12
 
 URxvt*scrollstyle: plain
 URxvt*scrollBar_right: 1
