@@ -45,6 +45,7 @@ XTerm*SaveLines: 9000
 !!----------------------------------------------------------------
 !!  URxvt settings
 !!----------------------------------------------------------------
+! Colors
 URxvt*background: black
 URxvt*foreground: white
 URxvt*color0: black
@@ -61,25 +62,29 @@ URxvt*colorUL: green
 URxvt*underlineColor: yellow
 URxvt*highlightColor: blue
 URxvt*highlightTextColor: magenta
-URxvt*cursorColor: cyan
-URxvt*cursorColor2: white
 
+! Fonts
 URxvt*font: xft:Bitstream Vera Sans Mono:pixelsize=12
 URxvt*boldFont: xft:Bitstream Vera Sans Mono:style=bold:pixelsize=12
 URxvt*italicFont: xft:Bitstream Vera Sans Mono:style=italic:pixelsize=12
 URxvt*boldItalicFont: xft:Bitstream Vera Sans Mono:style=bolditalic:pixelsize=12
 
+! Scroll bar
 URxvt*scrollstyle: plain
 URxvt*scrollBar_right: 1
 URxvt*scrollTtyOutput: 0
 URxvt*scrollWithBuffer: 1
 URxvt*scrollTtyKeypress: 1
 
+! Cursor
 URxvt*cursorBlink: 1
+URxvt*cursorColor: cyan
+URxvt*cursorColor2: white
 
 URxvt*secondaryScreen: 1
 URxvt*secondaryScroll: 0
 
+! Perl extensions
 URxvt*perl-ext-common: default,matcher,font-size
 URxvt*iso14755: 0
 URxvt*iso14755_52: 0
