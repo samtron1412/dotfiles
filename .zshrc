@@ -83,7 +83,6 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="subl3 ~/.zshrc"
 
 # Add this line if want to use ramdisk or SSD
 # export CCACHE_DIR="/path/to/directory"
