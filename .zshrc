@@ -56,7 +56,7 @@ plugins=(git)
 
 # User configuration
 
-  export PATH="/home/glider/.pyenv/plugins/pyenv-virtualenv/shims:/home/glider/.pyenv/libexec:/home/glider/.pyenv/plugins/python-build/bin:/home/glider/.pyenv/plugins/pyenv-virtualenv/bin:/home/glider/.pyenv/plugins/pyenv-update/bin:/home/glider/.pyenv/plugins/pyenv-installer/bin:/home/glider/.pyenv/plugins/pyenv-doctor/bin:/home/glider/.pyenv/shims:/home/glider/.pyenv/bin:/home/glider/.pyenv/plugins/pyenv-virtualenv/shims:/home/glider/.pyenv/libexec:/home/glider/.pyenv/plugins/python-build/bin:/home/glider/.pyenv/plugins/pyenv-virtualenv/bin:/home/glider/.pyenv/plugins/pyenv-update/bin:/home/glider/.pyenv/plugins/pyenv-installer/bin:/home/glider/.pyenv/plugins/pyenv-doctor/bin:/home/glider/.pyenv/shims:/home/glider/.pyenv/bin:/home/glider/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
+export PATH="/home/glider/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -84,10 +84,6 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 #
 # Example aliases
 alias zshconfig="subl3 ~/.zshrc"
-
-export PATH="/home/glider/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 
 # Add this line if want to use ramdisk or SSD
 # export CCACHE_DIR="/path/to/directory"
