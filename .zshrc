@@ -75,7 +75,6 @@ fi
 export ARCHFLAGS="-arch x86_64"
 
 # ssh
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export SSH_KEY_PATH="~/.ssh/id_rsa"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
