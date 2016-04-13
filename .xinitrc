@@ -37,7 +37,7 @@ export XMODIFIERS=@im=fcitx
 fcitx &
 
 # Kill all ssh-agent before start new one
-killall -q ssh-agent
+pkill ssh-agent
 eval $(ssh-agent)
 
 # Start syndaemon to disable touch pad when typing
