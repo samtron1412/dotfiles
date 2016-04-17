@@ -92,4 +92,3 @@ xnoremap p pgvy		"paste and recopy
 
 nmap oo o<Esc>k 	"insert new line after current line
 nmap OO O<Esc>j 	"insert new line before current line
-nnoremap U <C-r>	"remap U to <C-r> for easier undo
