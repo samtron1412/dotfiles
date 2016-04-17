@@ -1,3 +1,6 @@
+#===============================================================================
+# oh-my-zsh
+#===============================================================================
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
@@ -31,6 +34,9 @@ ENABLE_CORRECTION="true"
 plugins=(vi-mode git history-substring-search z)
 source $ZSH/oh-my-zsh.sh
 
+#===============================================================================
+# ENVIROMENT VARIABLES
+#===============================================================================
 # PATH
 export PATH="/home/glider/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
 export MANPATH="/usr/local/man:$MANPATH"
@@ -64,9 +70,19 @@ export PATH="/home/glider/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+#===============================================================================
+# ALIAS
+#===============================================================================
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
+
+#===============================================================================
+# BINDING KEY
+#===============================================================================
+
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
