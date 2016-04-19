@@ -12,6 +12,7 @@ ZSH_THEME="robbyrussell"
 # ZSH_THEME="agnoster"
 # ZSH_THEME="amuse"
 # ZSH_THEME="ys"
+ZSH_CUSTOM=~/.zsh-custom
 
 # _ and - will be interchangeable.
 HYPHEN_INSENSITIVE="true"
@@ -33,6 +34,7 @@ ENABLE_CORRECTION="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(vi-mode git history-substring-search z)
 source $ZSH/oh-my-zsh.sh
+source $ZSH_CUSTOM/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #===============================================================================
 # ENVIROMENT VARIABLES
