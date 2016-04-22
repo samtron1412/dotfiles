@@ -63,11 +63,6 @@ export SSH_KEY_PATH="~/.ssh/id_rsa"
 # Enable compiling your code from command line
 # export PATH="/usr/lib/ccache/bin/:$PATH"
 
-# Load pyenv
-export PATH="/home/glider/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
 #===============================================================================
 # ALIAS
 #===============================================================================
