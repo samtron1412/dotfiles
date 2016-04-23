@@ -36,8 +36,7 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 fcitx &
 
-# Kill all ssh-agent before start new one
-pkill ssh-agent
+# Start ssh-agent
 eval $(ssh-agent)
 
 # Start syndaemon to disable touch pad when typing
