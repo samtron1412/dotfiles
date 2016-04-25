@@ -7,4 +7,14 @@
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
+alias sudo='sudo '
 alias cu='checkupdates'
+alias po='poweroff'
+alias rb='reboot'
+alias pm='pacman'
+alias pms='pm -S'
+alias pmss='pm -Ss'
+alias pmqo='pm -Qo'
+alias pmqi='pm -Qi'
+alias pmr='pm -R'
+alias pmro='pm -Rns $(pm -Qtdq)'
