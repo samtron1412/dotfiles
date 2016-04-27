@@ -1,5 +1,3 @@
-set pages-per-row 1
-
 map = zoom in
 map - zoom out
 map + zoom best-fit
