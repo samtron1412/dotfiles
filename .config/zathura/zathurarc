@@ -1,7 +1,5 @@
 map = zoom in
 map - zoom out
-map + zoom best-fit
-map f zoom width
 
 set adjust-open width
 
