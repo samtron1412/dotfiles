@@ -50,6 +50,7 @@ XTerm*cursorBlink: 1
 ! URxvt settings
 !----------------------------------------------------------------
 
+URxvt*termName: xterm-256color
 URxvt*saveLines: 9000
 
 ! Fonts
