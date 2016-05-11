@@ -107,12 +107,23 @@ set slowfs=curlftpfs
 
 set statusline="  %t%= %A %10u:%-7g %15s %20d  "
 
-" ------------------------------------------------------------------------------
+" ==============================================================================
+" == BOOKMARKS
+" ==============================================================================
+" show all bookmarks
+nmap bb :marks <cr>
 
-" :mark mark /full/directory/path [filename]
-
+" bookmarks
+mark a ~/aur
 mark b ~/bin/
+mark c ~/.config
+mark d ~/download
+mark D ~/doc
 mark h ~/
+mark m ~/media
+mark r ~/repo
+mark t ~/.local/share/vifm/Trash
+mark u ~/run/media
 
 " ------------------------------------------------------------------------------
 
