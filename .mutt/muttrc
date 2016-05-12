@@ -1,0 +1,48 @@
+## General options
+
+# Store message headers locally to speed things up.
+# If hcache is a folder, Mutt will create sub cache folders for each account which may speeds things up even more.
+set header_cache = "~/.cache/mutt"
+
+# Store messages locally to speed things up, like searching message bodies.
+# Can be the same folder as header_cache.
+# This will cost important disk usage according to your e-mail amount.
+set message_cachedir = "~/.cache/mutt"
+
+# check for all subscribed IMAP folders
+set imap_check_subscribed
+
+# Keep IMAP connection alive by polling intermittently (time in seconds).
+set imap_keepalive = 300
+
+# Allow Mutt to open new imap connection automatically.
+unset imap_passive
+
+# How often to check for new mail (time in seconds).
+set mail_check = 60
+
+set mbox_type=Maildir
+
+## Personal account
+source "gpg2 -dq $HOME/.my-pwds.gpg |"
+source "~/.mutt/personal"
+# Here we use the $folder variable that has just been set in the sourced file.
+# We must set it right now otherwise the 'folder' variable will change in the next sourced file.
+folder-hook $folder 'source ~/.mutt/personal'
+
+## Work account
+source "gpg2 -dq $HOME/.my-pwds.gpg |"
+source "~/.mutt/work"
+folder-hook *sontht92@gmail.com/ 'source ~/.mutt/personal'
+
+## Shortcuts
+macro index,pager <f2> '<sync-mailbox><enter-command>source ~/.mutt/personal<enter><change-folder>!<enter>'
+macro index,pager <f3> '<sync-mailbox><enter-command>source ~/.mutt/work<enter><change-folder>!<enter>'
+
+# sort mail by threads
+set sort = threads
+# and sort threads by date
+set sort_aux = last-date-received
+
+# Security concern
+bind generic,alias,attach,browser,editor,index,compose,pager,pgp,postpone ':' noop
