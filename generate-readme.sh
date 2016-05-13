@@ -36,23 +36,13 @@ to the home directory and install vim plugins.
 # What programs do these configure?
 <!-- TODO: Make this easier to maintain. -->
 + Misc Linux config: [.xinitrc](/.xinitrc), [.Xresources](/.Xresources)
-<!-- + [aria2](https://github.com/tatsuhiro-t/aria2): [.aria2](/.aria2) -->
 + [cmus](https://cmus.github.io/): [.cmus](/.config/cmus)
-<!-- + [conky](https://wiki.archlinux.org/index.php/Conky): [.conkyrc](/.conkyrc) -->
-<!-- + [emacs](https://www.gnu.org/software/emacs/): [.emacs.d](/.emacs.d) -->
 + [git](https://git-scm.com/): [.gitconfig](/.gitconfig)
-<!-- + [GNU aspell](http://aspell.net): [.aspell.en.pws](/.aspell.en.pws) -->
 + [GPG](https://www.gnupg.org): [.gnupg](/.gnupg)
 + [i3wm](https://i3wm.org/): [.i3](/.i3)
-<!-- + [ispell](https://www.gnu.org/software/ispell/): [.ispell_english](/.ispell_english) -->
 + [mpv](http://mpv.io): [.mpv](/.config/mpv)
 + [mutt](http://www.mutt.org): [.mutt](/.mutt)
-<!-- + [sbt](http://www.scala-sbt.org): [.sbt](/.sbt) -->
-<!-- + [screen](https://www.gnu.org/software/screen/): [.screenrc](/.screenrc) -->
-<!-- + [tmux](https://tmux.github.io/): [.tmux.conf](/.tmux.conf) -->
 + [vim](http://www.vim.org/): [.vimrc](/.vimrc)
-<!-- + [wget](https://www.gnu.org/software/wget/): [.wgetrc](/.wgetrc) -->
-<!-- + [xmonad](http://xmonad.org): [.xmonad](/.xmonad) -->
 + [zsh](http://www.zsh.org): [.zshrc](/.zshrc), [.zsh](/.zsh),
   [.zsh-custom](/.zsh-custom).
 
