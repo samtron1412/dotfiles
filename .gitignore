@@ -8,6 +8,8 @@
 .emacs.d/tramp
 .gnupg/*
 !.gnupg/gpg.conf
+.config/cmus/*
+!.config/cmus/rc
 .config/mpv/watch_later
 .config/vifm/vifminfo
 .config/vifm/vifm-help.txt
