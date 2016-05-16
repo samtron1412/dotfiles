@@ -223,6 +223,9 @@ bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20
 
+# Screenshot
+bindsym Print exec maim ~/img/screen/$(date +%F-%T).png
+
 #######################################################################
 #
 # LOCK SCREEN; POWER MANAGEMENT
