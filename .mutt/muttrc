@@ -28,13 +28,15 @@ set mbox_type=Maildir
 # sort mail by threads
 set sort = threads
 # and sort threads by date
-set sort_aux = last-date-received
+set sort_aux = reverse-last-date-received
 
 # Security concern
 bind generic,alias,attach,browser,editor,index,compose,pager,pgp,postpone ':' noop
 
 # Colors
 source ~/.mutt/color
+
+unset markers # Don't show markers ('+') for wrapped lines.
 
 #==================================================================================
 # WORK ACCOUNT
