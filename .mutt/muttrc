@@ -23,8 +23,6 @@ unset imap_passive
 # How often to check for new mail (time in seconds).
 set mail_check = 60
 
-set mbox_type=Maildir
-
 # sort mail by threads
 set sort = threads
 # and sort threads by date
