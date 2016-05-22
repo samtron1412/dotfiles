@@ -58,9 +58,12 @@ folder-hook *samtron1412@gmail.com/ 'source ~/.mutt/personal'
 # SHORTCUTS
 #==================================================================================
 
-# Change account shortcut
+# Changing accounts
 macro index,pager <f2> '<sync-mailbox><enter-command>source ~/.mutt/personal<enter><change-folder>!<enter>'
 macro index,pager <f3> '<sync-mailbox><enter-command>source ~/.mutt/work<enter><change-folder>!<enter>'
 
-# Fetch mail shortcut
+# Manually fetching mails
 bind index G imap-fetch-mail
+
+# Switching mailboxes
+macro index 'c' '<change-folder>?<change-dir><home>^K=<enter>'
