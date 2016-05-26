@@ -36,6 +36,11 @@ source ~/.mutt/color
 
 unset markers # Don't show markers ('+') for wrapped lines.
 
+# History
+set history = 50 # Buffer's size
+set save_history = 1000 # File's size
+set history_file = ~/.mutt_history
+
 #==================================================================================
 # WORK ACCOUNT
 #==================================================================================
@@ -67,3 +72,5 @@ bind index G imap-fetch-mail
 
 # Switching mailboxes
 macro index 'c' '<change-folder>?<change-dir><home>^K=<enter>'
+
+bind editor <delete> delete-char
