@@ -5,8 +5,10 @@
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
+
+#===============================================================================
+#= PACMAN
+#===============================================================================
 alias sudo='sudo '
 alias cu='checkupdates'
 alias po='poweroff'
@@ -22,3 +24,8 @@ alias pmqn='pm -Qn'
 alias pmr='pm -R'
 alias pmrns='pm -Rns'
 alias pmro='pm -Rns $(pm -Qtdq)'
+
+#===============================================================================
+#= APPS
+#===============================================================================
+alias showimg='sxiv -t *'
