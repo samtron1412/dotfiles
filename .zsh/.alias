@@ -29,3 +29,4 @@ alias pmro='pm -Rns $(pm -Qtdq)'
 #= APPS
 #===============================================================================
 alias showimg='sxiv -t *'
+alias maims='maim -s ~/img/screen/$(date +%F-%T).png'
