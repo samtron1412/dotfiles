@@ -50,6 +50,11 @@ set edit_headers = yes
 # Signature
 set signature = ~/.signature
 
+# HTML
+set mailcap_path = ~/.mutt/mailcap
+auto_view text/html
+alternative_order text/plain text/html
+
 #==================================================================================
 # WORK ACCOUNT
 #==================================================================================
