@@ -44,6 +44,9 @@ set history_file = ~/.mutt_history
 # Character encoding
 set send_char = "utf-8"
 
+# Edit headers
+set edit_headers = yes
+
 #==================================================================================
 # WORK ACCOUNT
 #==================================================================================
