@@ -41,6 +41,9 @@ set history = 50 # Buffer's size
 set save_history = 1000 # File's size
 set history_file = ~/.mutt_history
 
+# Character encoding
+set send_char = "utf-8"
+
 #==================================================================================
 # WORK ACCOUNT
 #==================================================================================
