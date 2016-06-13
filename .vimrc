@@ -93,7 +93,7 @@ xnoremap p pgvy		"paste and recopy
 nmap oo o<Esc>k 	"insert new line after current line
 nmap OO O<Esc>j 	"insert new line before current line
 
-" Moving lines up or down
+"======== Moving lines up or down =====================
 let c='a'
 while c <= 'z'
   exec "set <A-".c.">=\e".c
