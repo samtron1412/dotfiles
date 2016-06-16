@@ -1,1 +1,2 @@
-text/html; lynx -stdin -dump -force_html -width 70; copiousoutput; description=HTML Text; test=type lynx >/dev/null
+text/html; chromium %s &; test=test -n "$DISPLAY"; needsterminal;
+# text/html; lynx -stdin -dump -force_html -width 70; copiousoutput; description=HTML Text; test=type lynx >/dev/null
