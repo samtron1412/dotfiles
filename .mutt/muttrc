@@ -52,8 +52,10 @@ set signature = ~/.signature
 
 # HTML
 set mailcap_path = ~/.mutt/mailcap
-auto_view text/html
-alternative_order text/plain text/html
+# open in gui browser: hit "v" then go down to text/html then hit "m"
+bind attach <return> view-mailcap
+auto_view text/html                                      # view html automatically
+alternative_order text/plain text/enriched text/html     # list html for last
 
 #==================================================================================
 # WORK ACCOUNT
