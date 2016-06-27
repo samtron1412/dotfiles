@@ -1,7 +1,7 @@
 # core {{{
 [core]
-  editor = /usr/bin/vim
-  pager = less -x4
+  editor = vim
+  pager = less -x2
   autocrlf = input
 #}}}
 
@@ -41,6 +41,7 @@
 [pull]
   default = current
 [diff]
+
   mnemonicprefix = true
 [branch]
   autosetuprebase = always
