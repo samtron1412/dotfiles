@@ -56,3 +56,10 @@
 [filter "lob"]
   clean = $GOPATH/bin/git-lob filter-clean %f
   smudge = $GOPATH/bin/git-lob filter-smudge %f
+[sendemail]
+  smtpEncryption = tls
+  smtpServer = smtp.gmail.com
+  smtpUser = samtron1412@gmail.com
+  smtpServerPort = 587
+  suppresscc = self
+  confirm = always
