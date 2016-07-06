@@ -1,41 +1,28 @@
-# core {{{
 [core]
   editor = vim
   pager = less -x2
   autocrlf = input
-#}}}
-
-# user {{{
 [user]
   email = samtron1412@gmail.com
   name = Son Tran
-#}}}
-
-# color {{{
 [color]
   branch = auto
   diff = auto
   status = auto
-
 [color "branch"]
   current = red reverse
   local = blue
   remote = green
-
 [color "diff"]
   meta = yellow
   frag = magenta
   old = red bold
   new = green
   plain = white
-
 [color "status"]
   added = yellow
   changed = green
   untracked = cyan
-# }}}
-
-# push/pull/diff/options {{{
 [push]
   default = upstream
 [pull]
@@ -47,15 +34,10 @@
   autosetuprebase = always
 [apply]
   whitespace = nowarn
-#}}}
-
 [rerere]
   enabled = true
 [rebase]
   autosquash = true
-[filter "lob"]
-  clean = $GOPATH/bin/git-lob filter-clean %f
-  smudge = $GOPATH/bin/git-lob filter-smudge %f
 [sendemail]
   smtpEncryption = tls
   smtpServer = smtp.gmail.com
