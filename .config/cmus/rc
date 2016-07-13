@@ -5,3 +5,5 @@ fset symphonic=genre="Symphonic"|genre="Classical"
 fset country=genre="Country"
 fset bluegrass=genre="Bluegrass"
 fset rock=genre="rock"
+
+bind -f common 0 shell ~/bin/cmus-edit-tags
