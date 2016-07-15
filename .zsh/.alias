@@ -22,7 +22,8 @@ alias pmqi='pm -Qi'
 alias pmqm='pm -Qm'
 alias pmqn='pm -Qn'
 alias pmr='pm -R'
-alias pmrns='pm -Rns'
+alias pmrs='pm -Rs'
+alias pmrsc='pm -Rsc'
 alias pmro='pm -Rns $(pm -Qtdq)'
 
 #===============================================================================
