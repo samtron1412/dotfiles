@@ -31,3 +31,4 @@ alias pmro='pm -Rns $(pm -Qtdq)'
 #===============================================================================
 alias showimg='sxiv -t *'
 alias maims='maim -s ~/img/screen/$(date +%F-%T).png'
+alias pi='ssh -t pi@192.168.2.36 screen -R'
