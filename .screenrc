@@ -5,3 +5,4 @@ shell /bin/bash
 hardstatus off
 hardstatus alwayslastline
 hardstatus string '%{= kW} %= %H | %n | %f%t%?(%u)%? | %m-%d | %c %='
+altscreen on
