@@ -1,0 +1,7 @@
+term rxvt-unicode-256color
+termcapinfo rxvt* ti@:te@
+startup_message off
+shell /bin/bash
+hardstatus off
+hardstatus alwayslastline
+hardstatus string '%{= kW} %= %H | %n | %f%t%?(%u)%? | %m-%d | %c %='
