@@ -13,7 +13,7 @@ unset record
 # SEND OPTIONS.
 #===================================================================================
 
-set smtp_url=smtps://samtron1412:$my_pw_personal@smtp.gmail.com:465/
+set smtp_url=smtp://samtron1412:$my_pw_personal@smtp.gmail.com:587/
 set realname="Son Tran"
 set from=samtron1412@gmail.com
 set hostname="gmail.com"
