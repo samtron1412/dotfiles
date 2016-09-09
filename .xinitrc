@@ -49,8 +49,8 @@ syndaemon -i 2 -t -K -d
 # Start window manager
 session=${1:-i3}
 case $session in
-# i3                ) exec i3 -V >> ~/.i3/i3log 2>&1;;
-  i3                ) exec i3;;
+  i3                ) exec i3 2>~/.xsession-errors;;
+  i3log             ) exec i3 -V >> ~/i3log-$(date +'%F-%k-%M-%S') 2>&1;;
   xmonad            ) exec xmonad;;
   dwm               ) exec dwm;;
   awesome           ) exec awesome;;
