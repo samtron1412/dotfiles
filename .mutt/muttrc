@@ -57,6 +57,11 @@ bind attach <return> view-mailcap
 auto_view text/html                                      # view html automatically
 alternative_order text/plain text/enriched text/html     # list html for last
 
+# Contact management
+set alias_file = "~/.mutt/contacts"
+set sort_alias = alias
+source $alias_file
+
 #==================================================================================
 # WORK ACCOUNT
 #==================================================================================
