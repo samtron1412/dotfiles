@@ -5,6 +5,7 @@ set nocompatible
 
 " ================ General Config ====================
 
+set nrformats=                  "Treat all numerals as decimal
 set mouse=a                     "Support mouse actions
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
