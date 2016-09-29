@@ -137,7 +137,7 @@ bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth
 
 # move chromium to current workspace
-bindsym $mod+F1 [class="chromium"] move workspace current
+bindsym $mod+i [class="chromium"] move workspace current
 
 #######################################################################
 #
