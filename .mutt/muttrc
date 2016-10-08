@@ -81,7 +81,7 @@ source "~/.mutt/personal"
 folder-hook *samtron1412@gmail.com/ 'source ~/.mutt/personal'
 
 #==================================================================================
-# SHORTCUTS
+# BINDING
 #==================================================================================
 
 # Changing accounts
