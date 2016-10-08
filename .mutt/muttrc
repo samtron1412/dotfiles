@@ -62,6 +62,10 @@ set alias_file = "~/.mutt/contacts"
 set sort_alias = alias
 source $alias_file
 
+# Reply
+set fast_reply = yes
+set include = yes
+
 #==================================================================================
 # WORK ACCOUNT
 #==================================================================================
