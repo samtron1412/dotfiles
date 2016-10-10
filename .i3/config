@@ -235,6 +235,9 @@ bindsym Print exec maim ~/img/screen/$(date +%F-%T).png
 # execute i3lock and after that turn off backlight
 set $locker i3lock && sleep 1 && xset dpms force off
 
+# auto lock the screen
+exec_always --no-startup-id pkill xautolock && xautolock -time 10 -locker locker
+
 # execute mode system when press $mod+ESC
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (x) close-app, (Shift+s) shutdown
 mode "$mode_system" {
