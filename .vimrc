@@ -77,6 +77,7 @@ set nofoldenable        "dont fold by default
 
 " ================ Completion =======================
 
+set wildignorecase          "enable ignore case
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
 set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
 set wildignore+=*vim/backups*
