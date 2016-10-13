@@ -17,6 +17,8 @@ set autoread                    "Reload files changed outside vim
 set encoding=utf-8              "Set vim use utf-8
 set fileencoding=utf-8          "Force vim overwrite file encoding to 
                                 "utf-8
+set textwidth=72                "Set text width is 72 columns
+set colorcolumn=+1              "Set color columns is textwidth
 
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
@@ -128,3 +130,5 @@ map <leader>ew :e %%
 map <leader>es :sp %%
 map <leader>ev :vsp %%
 map <leader>et :tabe %%
+
+highlight ColorColumn ctermbg=8
