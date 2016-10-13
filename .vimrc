@@ -15,7 +15,8 @@ set gcr=a:blinkon0              "Disable cursor blink
 set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
 set encoding=utf-8              "Set vim use utf-8
-set fileencoding=utf-8          "Force vim overwrite file encoding to utf-8
+set fileencoding=utf-8          "Force vim overwrite file encoding to 
+                                "utf-8
 
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
@@ -77,8 +78,8 @@ set nofoldenable        "dont fold by default
 
 " ================ Completion =======================
 
-set wildignorecase          "enable ignore case
-set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
+set wildignorecase      "enable ignore case
+set wildmenu            "enable ctrl-n and ctrl-p to scroll thru matches
 set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
 set wildignore+=*vim/backups*
 set wildignore+=*sass-cache*
