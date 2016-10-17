@@ -15,7 +15,7 @@ set gcr=a:blinkon0              "Disable cursor blink
 set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
 set encoding=utf-8              "Set vim use utf-8
-set fileencoding=utf-8          "Force vim overwrite file encoding to 
+set fileencoding=utf-8          "Force vim overwrite file encoding to
                                 "utf-8
 set textwidth=72                "Set text width is 72 columns
 set colorcolumn=+1              "Set color columns is textwidth
@@ -122,7 +122,7 @@ nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
 nnoremap <silent> ]B :blast<CR>
 
-" Easy Expansion of the Active File Directory
+"= Easy Expansion of the Active File Directory
 let mapleader=','
 " cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
@@ -131,4 +131,5 @@ map <leader>es :sp %%
 map <leader>ev :vsp %%
 map <leader>et :tabe %%
 
+"= Set the color of the column marker is dark gray.
 highlight ColorColumn ctermbg=8
