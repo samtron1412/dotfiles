@@ -133,3 +133,9 @@ map <leader>et :tabe %%
 
 "= Set the color of the column marker is dark gray.
 highlight ColorColumn ctermbg=8
+
+"= Searching files
+set path=**
+map <leader>f :find
+map <leader>sf :sfind
+map <leader>vf :vertical sfind
