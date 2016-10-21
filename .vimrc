@@ -53,7 +53,7 @@ set hlsearch        " Highlight searches by default
 set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
 
-colo desert         " set color scheme is desert
+colo murphy         " set color scheme is murphy
 syntax on           " turn on syntax highlighting
 
 " ================ Indentation ======================
