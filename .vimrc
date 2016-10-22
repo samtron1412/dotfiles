@@ -53,7 +53,7 @@ set hlsearch        " Highlight searches by default
 set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
 
-colo desert         " set color scheme is desert
+colo murphy         " set color scheme is murphy
 syntax on           " turn on syntax highlighting
 
 " ================ Indentation ======================
@@ -131,11 +131,12 @@ map <leader>es :sp %%
 map <leader>ev :vsp %%
 map <leader>et :tabe %%
 
-"= Set the color of the column marker is dark gray.
-highlight ColorColumn ctermbg=8
 
 "= Searching files
 set path=**
 map <leader>f :find
 map <leader>sf :sfind
 map <leader>vf :vertical sfind
+
+"= Set the color of the column marker is dark gray.
+highlight ColorColumn ctermbg=8
