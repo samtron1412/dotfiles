@@ -140,3 +140,13 @@ map <leader>vf :vertical sfind
 
 "= Set the color of the column marker is dark gray.
 highlight ColorColumn ctermbg=8
+
+"= Toggle hard wrapping by textwidth
+map <C-B> <Esc>:call ToggleTextwidth()<CR>
+function! ToggleTextwidth()
+  if &textwidth > 0
+    set textwidth=0
+  else
+    set textwidth=72
+  endif
+endfunction
