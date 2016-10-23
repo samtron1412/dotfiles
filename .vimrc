@@ -19,6 +19,7 @@ set fileencoding=utf-8          "Force vim overwrite file encoding to
                                 "utf-8
 set textwidth=72                "Set text width is 72 columns
 set colorcolumn=+1              "Set color columns is textwidth
+set nowrap                      "Set no soft wrapping
 
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
