@@ -24,6 +24,9 @@ set vicmd=vim
 
 set trash
 
+" Set confirm when delete files
+set confirm=permdelete
+
 " This is how many directories to store in the directory history.
 
 set history=100
