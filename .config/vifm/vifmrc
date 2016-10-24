@@ -81,6 +81,15 @@ set timefmt=%m/%d\ %H:%M
 
 set wildmenu
 
+" Display completions in a form of popup with descriptions of the matches
+
+set wildstyle=popup
+
+" Display suggestions in normal, visual and view modes for keys, marks and
+" registers (at most 5 files).  In other view, when available.
+
+set suggestoptions=normal,visual,view,otherpane,keys,marks,registers
+
 " Ignore case in search patterns unless it contains at least one uppercase
 " letter
 
@@ -258,7 +267,22 @@ fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm convert -identify %f -verbose /d
 " MD5
 filetype *.md5
        \ {Check MD5 hash sum}
-       \ md5sum -c %f,
+       \ md5sum -c %f %S,
+
+" SHA1
+filetype *.sha1
+       \ {Check SHA1 hash sum}
+       \ sha1sum -c %f %S,
+
+" SHA256
+filetype *.sha256
+       \ {Check SHA256 hash sum}
+       \ sha256sum -c %f %S,
+
+" SHA512
+filetype *.sha512
+       \ {Check SHA512 hash sum}
+       \ sha512sum -c %f %S,
 
 " GPG signature
 filetype *.asc
@@ -270,7 +294,7 @@ filetype *.torrent deluge %f &
 fileviewer *.torrent dumptorrent -v %c
 
 " FuseZipMount
-filetype *.zip,*.jar,*.war,*.ear,*.oxt
+filetype *.zip,*.jar,*.war,*.ear,*.oxt,*.apkg
        \ {Mount with fuse-zip}
        \ FUSE_MOUNT|fuse-zip %SOURCE_FILE %DESTINATION_DIR,
        \ {View contents}
@@ -286,6 +310,7 @@ filetype *.tar,*.tar.bz2,*.tbz2,*.tgz,*.tar.gz,*.tar.xz,*.txz
 fileviewer *.tgz,*.tar.gz tar -tzf %c
 fileviewer *.tar.bz2,*.tbz2 tar -tjf %c
 fileviewer *.tar.txz,*.txz xz --list %c
+fileviewer *.tar tar -tf %c
 
 " Rar2FsMount and rar archives
 filetype *.rar
@@ -344,7 +369,7 @@ fileviewer .*/,*/ tree %f
 "
 " Or leave it for automatic detection
 "
-" fileviewer * pygmentize -O style=monokai -f console256 -g
+" fileviewer *[^/] pygmentize -O style=monokai -f console256 -g
 
 " Displaying pictures in terminal
 "
@@ -369,7 +394,7 @@ fileviewer .*/,*/ tree %f
 " set vifminfo=options,filetypes,commands,bookmarks,dhistory,state,cs
 " Like in vi
 set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
-    \phistory,fhistory,dirstack,registers,bookmarks
+    \phistory,fhistory,dirstack,registers,bookmarks,bmarks
 
 " ------------------------------------------------------------------------------
 
@@ -414,13 +439,13 @@ nnoremap yf :!echo %c:p | xclip %i<cr>
 " Mappings for faster renaming
 nnoremap I cw<c-a>
 nnoremap cc cw<c-u>
-nnoremap A cw<c-w>
+nnoremap A cw
 
 " Open console in current directory
 nnoremap ,t :!xterm &<cr>
 
-" Open vim to edit vifmrc and apply settings after returning to vifm
-nnoremap ,c :write | execute ':!vim $MYVIFMRC' | restart<cr>
+" Open editor to edit vifmrc and apply settings after returning to vifm
+nnoremap ,c :write | edit $MYVIFMRC | restart<cr>
 " Open gvim to edit vifmrc
 nnoremap ,C :!gvim --remote-tab-silent $MYVIFMRC &<cr>
 
