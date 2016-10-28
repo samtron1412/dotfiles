@@ -265,7 +265,7 @@ exec --no-startup-id redshift
 # Auto start applications using layout saving
 # (Being a command-line utility, i3-msg does not support startup notifications,
 #  hence the exec --no-startup-id.)
-exec --no-startup-id "i3-msg 'workspace 1:www; append_layout /home/glider/.i3/workspace-1.json; exec chromium'"
+# exec --no-startup-id "i3-msg 'workspace 1:www; append_layout /home/glider/.i3/workspace-1.json; exec chromium'"
 exec --no-startup-id "i3-msg 'workspace 2:term; append_layout /home/glider/.i3/workspace-2.json; exec urxvt'"
 
 # Start chromium
