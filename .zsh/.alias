@@ -1,14 +1,14 @@
-#===============================================================================
+#=======================================================================
 # ALIAS
-#===============================================================================
+#=======================================================================
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
-#===============================================================================
+#=======================================================================
 #= PACMAN
-#===============================================================================
+#=======================================================================
 alias sudo='sudo '
 alias cu='checkupdates'
 alias po='poweroff'
@@ -29,12 +29,15 @@ alias pmrs='sudo pm -Rs'
 alias pmrsc='sudo pm -Rsc'
 alias pmro='sudo pm -Rns $(pm -Qtdq)'
 
-#===============================================================================
+#=======================================================================
 #= APPS
-#===============================================================================
+#=======================================================================
 alias showimg='sxiv -t *'
 alias maims='maim -s ~/img/screen/$(date +%F-%T).png'
 alias pi='ssh pi@192.168.2.36'
 alias pis='ssh -t pi@192.168.2.36 screen -R'
 alias wifi='sudo wifi-menu -o'
 alias info='info --vi-keys'
+alias ldi="ls -lah | egrep '^d'"
+alias lfi="ls -lah | egrep '^-'"
+alias lli="ls -lah | egrep '^l'"
