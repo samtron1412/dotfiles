@@ -273,3 +273,6 @@ bindsym $mod+o exec chromium
 
 # Start sublime text
 bindsym $mod+u exec subl3
+
+# Start mutt
+bindsym $mod+t exec urxvt -e mutt
