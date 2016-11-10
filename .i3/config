@@ -269,7 +269,7 @@ exec --no-startup-id redshift
 exec --no-startup-id "i3-msg 'workspace 2:term; append_layout /home/glider/.i3/workspace-2.json; exec urxvt'"
 
 # Start chromium
-bindsym $mod+o exec chromium
+bindsym $mod+o exec --no-startup-id chromium
 
 # Start sublime text
 bindsym $mod+u exec subl3
