@@ -87,3 +87,6 @@ alias musb="udisksctl mount -b"
 
 # Unmount a block device
 alias uusb="udisksctl unmount -b"
+
+# Arranges for the device to be safely removed
+alias rmusb="udisksctl power-off -b"
