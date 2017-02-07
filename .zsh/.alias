@@ -84,3 +84,6 @@ alias lli="ls -lah | egrep '^l'"
 
 # Mount a new block device
 alias musb="udisksctl mount -b"
+
+# Unmount a block device
+alias uusb="udisksctl unmount -b"
