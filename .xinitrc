@@ -46,7 +46,7 @@ eval $(ssh-agent)
 # -i 2: wait 1 second after the last key press before enabling the touch pad.
 # -K: Ignore modifier keys and Modifier+Key combos when monitoring keyboard activity
 # -d: Start as a daemon
-syndaemon -i 2 -K -d
+syndaemon -i 1 -K -d
 
 # Start window manager
 session=${1:-i3}
