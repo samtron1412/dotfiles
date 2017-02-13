@@ -43,7 +43,7 @@ fcitx &
 eval $(ssh-agent)
 
 # Start syndaemon to disable touch pad when typing
-# -i 2: wait 1 second after the last key press before enabling the touch pad.
+# -i 1: wait 1 second after the last key press before enabling the touch pad.
 # -K: Ignore modifier keys and Modifier+Key combos when monitoring keyboard activity
 # -d: Start as a daemon
 syndaemon -i 1 -K -d
