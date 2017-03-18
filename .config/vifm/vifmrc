@@ -195,9 +195,7 @@ fileviewer *.pdf pdftotext -nopgbrk %c -
 " PostScript
 filextype *.ps,*.eps,*.ps.gz
         \ {View in zathura}
-        \ zathura %f,
-        \ {View in gv}
-        \ gv %c %i &,
+        \ zathura %c %i &,
 
 " Djvu
 filextype *.djvu
