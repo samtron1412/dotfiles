@@ -1,4 +1,15 @@
 [Default Applications]
-x-scheme-handler/mailto=mutt.desktop
+application/pdf=zathura.desktop
 text/html=chromium.desktop
+x-scheme-handler/mailto=mutt.desktop
 x-scheme-handler/tg=telegramdesktop.desktop
+x-scheme-handler/http=chromium.desktop
+x-scheme-handler/https=chromium.desktop
+x-scheme-handler/about=chromium.desktop
+x-scheme-handler/unknown=chromium.desktop
+x-scheme-handler/web+tg=chromium.desktop
+x-scheme-handler/tg=telegramdesktop.desktop
+x-scheme-handler/webcal=chromium.desktop
+x-scheme-handler/web+bitcoin=chromium.desktop
+x-scheme-handler/bitcoin=chromium.desktop
+
