@@ -284,8 +284,9 @@ filetype *.asc
        \ !!gpg --verify %c,
 
 " Torrent
-filetype *.torrent deluge %f &
-fileviewer *.torrent dumptorrent -v %c
+filextype *.torrent deluge %f %i &
+filetype *.torrent aria2c %c %i &
+fileviewer *.torrent torrentcheck -t %c
 
 " FuseZipMount
 filetype *.zip,*.jar,*.war,*.ear,*.oxt,*.apkg
