@@ -253,11 +253,11 @@ fileviewer *.[1-8] man ./%c | col -b
 " Image
 filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
         \ {View in sxiv}
-        \ sxiv %f,
+        \ sxiv %f %i &,
         \ {View in gpicview}
-        \ viewnior %c,
+        \ viewnior %f %i &,
         \ {View in shotwell}
-        \ eog %c,
+        \ eog %f %i &,
 
 filextype *.ico,*.svg
         \ {View in viewnior}
