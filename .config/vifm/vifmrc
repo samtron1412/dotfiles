@@ -261,9 +261,9 @@ filextype *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm
 
 filextype *.ico,*.svg
         \ {View in viewnior}
-        \ viewnior %f,
+        \ viewnior %f %i &,
         \ {View in eog}
-        \ eog %c,
+        \ eog %f %i &,
 
 fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.gif,*.xpm convert -identify %f -verbose /dev/null
 
