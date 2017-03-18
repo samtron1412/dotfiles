@@ -229,14 +229,10 @@ fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.vob,*.flv,*.m2v,*.m
 " Web
 filextype *.html,*.htm
         \ {Open with chromium}
-        \ chromium %f &,
-        \ {Open with dwb}
-        \ dwb %f %i &,
+        \ chromium %f %i &,
         \ {Open with firefox}
-        \ firefox %f &,
-        \ {Open with uzbl}
-        \ uzbl-browser %f %i &,
-filetype *.html,*.htm links, lynx
+        \ firefox %f %i &,
+filetype *.html,*.htm w3m, lynx
 
 " Object
 filetype *.o nm %f | less
