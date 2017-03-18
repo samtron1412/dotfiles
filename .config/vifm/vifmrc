@@ -218,13 +218,11 @@ fileviewer *.mp3 id3v2 -l
 " Video
 filextype *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.vob,*.flv,*.m2v,*.mov,*.webm,*.ts,*.m4v
         \ {View using mpv}
-        \ mpv %f,
-        \ {View using ffplay}
-        \ ffplay -fs %c,
-        \ {View using Dragon}
-        \ dragon %f,
+        \ mpv %f %i &,
         \ {View using mplayer}
-        \ mplayer %f,
+        \ mplayer %f %i &,
+        \ {View using ffplay}
+        \ ffplay -fs %c %i &,
 fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.vob,*.flv,*.m2v,*.mov,*.webm,*.ts,*.m4v
          \ ffprobe -pretty %c 2>&1
 
