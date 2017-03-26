@@ -134,7 +134,6 @@ mark D ~/doc
 mark h ~/
 mark m ~/media
 mark r ~/repo
-mark t ~/.local/share/vifm/Trash
 mark u /run/media
 
 " ------------------------------------------------------------------------------
