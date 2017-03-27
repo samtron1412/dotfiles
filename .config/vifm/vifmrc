@@ -413,7 +413,7 @@ nnoremap s :shell<cr>
 nnoremap S :sort<cr>
 
 " Toggle visibility of preview window
-nnoremap w :view<cr>
+nnoremap w :view<cr>gs
 vnoremap w :view<cr>gv
 
 " Open file in existing instance of gvim
