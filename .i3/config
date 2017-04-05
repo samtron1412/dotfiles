@@ -278,3 +278,12 @@ bindsym $mod+u exec subl3
 
 # Start mutt
 bindsym $mod+t exec urxvt -e mutt
+
+# Start vifm
+bindsym $mod+i exec urxvt -e vifm
+
+# Start newsbeuter
+bindsym $mod+n exec urxvt -e newsbeuter
+
+# Start vim
+bindsym $mod+shift+p exec urxvt -e vim
