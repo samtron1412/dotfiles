@@ -48,6 +48,9 @@ eval $(ssh-agent)
 # -d: Start as a daemon
 syndaemon -i 1 -K -d
 
+# Start rescuetime
+rescuetime &
+
 # Start window manager
 session=${1:-i3}
 case $session in
@@ -60,5 +63,3 @@ case $session in
   *) exec $1;;
 esac
 
-# Start rescuetime
-rescuetime &
