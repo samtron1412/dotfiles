@@ -1,0 +1,13 @@
+[Unit]
+Description=wpa_cli action service
+Wants=systemd-networkd.service network-online.target
+After=systemd-networkd.service network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/wpa_cli -a ~/bin/wpa_action
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
