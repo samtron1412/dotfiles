@@ -23,7 +23,7 @@
     padding = 10
     horizontal_padding = 10
     separator_color = frame
-    startup_notification = true
+    startup_notification = false
     dmenu = /usr/bin/dmenu -p dunst:
     browser = /usr/bin/chromium
     icon_position = left
@@ -104,5 +104,12 @@
 #    appname = Pidgin
 #    summary = *twitter.com*
 #    urgency = normal
-#
+
+[irc]
+    appname = "weechat"
+    format  = "%s: %b"
+    urgency = low
+    background = "#83c83d"
+    foreground = "#000000"
+
 # vim: ft=cfg
