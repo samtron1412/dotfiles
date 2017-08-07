@@ -48,6 +48,8 @@ eval $(ssh-agent)
 # -d: Start as a daemon
 syndaemon -i 1 -K -d
 
+source ~/.zsh/.env
+
 # Start window manager
 session=${1:-i3}
 case $session in
