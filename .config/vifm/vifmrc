@@ -94,10 +94,12 @@ mark b ~/bin/
 mark c ~/.config
 mark d ~/download
 mark D ~/doc
+mark g ~/doc/gwc
 mark h ~/
 mark m ~/media
 mark r ~/repo
 mark u /run/media
+mark v ~/vm
 
 
 " ======================================================================
