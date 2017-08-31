@@ -94,3 +94,8 @@ alias rmusb="udisksctl power-off -b"
 # Show detail information of a block device
 alias usbinfo="udisksctl info -b"
 
+# Start openvpn and wpa_cli at home
+alias home="systemctl start openvpn-client@la2.service && systemctl start wpa_cli.service"
+
+# Stop openvpn and wpa_cli at school
+alias school="systemctl stop openvpn-client@la2.service && systemctl stop wpa_cli.service"
