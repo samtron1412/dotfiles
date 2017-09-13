@@ -274,7 +274,7 @@ exec --no-startup-id "i3-msg 'workspace 2:term; append_layout /home/glider/.i3/w
 bindsym $mod+o exec chromium
 
 # Start sublime text
-bindsym $mod+u exec subl3
+bindsym $mod+u exec subl
 
 # Start mutt
 bindsym $mod+t exec urxvt -e mutt
