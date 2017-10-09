@@ -278,7 +278,7 @@ filetype *.7z
 fileviewer *.7z 7z l %c
 
 " Office files
-filextype *.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.ppt,*.pptx,*.dotx libreoffice %f %i &
+filextype *.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.ppt,*.pptx,*.dotx,*.dot libreoffice %f %i &
 fileviewer *.doc catdoc %c
 fileviewer *.docx, docx2txt.pl %f -
 
