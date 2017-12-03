@@ -1,0 +1,12 @@
+# Adjust the backlight depends on switching power_supply
+#
+# The ENV{DISPLAY} and ENV{XAUTHORITY} are requirements for the command
+# be executed.
+# The "/usr/bin/su" will place its ownership under the user of the
+# graphical session.
+
+# Dim the monitor when the power_supply switches to battery
+ACTION=="change", SUBSYSTEM=="power_supply", ATTR{type}=="Mains", ATTR{online}=="0", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/glider/.Xauthority", RUN+="/usr/bin/su glider -c '/usr/bin/xbacklight -set 20'"
+
+# Brighten the backlight when the power_supply switches to AC Adapter
+ACTION=="change", SUBSYSTEM=="power_supply", ATTR{type}=="Mains", ATTR{online}=="1", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/glider/.Xauthority", RUN+="/usr/bin/su glider -c '/usr/bin/xbacklight -set 100'"

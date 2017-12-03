@@ -1,0 +1,1 @@
+ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="04d9", ATTRS{idProduct}=="0141", RUN+="/home/glider/bin/kbd-udev", OWNER="glider"
