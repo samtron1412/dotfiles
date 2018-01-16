@@ -283,7 +283,7 @@ bindsym $mod+t exec urxvt -e mutt
 bindsym $mod+i exec urxvt -e vifm
 
 # Start newsbeuter
-bindsym $mod+n exec urxvt -e newsbeuter
+bindsym $mod+n exec urxvt -e newsboat
 
 # Start vim
 bindsym $mod+shift+p exec urxvt -e vim
