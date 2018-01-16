@@ -287,3 +287,6 @@ bindsym $mod+n exec urxvt -e newsboat
 
 # Start vim
 bindsym $mod+shift+p exec urxvt -e vim
+
+# Start qutebrowser
+bindsym $mod+shift+q exec qutebrowser
