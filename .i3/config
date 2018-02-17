@@ -290,3 +290,6 @@ bindsym $mod+shift+p exec urxvt -e vim
 
 # Start qutebrowser
 bindsym $mod+shift+q exec qutebrowser
+
+# Start cmus
+bindsym $mod+c exec urxvt -e cmus
