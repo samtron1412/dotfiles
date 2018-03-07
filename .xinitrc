@@ -39,6 +39,9 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 fcitx &
 
+# Start wpa_gui
+wpa_gui -t -q &
+
 # Start ssh-agent
 eval $(ssh-agent)
 
@@ -62,5 +65,3 @@ case $session in
   *) exec $1;;
 esac
 
-# Start wpa_gui
-wpa_gui &
