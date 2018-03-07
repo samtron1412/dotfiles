@@ -62,3 +62,5 @@ case $session in
   *) exec $1;;
 esac
 
+# Start wpa_gui
+wpa_gui &
