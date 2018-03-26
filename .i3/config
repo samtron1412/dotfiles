@@ -38,8 +38,11 @@ set $right semicolon
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+# start a terminal at the current working directory
+bindsym $mod+Return exec urxvt -cd "`xcwd`"
+
+# start a terminal at the home directory
+bindsym $mod+Shift+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+q kill
