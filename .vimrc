@@ -95,6 +95,11 @@ set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
 set showmatch           " highlight matching [{()}]
 
+" copy and paste
+vmap <C-c> "+y
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <ESC>"+pi
 xnoremap p pgvy		"paste and recopy
 
 nmap oo o<Esc>k 	"insert new line after current line
