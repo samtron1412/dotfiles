@@ -40,7 +40,7 @@ export XMODIFIERS=@im=fcitx
 fcitx &
 
 # Start wpa_gui
-wpa_gui -t -q &
+# wpa_gui -t -q &
 
 # Start ssh-agent
 eval $(ssh-agent)
