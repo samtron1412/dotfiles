@@ -58,8 +58,9 @@ alias pmro='sudo pm -Rns $(pm -Qtdq)'
 #= APPS
 #=======================================================================
 
-# Take a screenshoot with a selection tool
+# Take a screenshot with a selection tool
 alias maims='maim -s ~/img/screen/$(date +%F-%T).png'
+alias screenshot="maims"
 
 # Connect to raspberry pi
 alias pi='ssh pi@192.168.2.36'
@@ -99,3 +100,8 @@ alias home="systemctl start openvpn-client@la2.service && systemctl start wpa_cl
 
 # Stop openvpn and wpa_cli at school
 alias school="systemctl stop openvpn-client@la2.service && systemctl stop wpa_cli.service"
+
+# cower
+alias cowerl="cower -u"
+alias cowers="cower -s"
+alias cowerm="cower -m"
