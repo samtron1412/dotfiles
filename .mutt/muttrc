@@ -102,3 +102,5 @@ bind index G imap-fetch-mail
 macro index 'c' '<change-folder>?<change-dir><home>^K=<enter>'
 
 bind editor <delete> delete-char
+
+set wrap = 72
