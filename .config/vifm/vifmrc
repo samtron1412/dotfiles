@@ -95,9 +95,10 @@ nmap bm :marks <cr>
 mark a ~/aur
 mark b ~/bin/
 mark c ~/.config
+mark C ~/doc/schools/cal
 mark d ~/download
 mark D ~/doc
-mark g ~/doc/gwc
+mark g ~/doc/schools/gwc
 mark h ~/
 mark m ~/media
 mark r ~/repo
