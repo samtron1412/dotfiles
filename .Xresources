@@ -53,10 +53,11 @@ XTerm*cursorBlink: 1
 URxvt*saveLines: 9000
 
 ! Fonts
-URxvt*font: xft:Bitstream Vera Sans Mono:pixelsize=12
-URxvt*boldFont: xft:Bitstream Vera Sans Mono:style=bold:pixelsize=12
-URxvt*italicFont: xft:Bitstream Vera Sans Mono:style=italic:pixelsize=12
-URxvt*boldItalicFont: xft:Bitstream Vera Sans Mono:style=bolditalic:pixelsize=12
+URxvt*font: xft:Dejavu Sans Mono:pixelsize=12
+! URxvt*font: xft:Bitstream Vera Sans Mono:pixelsize=12
+! URxvt*boldFont: xft:Bitstream Vera Sans Mono:style=bold:pixelsize=12
+! URxvt*italicFont: xft:Bitstream Vera Sans Mono:style=italic:pixelsize=12
+! URxvt*boldItalicFont: xft:Bitstream Vera Sans Mono:style=bolditalic:pixelsize=12
 
 ! Colors
 URxvt*background: black
