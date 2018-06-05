@@ -103,4 +103,4 @@ macro index 'c' '<change-folder>?<change-dir><home>^K=<enter>'
 
 bind editor <delete> delete-char
 
-set wrap = 72
+set wrap = 84
