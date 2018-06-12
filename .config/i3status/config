@@ -77,7 +77,7 @@ battery 0 {
 }
 
 tztime local {
-    format = "%Y-%m-%d %H:%M:%S"
+    format = "%a %d %b %R"
 }
 
 tztime vietnam {
