@@ -22,8 +22,8 @@ if [ -f "$usermodmap" ]; then
   xmodmap "$usermodmap"
 fi
 
-# Caps Lock as Escape key
-setxkbmap -option caps:escape
+# Caps Lock as Ctrl key
+setxkbmap -option ctrl:nocaps
 
 # start some nice programs
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
