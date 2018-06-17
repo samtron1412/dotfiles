@@ -69,7 +69,7 @@ battery 0 {
     status_bat = "⚡ BAT"
     status_full = "☻ FULL"
     # status_full = ""
-    path = "/sys/class/power_supply/BAT1/uevent"
+    path = "/sys/class/power_supply/BAT0/uevent"
     low_threshold = 30
     last_full_capacity = true
     hide_seconds = true
