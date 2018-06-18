@@ -39,18 +39,6 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 fcitx &
 
-# Start wpa_gui
-# wpa_gui -t -q &
-
-# Start ssh-agent
-eval $(ssh-agent)
-
-# Start syndaemon to disable touch pad when typing
-# -i 1: wait 1 second after the last key press before enabling the touch pad.
-# -K: Ignore modifier keys and Modifier+Key combos when monitoring keyboard activity
-# -d: Start as a daemon
-syndaemon -i 1 -K -d
-
 source ~/.zsh/.env
 
 # Start window manager
