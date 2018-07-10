@@ -63,13 +63,13 @@ alias maims='maim -s ~/img/screen/$(date +%F-%T).png'
 alias screenshot="maims"
 
 # Connect to raspberry pi
-alias pi='ssh pi@192.168.2.36'
+# alias pi='ssh pi@192.168.2.36'
 
 # Connect to raspberry pi and use screen
-alias pis='ssh -t pi@192.168.2.36 screen -R'
+# alias pis='ssh -t pi@192.168.2.36 screen -R'
 
 # Using netctl to connect to wifi with the encryption option
-alias wifi='sudo wifi-menu -o'
+# alias wifi='sudo wifi-menu -o'
 
 # Using info to read manual with vi keybinding
 alias info='info --vi-keys'
