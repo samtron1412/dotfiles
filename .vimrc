@@ -94,6 +94,13 @@ set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
 set showmatch           " highlight matching [{()}]
+inoremap {      {}<Left>
+inoremap {<CR>  {<CR>}<Esc>ko
+inoremap {{     {
+inoremap {}     {}
+inoremap        (  ()<Left>
+inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
+inoremap <expr> ' strpart(getline('.'), col('.')-1, 1) == "\'" ? "\<Right>" : "\'\'\<Left>"
 
 " copy and paste
 vmap <C-c> "+y
