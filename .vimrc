@@ -163,3 +163,9 @@ function! ToggleTextwidth()
     set textwidth=72
   endif
 endfunction
+
+"= LATEX
+let g:tex_flavor='latex'
+let g:Tex_DefaultTargetFormat='pdf'
+let g:Tex_CompileRule='pdflatex -interaction=nonstopmode $*'
+let g:Tex_ViewRule_pdf='zathura'
