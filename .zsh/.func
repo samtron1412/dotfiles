@@ -1,3 +1,9 @@
+# Instal or upgrade a global Python package
+# Since we set require-virtualenv = true at Application Support/pip/pip.conf
+gpip(){
+   PIP_REQUIRE_VIRTUALENV="0" pip3 "$@"
+}
+
 # Create a new directory and enter it
 function mk() {
   mkdir -p "$@" && cd "$@"
