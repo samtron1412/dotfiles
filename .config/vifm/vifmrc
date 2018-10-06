@@ -89,17 +89,14 @@ set statusline="  %t%= %A %10u:%-7g %15E %20d  "
 nmap bm :marks <cr>
 
 " bookmarks
-mark a ~/aur
 mark b ~/bin/
 mark c ~/.config
-mark d ~/download
-mark D ~/doc
-mark g ~/doc/gwc
+mark d ~/Downloads
+mark D ~/Documents
+mark C ~/Documents/cal
 mark h ~/
-mark m ~/media
 mark r ~/repo
 mark u /run/media
-mark v ~/vm
 
 
 " ======================================================================
@@ -131,7 +128,8 @@ command! reload :write | restart
 " == DEFAULT PROGRAMS
 " ======================================================================
 " Pdf
-filextype *.pdf zathura %c %i &, apvlv %c %i &, xpdf %c
+" filextype *.pdf zathura %c %i &, apvlv %c %i &, xpdf %c
+" filextype *.pdf open -a Preview %c
 fileviewer *.pdf pdftotext -nopgbrk %c -
 
 " PostScript
@@ -278,7 +276,7 @@ filetype *.7z
 fileviewer *.7z 7z l %c
 
 " Office files
-filextype *.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.ppt,*.pptx,*.dotx,*.dot libreoffice %f %i &
+" filextype *.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.ppt,*.pptx,*.dotx,*.dot libreoffice %f %i &
 fileviewer *.doc catdoc %c
 fileviewer *.docx, docx2txt.pl %f -
 
@@ -294,6 +292,9 @@ filextype */
         \ Thunar %f &,
 fileviewer .*/,*/ tree %f
 
+" Vim
+filetype *.py,*.ipynb,*.txt,*.tex vim
+
 " Open all other files with default system programs (you can also remove all
 " :file[x]type commands above to ensure they don't interfere with system-wide
 " settings).  By default all unknown files are opened with 'vi[x]cmd'
@@ -302,7 +303,7 @@ fileviewer .*/,*/ tree %f
 " For *nix:
 " filetype * xdg-open
 " For OS X:
-" filetype * open
+filetype * open
 " For Windows:
 " filetype * start, explorer
 
