@@ -22,6 +22,10 @@ set colorcolumn=+1              "Set color columns is textwidth
 set nowrap                      "Set no soft wrapping
 set number
 
+" Status line at the bottom
+set ruler
+set laststatus=2
+
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
 " http://items.sjbach.com/319/configuring-vim-right
