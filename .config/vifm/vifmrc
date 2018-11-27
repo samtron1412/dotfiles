@@ -293,7 +293,7 @@ filextype */
 fileviewer .*/,*/ tree %f
 
 " Vim
-filetype *.py,*.ipynb,*.txt,*.tex vim
+filetype *.py,*.ipynb,*.txt,*.tex,*.scm,*.rst,*.ok,*.sql,*.xml vim
 
 " Open all other files with default system programs (you can also remove all
 " :file[x]type commands above to ensure they don't interfere with system-wide
