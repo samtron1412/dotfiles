@@ -156,3 +156,32 @@ function! ToggleTextwidth()
     set textwidth=72
   endif
 endfunction
+
+"==== vim-plug ===="
+
+"= Automatic installation"
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Specify a directory for plugins
+" - For Neovim: ~/.local/share/nvim/plugged
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
+" Make sure you use single quotes
+
+" Plugin outside ~/.vim/plugged with post-update hook
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+" Initialize plugin system
+call plug#end()
+
+" Reload .vimrc and :PlugInstall to install plugins.
+
+
+"= Fuzzy Finder"
+nnoremap <C-p> :<C-u>FZF<CR>
