@@ -1,0 +1,32 @@
+*Background:			black
+*Foreground:			white
+
+*Font:				9x15
+*cursorColor:			#515551
+*pointerColor:			yellow
+
+! These defs are for the emacs window
+Emacs*font:		9x15
+Emacs*background:	#aaaaaa
+Emacs*foreground:	#000000
+Emacs*borderWidth:	0
+Emacs*cursorColor:	CornflowerBlue
+Emacs*pointerColor:	CornflowerBlue
+Emacs*region.attributeBackground: LightGray
+
+! This defs are for the emacs text buffer window
+emacs.font:		9x15
+emacs.background:	#a1a5a5
+emacs.foreground:	#000000
+emacs.cursorColor:	lightsteelblue
+
+XTerm*font:		10x20
+XTerm*saveLines:	1024
+
+!xterm*background:	#a1a5a5
+!xterm*foreground: 	black
+xterm*cursorColor:	#6e7388
+
+xterm*background:	black
+xterm*foreground:	yellow
+STk*background:		#a1a5a5
