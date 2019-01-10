@@ -99,3 +99,9 @@ alias home="systemctl start openvpn-client@la2.service && systemctl start wpa_cl
 
 # Stop openvpn and wpa_cli at school
 alias school="systemctl stop openvpn-client@la2.service && systemctl stop wpa_cli.service"
+
+# jump plugin for zsh
+alias j="jump"
+alias m="mark"
+alias ms="marks"
+alias um="unmark"
