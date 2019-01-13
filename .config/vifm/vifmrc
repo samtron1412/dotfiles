@@ -146,23 +146,27 @@ filextype *.djvu
 
 " Audio
 filetype *.wav,*.mp3,*.flac,*.ogg,*.m4a,*.wma,*.ape,*.ac3
-       \ {Play using mpv}
-       \ mpv %f %i &,
-       \ {Play using ffplay}
-       \ ffplay -nodisp %c %i &,
-       \ {Play using MPlayer}
-       \ mplayer %f %i &,
-       \ ffplay %c %i &,
+    \ {Play using iina}
+    \ iina %f,
+    \ {Play using mpv}
+    \ mpv %f %i,
+    \ {Play using ffplay}
+    \ ffplay -nodisp %c %i &,
+    \ {Play using MPlayer}
+    \ mplayer %f %i &,
+    \ ffplay %c %i &,
 fileviewer *.mp3 id3v2 -l
 
 " Video
 filextype *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.vob,*.flv,*.m2v,*.mov,*.webm,*.ts,*.m4v
-        \ {View using mpv}
-        \ mpv %f %i &,
-        \ {View using mplayer}
-        \ mplayer %f %i &,
-        \ {View using ffplay}
-        \ ffplay -fs %c %i &,
+    \ {Play using iina}
+    \ iina %f,
+    \ {View using mpv}
+    \ mpv %f %i,
+    \ {View using mplayer}
+    \ mplayer %f %i &,
+    \ {View using ffplay}
+    \ ffplay -fs %c %i &,
 fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.vob,*.flv,*.m2v,*.mov,*.webm,*.ts,*.m4v
          \ ffprobe -pretty %c 2>&1
 
