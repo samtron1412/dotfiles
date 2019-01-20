@@ -96,7 +96,7 @@ mark D ~/Documents
 mark C ~/Documents/cal
 mark h ~/
 mark r ~/repo
-mark u /run/media
+mark v /Volumes
 
 
 " ======================================================================
