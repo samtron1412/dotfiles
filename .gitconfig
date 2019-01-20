@@ -3,7 +3,7 @@
   pager = less -x2
   autocrlf = input
 [user]
-  email = samtron1412@gmail.com
+  email = sontran@berkeley.edu
   name = Son Tran
 [color]
   branch = auto
@@ -41,7 +41,7 @@
 [sendemail]
   smtpEncryption = tls
   smtpServer = smtp.gmail.com
-  smtpUser = samtron1412@gmail.com
+  smtpUser = sontran@berkeley.edu
   smtpServerPort = 587
   suppresscc = self
   confirm = always
