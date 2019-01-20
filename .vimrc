@@ -180,6 +180,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-commentary'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
+Plug 'vim-latex/vim-latex'
+Plug 'lervag/vimtex'
 
 " Initialize plugin system
 call plug#end()
