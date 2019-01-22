@@ -21,6 +21,7 @@ set textwidth=72                "Set text width is 72 columns
 set colorcolumn=+1              "Set color columns is textwidth
 set nowrap                      "Set no soft wrapping
 set number
+set background=dark
 
 " Status line at the bottom
 set ruler
@@ -59,7 +60,6 @@ set hlsearch        " Highlight searches by default
 set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
 
-colo murphy         " set color scheme is murphy
 syntax on           " turn on syntax highlighting
 
 " ================ Indentation ======================
@@ -106,12 +106,14 @@ nmap oo o<Esc>k 	"insert new line after current line
 nmap OO O<Esc>j 	"insert new line before current line
 
 "======== Moving lines up or down =====================
-let c='a'
-while c <= 'z'
-  exec "set <A-".c.">=\e".c
-  exec "imap \e".c." <A-".c.">"
-  let c = nr2char(1+char2nr(c))
-endw
+if !has('nvim')
+  let c='a'
+  while c <= 'z'
+    exec "set <A-".c.">=\e".c
+    exec "imap \e".c." <A-".c.">"
+    let c = nr2char(1+char2nr(c))
+  endw
+endif
 
 set timeout ttimeoutlen=50
 
@@ -182,6 +184,9 @@ Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
 Plug 'vim-latex/vim-latex'
 Plug 'lervag/vimtex'
+Plug 'patstockwell/vim-monokai-tasty'
+Plug 'phanviet/vim-monokai-pro'
+Plug 'morhetz/gruvbox'
 
 " Initialize plugin system
 call plug#end()
@@ -191,3 +196,11 @@ call plug#end()
 
 "= Fuzzy Finder"
 nnoremap <C-p> :<C-u>FZF<CR>
+
+let g:gruvbox_italic=1
+colorscheme gruvbox
+
+" Change the cursor from box to line in the insert mode
+let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
