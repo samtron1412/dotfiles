@@ -105,3 +105,6 @@ alias j="jump"
 alias m="mark"
 alias ms="marks"
 alias um="unmark"
+
+# for custom terminfo
+alias ssh='TERM=xterm-256color ssh'
