@@ -158,6 +158,8 @@ function! ToggleTextwidth()
     set textwidth=72
   endif
 endfunction
+command! -nargs=* Wrap set wrap linebreak nolist
+command! -nargs=* Nowrap set nowrap list
 
 "==== vim-plug ===="
 
