@@ -93,7 +93,7 @@ mark b ~/bin/
 mark c ~/.config
 mark d ~/Downloads
 mark D ~/Documents
-mark C ~/Documents/cal
+mark C ~/Documents/schools/cal
 mark h ~/
 mark r ~/repo
 mark v /Volumes
@@ -297,7 +297,7 @@ filextype */
 fileviewer .*/,*/ tree %f
 
 " Vim
-filetype *.py,*.ipynb,*.txt,*.tex,*.scm,*.rst,*.ok,*.sql,*.xml,*.conf,*.vim,*.sh,*.md vim
+filetype *.py,*.ipynb,*.txt,*.tex,*.scm,*.rst,*.ok,*.sql,*.xml,*.conf,*.vim,*.sh,*.md,*.java,*.sty vim
 
 " Open all other files with default system programs (you can also remove all
 " :file[x]type commands above to ensure they don't interfere with system-wide
