@@ -1,0 +1,7 @@
+map = zoom in
+map - zoom out
+
+set adjust-open width
+
+# Use clipboard instead of the X11 primary selection
+set selection-clipboard clipboard
