@@ -189,6 +189,10 @@ Plug 'lervag/vimtex'
 Plug 'patstockwell/vim-monokai-tasty'
 Plug 'phanviet/vim-monokai-pro'
 Plug 'morhetz/gruvbox'
+Plug 'tpope/vim-surround'
+Plug 'Shougo/neocomplete.vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/vim-easy-align'
 
 " Initialize plugin system
 call plug#end()
@@ -206,3 +210,13 @@ colorscheme gruvbox
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
 let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+
+" Easy Align key binding
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+" Spell checking
+autocmd FileType latex,tex,md,markdown setlocal spell spelllang=en_us
