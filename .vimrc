@@ -202,7 +202,7 @@ call plug#end()
 
 
 "= Fuzzy Finder"
-nnoremap <C-p> :<C-u>FZF<CR>
+nnoremap <C-p> :Files<CR>
 
 let g:gruvbox_italic=1
 colorscheme gruvbox
