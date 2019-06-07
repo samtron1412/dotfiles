@@ -12,7 +12,7 @@ set history=1000                "Store lots of :cmdline history
 set showcmd                     "Show incomplete cmds down the bottom
 set showmode                    "Show current mode down the bottom
 set visualbell                  "No sounds
-set autoread                    "Reload files changed outside vim
+au CursorHold * checktime       "Load the changes if cursor stop moving
 set encoding=utf-8              "Set vim use utf-8
 set fileencoding=utf-8          "Force vim overwrite file encoding to
                                 "utf-8
@@ -22,8 +22,31 @@ set nowrap                      "Set no soft wrapping
 set number                      "Show line numbers
 set background=dark             "Use the dark background
 
+" =========================== Statusline ===============================
 set ruler                       "Show line and collumn number of the cursor
 set laststatus=2                "Always show the status line at the bottom
+function! GitBranch()
+  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
+
+function! StatuslineGit()
+  let l:branchname = GitBranch()
+  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+endfunction
+
+set statusline=
+set statusline+=%#PmenuSel#
+set statusline+=%{StatuslineGit()}
+set statusline+=%#LineNr#
+set statusline+=\ %f
+set statusline+=%m\
+set statusline+=%=
+set statusline+=%#CursorColumn#
+set statusline+=\ %y
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\[%{&fileformat}\]
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
 
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
@@ -44,7 +67,6 @@ set laststatus=2                "Always show the status line at the bottom
 " saving, and swap files will keep you safe if your computer crashes.
 set hidden
 
-"
 " =========================== Scrolling ================================
 
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
@@ -181,7 +203,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-commentary'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
-" Plug 'vim-latex/vim-latex'
 Plug 'lervag/vimtex'
 Plug 'patstockwell/vim-monokai-tasty'
 Plug 'phanviet/vim-monokai-pro'
