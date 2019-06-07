@@ -77,6 +77,8 @@ syntax on           " turn on syntax highlighting
 set listchars=eol:¬,tab:▸-,trail:·,space:·
 set cursorline
 
+" Convert existing tabs to spaces by :retab
+
 " =============================== Folds ================================
 
 set foldmethod=indent   "fold based on indent
