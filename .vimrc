@@ -104,14 +104,14 @@ xnoremap p pgvy     "paste and recopy
 
 " ======================== Moving lines up or down =====================
 " Fix META key if needed
-" if !has('nvim')
-"   let c='a'
-"   while c <= 'z'
-"     exec "set <A-".c.">=\e".c
-"     exec "imap \e".c." <A-".c.">"
-"     let c = nr2char(1+char2nr(c))
-"   endw
-" endif
+if !has('nvim')
+  let c='a'
+  while c <= 'z'
+    exec "set <A-".c.">=\e".c
+    exec "imap \e".c." <A-".c.">"
+    let c = nr2char(1+char2nr(c))
+  endw
+endif
 
 set timeout ttimeoutlen=50
 
@@ -213,7 +213,7 @@ nnoremap <C-p> :Files<CR>
 " --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
 " --color: Search color options
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
-map <CR> :Find 
+map <CR> :Find
 
 let g:gruvbox_italic=1
 colorscheme gruvbox     " Load colorscheme after vim-plug
