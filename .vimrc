@@ -3,7 +3,7 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" ================ General Config ====================
+" ========================== General Config ============================
 
 set nrformats=                  "Treat all numerals as decimal
 set mouse=a                     "Support mouse actions
@@ -11,7 +11,6 @@ set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
 set showcmd                     "Show incomplete cmds down the bottom
 set showmode                    "Show current mode down the bottom
-set gcr=a:blinkon0              "Disable cursor blink
 set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
 set encoding=utf-8              "Set vim use utf-8
@@ -20,48 +19,49 @@ set fileencoding=utf-8          "Force vim overwrite file encoding to
 set textwidth=72                "Set text width is 72 columns
 set colorcolumn=+1              "Set color columns is textwidth
 set nowrap                      "Set no soft wrapping
-set number
-set background=dark
+set number                      "Show line numbers
+set background=dark             "Use the dark background
 
-" Status line at the bottom
-set ruler
-set laststatus=2
+set ruler                       "Show line and collumn number of the cursor
+set laststatus=2                "Always show the status line at the bottom
 
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
 " http://items.sjbach.com/319/configuring-vim-right
 
-" Vim with default settings does not allow easy switching between multiple files
-" in the same editor window. Users can use multiple split windows or multiple
-" tab pages to edit multiple files, but it is still best to enable an option to
-" allow easier switching between files.
+" Vim with default settings does not allow easy switching between
+" multiple files in the same editor window. Users can use multiple split
+" windows or multiple tab pages to edit multiple files, but it is still
+" best to enable an option to allow easier switching between files.
 "
-" One such option is the 'hidden' option, which allows you to re-use the same
-" window and switch from an unsaved buffer without saving it first. Also allows
-" you to keep an undo history for multiple files when re-using the same window
-" in this way. Note that using persistent undo also lets you undo in multiple
-" files even in the same window, but is less efficient and is actually designed
-" for keeping undo history after closing Vim entirely. Vim will complain if you
-" try to quit without saving, and swap files will keep you safe if your computer
-" crashes.
+" One such option is the 'hidden' option, which allows you to re-use the
+" same window and switch from an unsaved buffer without saving it first.
+" Also allows you to keep an undo history for multiple files when
+" re-using the same window in this way. Note that using persistent undo
+" also lets you undo in multiple files even in the same window, but is
+" less efficient and is actually designed for keeping undo history after
+" closing Vim entirely. Vim will complain if you try to quit without
+" saving, and swap files will keep you safe if your computer crashes.
 set hidden
 
 "
-" ================ Scrolling ========================
+" =========================== Scrolling ================================
 
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
 
-" ================ Search ===========================
+" =========================== Search ===================================
 
 set incsearch       " Find the next match as we type the search
 set hlsearch        " Highlight searches by default
+" Clear highlight searches when press escape
+nnoremap <silent> <esc> :noh<CR><esc>
 set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
 
 
-" ================ Indentation ======================
+" =========================== Indentation ==============================
 
 set autoindent
 set smartindent
@@ -74,17 +74,16 @@ filetype indent plugin on
 syntax on           " turn on syntax highlighting
 
 " Display tabs and trailing spaces visually
-set list listchars=tab:\ \ ,trail:·
-
+set listchars=eol:¬,tab:▸-,trail:·,space:·
 set cursorline
 
-" ================ Folds ============================
+" =============================== Folds ================================
 
 set foldmethod=indent   "fold based on indent
 set foldnestmax=4       "deepest fold is 3 levels
 set nofoldenable        "dont fold by default
 
-" ================ Completion =======================
+" ============================ Completion ==============================
 
 set wildignorecase      "enable ignore case
 set wildmenu            "enable ctrl-n and ctrl-p to scroll thru matches
@@ -100,20 +99,19 @@ set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
 set showmatch           " highlight matching [{()}]
 
-xnoremap p pgvy		"paste and recopy
+xnoremap p pgvy     "paste and recopy
 
-nmap oo o<Esc>k 	"insert new line after current line
-nmap OO O<Esc>j 	"insert new line before current line
 
-"======== Moving lines up or down =====================
-if !has('nvim')
-  let c='a'
-  while c <= 'z'
-    exec "set <A-".c.">=\e".c
-    exec "imap \e".c." <A-".c.">"
-    let c = nr2char(1+char2nr(c))
-  endw
-endif
+" ======================== Moving lines up or down =====================
+" Fix META key if needed
+" if !has('nvim')
+"   let c='a'
+"   while c <= 'z'
+"     exec "set <A-".c.">=\e".c
+"     exec "imap \e".c." <A-".c.">"
+"     let c = nr2char(1+char2nr(c))
+"   endw
+" endif
 
 set timeout ttimeoutlen=50
 
@@ -124,14 +122,16 @@ inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
-"======== Moving in the buffer list =====================
+" ====================== Moving in the buffer list =====================
 nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
 nnoremap <silent> ]B :blast<CR>
 nnoremap <BS> <C-^>
+nnoremap <S-T> :Buffers<CR>
 
-"= Easy Expansion of the Active File Directory
+" Easy Expansion of the Active File Directory
+" Add the path of the current directory to the path of the file
 let mapleader=','
 " cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
@@ -140,18 +140,11 @@ map <leader>es :sp %%
 map <leader>ev :vsp %%
 map <leader>et :tabe %%
 
-
-"= Searching files
-set path=**
-map <leader>f :find
-map <leader>sf :sfind
-map <leader>vf :vertical sfind
-
 "= Set the color of the column marker is dark gray.
 highlight ColorColumn ctermbg=8
 
 "= Toggle hard wrapping by textwidth
-map <C-B> <Esc>:call ToggleTextwidth()<CR>
+map <C-m> <Esc>:call ToggleTextwidth()<CR>
 function! ToggleTextwidth()
   if &textwidth > 0
     set textwidth=0
@@ -162,9 +155,10 @@ endfunction
 command! -nargs=* Wrap set wrap linebreak nolist
 command! -nargs=* Nowrap set nowrap list
 
-"==== vim-plug ===="
 
-"= Automatic installation"
+"=========================== vim-plug ================================="
+
+" Automatic installation"
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -201,11 +195,28 @@ call plug#end()
 " Reload .vimrc and :PlugInstall to install plugins.
 
 
-"= Fuzzy Finder"
+" ========================== Fuzzy Finder ==============================
+
+" Search file names
 nnoremap <C-p> :Files<CR>
 
+" :Find <pattern>
+" Find the pattern in file contents
+" --column: Show column number
+" --line-number: Show line number
+" --no-heading: Do not show file headings in results
+" --fixed-strings: Search term as a literal string
+" --ignore-case: Case insensitive search
+" --no-ignore: Do not respect .gitignore, etc...
+" --hidden: Search hidden files and folders
+" --follow: Follow symlinks
+" --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+" --color: Search color options
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+map <CR> :Find 
+
 let g:gruvbox_italic=1
-colorscheme gruvbox
+colorscheme gruvbox     " Load colorscheme after vim-plug
 
 " Change the cursor from box to line in the insert mode
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
