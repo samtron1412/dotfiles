@@ -60,7 +60,6 @@ set hlsearch        " Highlight searches by default
 set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
 
-syntax on           " turn on syntax highlighting
 
 " ================ Indentation ======================
 
@@ -72,6 +71,7 @@ set softtabstop=4
 set tabstop=4
 set expandtab
 filetype indent plugin on
+syntax on           " turn on syntax highlighting
 
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
@@ -184,7 +184,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-commentary'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
-Plug 'vim-latex/vim-latex'
+" Plug 'vim-latex/vim-latex'
 Plug 'lervag/vimtex'
 Plug 'patstockwell/vim-monokai-tasty'
 Plug 'phanviet/vim-monokai-pro'
