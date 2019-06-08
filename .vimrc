@@ -158,7 +158,7 @@ map <leader>et :tabe %%
 highlight ColorColumn ctermbg=8
 
 "= Toggle hard wrapping by textwidth
-map <C-m> <Esc>:call ToggleTextwidth()<CR>
+map \\ <Esc>:call ToggleTextwidth()<CR>
 function! ToggleTextwidth()
   if &textwidth > 0
     set textwidth=0
