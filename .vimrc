@@ -25,28 +25,18 @@ set background=dark             "Use the dark background
 " =========================== Statusline ===============================
 set ruler                       "Show line and collumn number of the cursor
 set laststatus=2                "Always show the status line at the bottom
-function! GitBranch()
-  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-endfunction
-
-function! StatuslineGit()
-  let l:branchname = GitBranch()
-  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
-endfunction
-
 set statusline=
-set statusline+=%#PmenuSel#
-set statusline+=%{StatuslineGit()}
-set statusline+=%#LineNr#
-set statusline+=\ %f
-set statusline+=%m\
-set statusline+=%=
-set statusline+=%#CursorColumn#
-set statusline+=\ %y
-set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-set statusline+=\[%{&fileformat}\]
-set statusline+=\ %p%%
-set statusline+=\ %l:%c
+set statusline+=%#PmenuSel#     "Highlight the git branch
+set statusline+=%{FugitiveStatusline()} "Git branch of this file
+set statusline+=%#LineNr#       "Erase highlight for other parts
+set statusline+=\ %f            "A whitespace followed by file path
+set statusline+=%m              "Modified flag
+set statusline+=%=              "Separation point between left and right items
+set statusline+=\ %y            "A whitespace followed by file type
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding} "File encoding
+set statusline+=\ [%{&fileformat}]   "File format: unix, dos, mac
+set statusline+=\ %p%%          "Percentage through file in lines
+set statusline+=\ %l:%c         "Line and column numbers
 
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
