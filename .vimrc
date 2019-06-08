@@ -86,7 +86,7 @@ filetype indent plugin on
 syntax on           " turn on syntax highlighting
 
 " Display tabs and trailing spaces visually
-set listchars=eol:¬,tab:▸-,trail:·,space:·
+set list listchars=eol:¬,tab:▸-,trail:·,space:·
 set cursorline
 
 " Convert existing tabs to spaces by :retab
