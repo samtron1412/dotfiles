@@ -422,4 +422,4 @@ nmap <Leader>s <Plug>MarkdownPreviewStop
 
 
 """" goyo
-nmap <Leader>g :Goyo<CR>
+nmap <Leader>d :Goyo<CR>
