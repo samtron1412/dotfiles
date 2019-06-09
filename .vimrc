@@ -279,14 +279,7 @@ nnoremap \c :noh<CR><Esc>
 
 
 "= Toggle hard wrapping by textwidth
-map \\ <Esc>:call ToggleTextwidth()<CR>
-function! ToggleTextwidth()
-  if &textwidth > 0
-    set textwidth=0
-  else
-    set textwidth=72
-  endif
-endfunction
+map \\ <Esc>:call vimrc#ToggleTextwidth()<CR>
 
 " Search file names
 nnoremap <C-p> :Files<CR>
