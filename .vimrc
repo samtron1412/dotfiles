@@ -28,24 +28,46 @@ call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
 
+
 " Utility
 " Enhance or change behavior of core vim
+
+" Fuzzy Finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+
+" Remaps '.' in a way that plugins can use it
+Plug 'tpope/vim-repeat'
+
+" Add, change, delete surrounding pairs
 Plug 'tpope/vim-surround'
+
 "Plug 'Shougo/neocomplete.vim'
 "Plug 'jiangmiao/auto-pairs'
 "Plug 'junegunn/vim-easy-align'
 "Plug 'kana/vim-textobj-user'
 "Plug 'kana/vim-textobj-entire'
 
+
 " Git
+
+" Git wrapper in vim
 Plug 'tpope/vim-fugitive'
+
+" A git commit browser
 Plug 'junegunn/gv.vim'
+
+" Shows git diff in the gutter (sign column)
 Plug 'airblade/vim-gitgutter'
+
 
 " Markdown / Writing
 
+Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
+"Plug 'JamshedVesuna/vim-markdown-preview'  " Minimalist
+
+" Full feature preview
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 
 " Programming Support
 "Plug 'tpope/vim-commentary'
@@ -202,6 +224,20 @@ let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 let g:gruvbox_italic=1
 
 
+"""" vim-markdown-preview
+
+"let vim_markdown_preview_hotkey='<A-p>'
+"let vim_markdown_preview_browser='Google Chrome'
+"let vim_markdown_preview_github=1
+
+
+"""" markdown-preview.nvim
+
+"Refresh when save the buffer or leave from insert mode
+let g:mkdp_refresh_slow = 1
+"let g:mkdp_markdown_css = '~/repo/code/misc/github-markdown.css'
+
+
 
 """"""""""""""""""""""""""""
 " Commands
@@ -317,3 +353,9 @@ nmap ga <Plug>(EasyAlign)
 
 "paste and recopy
 xnoremap p pgvy
+
+
+"""" markdown-preview.nvim
+
+nmap <leader>p <Plug>MarkdownPreview
+nmap <leader>s <Plug>MarkdownPreviewStop
