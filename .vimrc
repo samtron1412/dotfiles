@@ -29,8 +29,8 @@ call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 
 
-" Utility
-" Enhance or change behavior of core vim
+"""" Utility
+"""" Enhance or change behavior of core vim
 
 " Fuzzy Finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -42,6 +42,18 @@ Plug 'tpope/vim-repeat'
 " Add, change, delete surrounding pairs
 Plug 'tpope/vim-surround'
 
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
+" Distraction-free mode
+Plug 'junegunn/goyo.vim'
+
+" Hyperfocus-writing: dim light
+Plug 'junegunn/limelight.vim'
+
+" Range, pattern, and substitute preview for Vim
+Plug 'markonm/traces.vim'
+
 "Plug 'Shougo/neocomplete.vim'
 "Plug 'jiangmiao/auto-pairs'
 "Plug 'junegunn/vim-easy-align'
@@ -49,7 +61,7 @@ Plug 'tpope/vim-surround'
 "Plug 'kana/vim-textobj-entire'
 
 
-" Git
+"""" Git
 
 " Git wrapper in vim
 Plug 'tpope/vim-fugitive'
@@ -61,7 +73,7 @@ Plug 'junegunn/gv.vim'
 Plug 'airblade/vim-gitgutter'
 
 
-" Markdown / Writing
+"""" Markdown / Writing
 
 Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
 "Plug 'JamshedVesuna/vim-markdown-preview'  " Minimalist
@@ -69,13 +81,18 @@ Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
 " Full feature preview
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 
-" Programming Support
+
+"""" Programming Support
+
 "Plug 'tpope/vim-commentary'
 
-" LaTeX
+
+"""" LaTeX
+
 "Plug 'lervag/vimtex'
 
-" Theme / Interface
+
+"""" Theme / Interface
 Plug 'patstockwell/vim-monokai-tasty'
 Plug 'phanviet/vim-monokai-pro'
 Plug 'morhetz/gruvbox'
@@ -224,6 +241,17 @@ let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 let g:gruvbox_italic=1
 
 
+"""" vim-markdown
+let g:vim_markdown_conceal = 0
+let g:tex_conceal = ""
+let g:vim_markdown_math = 1
+let g:vim_markdown_conceal_code_blocks = 0
+let g:vim_markdown_fenced_languages = ['csharp=cs']
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_toml_frontmatter = 1
+let g:vim_markdown_json_frontmatter = 1
+
+
 """" vim-markdown-preview
 
 "let vim_markdown_preview_hotkey='<A-p>'
@@ -237,6 +265,27 @@ let g:gruvbox_italic=1
 let g:mkdp_refresh_slow = 1
 "let g:mkdp_markdown_css = '~/repo/code/misc/github-markdown.css'
 
+" do not close the preview tab when switching to other buffers
+let g:mkdp_auto_close = 0
+
+
+"""" ultisnips
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<Tab>"  " use <Tab> trigger autocompletion
+let g:UltiSnipsJumpForwardTrigger="<C-f>"
+let g:UltiSnipsJumpBackwardTrigger="<C-b>"
+
+
+"""" limelight
+
+" Color name (:help cterm-colors) or ANSI code
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+
+" Color name (:help gui-colors) or RGB color
+let g:limelight_conceal_guifg = 'DarkGray'
+let g:limelight_conceal_guifg = '#777777'
 
 
 """"""""""""""""""""""""""""
@@ -248,8 +297,15 @@ let g:mkdp_refresh_slow = 1
 " Spell checking
 autocmd FileType latex,tex,md,markdown setlocal spell spelllang=en_us
 
-"Load the changes if cursor stop moving
+" Load the changes if cursor stop moving
 autocmd CursorHold * checktime
+
+" Integrate Goyo and LimeLight
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
+
+" Enable options after quitting vimdiff
+autocmd QuitPre * if &diff | filetype plugin on | let g:vim_markdown_folding_disabled = 0 | endif
 
 
 """" Custom commands
@@ -273,11 +329,18 @@ command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-h
 command! -nargs=* Wrap set wrap linebreak
 command! -nargs=* Nowrap set nowrap
 
+" Wrapping Gdiff to work with markdown files
+command! -nargs=* Mydiff filetype plugin off | let g:vim_markdown_folding_disabled = 1 | Gdiff
+
 
 
 """"""""""""""""""""""""""""
 " Mappings
 """"""""""""""""""""""""""""
+
+" paste and recopy
+xnoremap p pgvy
+
 
 """" Moving lines up or down
 
@@ -319,7 +382,7 @@ map \\ <Esc>:call vimrc#ToggleTextwidth()<CR>
 
 " Search file names
 nnoremap <C-p> :Files<CR>
-map <CR> :Find 
+map <Leader>f :Find
 
 
 
@@ -332,10 +395,10 @@ map <CR> :Find
 let mapleader=','
 " cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<CR>
-map <leader>ew :e %%
-map <leader>es :sp %%
-map <leader>ev :vsp %%
-map <leader>et :tabe %%
+map <Leader>ew :e %%
+map <Leader>es :sp %%
+map <Leader>ev :vsp %%
+map <Leader>et :tabe %%
 
 
 
@@ -351,11 +414,12 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
-"paste and recopy
-xnoremap p pgvy
-
 
 """" markdown-preview.nvim
 
-nmap <leader>p <Plug>MarkdownPreview
-nmap <leader>s <Plug>MarkdownPreviewStop
+nmap <Leader>p <Plug>MarkdownPreview
+nmap <Leader>s <Plug>MarkdownPreviewStop
+
+
+"""" goyo
+nmap <Leader>g :Goyo<CR>
