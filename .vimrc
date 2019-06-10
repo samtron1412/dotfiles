@@ -359,6 +359,10 @@ command! -nargs=* Mydiff filetype plugin off | let g:vim_markdown_folding_disabl
 " Mappings
 """"""""""""""""""""""""""""
 
+" Formatting the current paragraph (or selection)
+vmap ff gq
+nmap ff gqap
+
 " One keystroke for colon
 nnoremap ; :
 
