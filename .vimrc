@@ -288,6 +288,12 @@ let g:limelight_conceal_guifg = 'DarkGray'
 let g:limelight_conceal_guifg = '#777777'
 
 
+"""" git-gutter
+
+set updatetime=100
+
+
+
 """"""""""""""""""""""""""""
 " Commands
 """"""""""""""""""""""""""""
