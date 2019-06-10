@@ -85,6 +85,9 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 " Git wrapper in vim
 Plug 'tpope/vim-fugitive'
 
+" GitHub support
+Plug 'tpope/vim-rhubarb'
+
 " A git commit browser
 Plug 'junegunn/gv.vim'
 
