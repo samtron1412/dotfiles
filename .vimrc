@@ -437,6 +437,8 @@ nnoremap <Leader>gs :Gstatus<CR>
 nnoremap <Leader>gc :Gcommit -v<CR>
 
 " Add the file then commit it
+" Take advantage of autocomplete in writing commit message
+" Hit Ctrl-n to autocomplete the word
 nnoremap <Leader>gC :Gcommit -v %<CR>
 
 " Mydiff is a wrapper around Gdiff
@@ -459,3 +461,9 @@ nnoremap <Leader>gl :Glog -- %<CR><CR>:copen<CR>
 
 " List all commit history
 nnoremap <Leader>gL :exe ':!cd ' . expand('%:p:h') . '; git lap'<CR>
+
+" Rename the file, the new location is relative to the current file path
+nnoremap <Leader>gm :Gmove<Space>
+
+" Delete the file
+nnoremap <Leader>gM :Gremove<CR>
