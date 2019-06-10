@@ -202,7 +202,6 @@ set expandtab
 
 " Display tabs and trailing spaces visually
 set list listchars=eol:¬,tab:▸-,trail:·,space:·
-set cursorline
 
 
 """" Statusline
