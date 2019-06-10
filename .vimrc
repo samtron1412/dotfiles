@@ -436,6 +436,9 @@ nmap <Leader>d :Goyo<CR>
 """" vim-fugitive
 " Using cmdline for other tasks: move, delete, stash, push, pull
 
+" Add all files
+nnoremap <Leader>ga :Git add .<CR>
+
 nnoremap <Leader>gb :Gblame<CR>
 nnoremap <Leader>gs :Gstatus<CR>
 
