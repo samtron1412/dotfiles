@@ -61,16 +61,9 @@ Plug 'markonm/traces.vim'
 "Plug 'kana/vim-textobj-entire'
 
 
-"""" Git
+"""" LaTeX
 
-" Git wrapper in vim
-Plug 'tpope/vim-fugitive'
-
-" A git commit browser
-Plug 'junegunn/gv.vim'
-
-" Shows git diff in the gutter (sign column)
-Plug 'airblade/vim-gitgutter'
+"Plug 'lervag/vimtex'
 
 
 """" Markdown / Writing
@@ -87,15 +80,23 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 "Plug 'tpope/vim-commentary'
 
 
-"""" LaTeX
+"""" Git
 
-"Plug 'lervag/vimtex'
+" Git wrapper in vim
+Plug 'tpope/vim-fugitive'
+
+" A git commit browser
+Plug 'junegunn/gv.vim'
+
+" Shows git diff in the gutter (sign column)
+Plug 'airblade/vim-gitgutter'
 
 
 """" Theme / Interface
 Plug 'patstockwell/vim-monokai-tasty'
 Plug 'phanviet/vim-monokai-pro'
 Plug 'morhetz/gruvbox'
+
 
 " Initialize plugin system
 call plug#end()
@@ -236,12 +237,12 @@ let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 " Plugin Configuration
 """"""""""""""""""""""""""""
 
-"""" gruvbox
+"""" gruvbox configuration
 
 let g:gruvbox_italic=1
 
 
-"""" vim-markdown
+"""" vim-markdown configuration
 let g:vim_markdown_conceal = 0
 let g:tex_conceal = ""
 let g:vim_markdown_math = 1
@@ -252,14 +253,14 @@ let g:vim_markdown_toml_frontmatter = 1
 let g:vim_markdown_json_frontmatter = 1
 
 
-"""" vim-markdown-preview
+"""" vim-markdown-preview configuration
 
 "let vim_markdown_preview_hotkey='<A-p>'
 "let vim_markdown_preview_browser='Google Chrome'
 "let vim_markdown_preview_github=1
 
 
-"""" markdown-preview.nvim
+"""" markdown-preview.nvim configuration
 
 "Refresh when save the buffer or leave from insert mode
 let g:mkdp_refresh_slow = 1
@@ -269,7 +270,7 @@ let g:mkdp_refresh_slow = 1
 let g:mkdp_auto_close = 0
 
 
-"""" ultisnips
+"""" ultisnips configuration
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<Tab>"  " use <Tab> trigger autocompletion
@@ -277,7 +278,7 @@ let g:UltiSnipsJumpForwardTrigger="<C-f>"
 let g:UltiSnipsJumpBackwardTrigger="<C-b>"
 
 
-"""" limelight
+"""" limelight configuration
 
 " Color name (:help cterm-colors) or ANSI code
 let g:limelight_conceal_ctermfg = 'gray'
@@ -288,7 +289,7 @@ let g:limelight_conceal_guifg = 'DarkGray'
 let g:limelight_conceal_guifg = '#777777'
 
 
-"""" git-gutter
+"""" git-gutter configuration
 
 set updatetime=100
 
@@ -398,7 +399,7 @@ map <Leader>et :tabe %%
 " Plugin Mappings
 """"""""""""""""""""""""""""
 
-"""" fzf
+"""" fzf mapping
 
 nnoremap <S-T> :Buffers<CR>
 
@@ -412,7 +413,7 @@ nnoremap <Leader>f :Find<Space>
 nnoremap <Leader>s :BLines<CR>
 
 
-"""" easy-align
+"""" easy-align mapping
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
@@ -421,17 +422,23 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 
-"""" markdown-preview.nvim
+"""" markdown-preview.nvim mapping
 
-nmap <Leader>mp <Plug>MarkdownPreview
-nmap <Leader>ms <Plug>MarkdownPreviewStop
-
-
-"""" goyo
-nmap <Leader>d :Goyo<CR>
+nnoremap <Leader>mp <Plug>MarkdownPreview
+nnoremap <Leader>ms <Plug>MarkdownPreviewStop
 
 
-"""" vim-fugitive
+"""" goyo mapping
+nnoremap <Leader>d :Goyo<CR>
+
+
+"""" git-gutter mapping
+
+nmap ]h <Plug>GitGutterNextHunk
+nmap [h <Plug>GitGutterPrevHunk
+
+
+"""" vim-fugitive mapping
 " Using cmdline for other tasks: move, delete, stash, push, pull
 
 " Add all files
