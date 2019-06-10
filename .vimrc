@@ -359,6 +359,9 @@ command! -nargs=* Mydiff filetype plugin off | let g:vim_markdown_folding_disabl
 " Mappings
 """"""""""""""""""""""""""""
 
+" One keystroke for colon
+nnoremap ; :
+
 " paste and recopy
 xmap p pgvy
 
@@ -476,6 +479,9 @@ nmap <Leader>gg :Gcommit % -m ""<Left>
 
 " Stage the current hunk and commit it
 nmap <Leader>gh ,hs,gc
+
+" Stage the current hunk and commit it without invoking an editor
+nmap <Leader>ghh ,hs,gg
 
 " Mydiff is a wrapper around Gdiff
 nmap <Leader>gd :Mydiff<CR>
