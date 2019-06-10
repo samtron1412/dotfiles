@@ -484,3 +484,6 @@ nmap <Leader>gm :Gmove<Space>
 
 " Delete the file
 nmap <Leader>gM :Gremove<CR>
+
+nmap <Leader>gp :Gpush<CR>
+nmap <Leader>gl :Gpull<CR>
