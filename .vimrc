@@ -315,7 +315,7 @@ autocmd! User GoyoLeave Limelight!
 autocmd QuitPre * if &diff | filetype plugin on | let g:vim_markdown_folding_disabled = 0 | endif
 
 " Update git-gutter after working with vim-fugitive
-autocmd BufWritePost * GitGutter
+autocmd BufWritePost,BufWinEnter * GitGutter
 
 
 """" Custom commands
