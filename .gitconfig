@@ -45,3 +45,6 @@
   smtpServerPort = 587
   suppresscc = self
   confirm = always
+[alias]
+    la = log --oneline --all --decorate --graph
+    lap = log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --all
