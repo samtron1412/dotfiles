@@ -378,11 +378,13 @@ nnoremap \c :noh<CR><Esc>
 
 
 "= Toggle hard wrapping by textwidth
-map \\ <Esc>:call vimrc#ToggleTextwidth()<CR>
+nnoremap \\ <Esc>:call vimrc#ToggleTextwidth()<CR>
 
 " Search file names
 nnoremap <C-p> :Files<CR>
-map <Leader>f :Find
+
+" Search file content
+nnoremap <Leader>f :Find<Space>
 
 
 
@@ -423,3 +425,37 @@ nmap <Leader>s <Plug>MarkdownPreviewStop
 
 """" goyo
 nmap <Leader>d :Goyo<CR>
+
+
+"""" vim-fugitive
+" Using cmdline for other tasks: move, delete, stash, push, pull
+
+nnoremap <Leader>gb :Gblame<CR>
+nnoremap <Leader>gs :Gstatus<CR>
+
+" Commit after adding
+nnoremap <Leader>gc :Gcommit -v<CR>
+
+" Add the file then commit it
+nnoremap <Leader>gC :Gcommit -v %<CR>
+
+" Mydiff is a wrapper around Gdiff
+nnoremap <Leader>gd :Mydiff<CR>
+
+" Edit a fugitive-object, e.g. :% is the current file in the git index
+" :h fugitive-object to learn more
+" This map is to edit the current file in the git index
+nnoremap <Leader>ge :Gedit<CR>
+
+" Similar to git-checkout on a work tree file
+nnoremap <Leader>gr :Gread<CR>
+
+" Similar to git-add on a work tree file
+nnoremap <Leader>gw :Gwrite<CR>
+
+" Load this file's commit history into the quickfix list
+" :copen to open the quickfix list
+nnoremap <Leader>gl :Glog -- %<CR><CR>:copen<CR>
+
+" List all commit history
+nnoremap <Leader>gL :exe ':!cd ' . expand('%:p:h') . '; git lap'<CR>
