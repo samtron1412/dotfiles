@@ -369,34 +369,18 @@ inoremap <A-k> <Esc>:m .-2<CR>==gi
 vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
-
 " Moving in the buffer list
 nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
 nnoremap <silent> ]B :blast<CR>
 nnoremap <BS> <C-^>
-nnoremap <S-T> :Buffers<CR>
-
 
 " Clear highlight searches when press escape
 nnoremap \c :noh<CR><Esc>
 
-
 "= Toggle hard wrapping by textwidth
 nnoremap \\ <Esc>:call vimrc#ToggleTextwidth()<CR>
-
-" Search file names
-nnoremap <C-p> :Files<CR>
-
-" Search file content
-nnoremap <Leader>f :Find<Space>
-
-
-
-""""""""""""""""""""""""""""
-" Leader Mappings
-""""""""""""""""""""""""""""
 
 " Easy Expansion of the Active File Directory
 " Add the path of the current directory to the path of the file
@@ -414,7 +398,21 @@ map <Leader>et :tabe %%
 " Plugin Mappings
 """"""""""""""""""""""""""""
 
-"""" Easy Align key binding
+"""" fzf
+
+nnoremap <S-T> :Buffers<CR>
+
+" Search file names
+nnoremap <C-p> :Files<CR>
+
+" Search file content
+nnoremap <Leader>f :Find<Space>
+
+" Search lines
+nnoremap <Leader>s :BLines<CR>
+
+
+"""" easy-align
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
@@ -425,8 +423,8 @@ nmap ga <Plug>(EasyAlign)
 
 """" markdown-preview.nvim
 
-nmap <Leader>p <Plug>MarkdownPreview
-nmap <Leader>s <Plug>MarkdownPreviewStop
+nmap <Leader>mp <Plug>MarkdownPreview
+nmap <Leader>ms <Plug>MarkdownPreviewStop
 
 
 """" goyo
