@@ -363,25 +363,25 @@ endif
 
 set timeout ttimeoutlen=50
 
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-inoremap <A-j> <Esc>:m .+1<CR>==gi
-inoremap <A-k> <Esc>:m .-2<CR>==gi
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
+nmap <A-j> :m .+1<CR>==
+nmap <A-k> :m .-2<CR>==
+imap <A-j> <Esc>:m .+1<CR>==gi
+imap <A-k> <Esc>:m .-2<CR>==gi
+vmap <A-j> :m '>+1<CR>gv=gv
+vmap <A-k> :m '<-2<CR>gv=gv
 
 " Moving in the buffer list
-nnoremap <silent> [b :bprevious<CR>
-nnoremap <silent> ]b :bnext<CR>
-nnoremap <silent> [B :bfirst<CR>
-nnoremap <silent> ]B :blast<CR>
-nnoremap <BS> <C-^>
+nmap <silent> [b :bprevious<CR>
+nmap <silent> ]b :bnext<CR>
+nmap <silent> [B :bfirst<CR>
+nmap <silent> ]B :blast<CR>
+nmap <BS> <C-^>
 
 " Clear highlight searches when press escape
-nnoremap \c :noh<CR><Esc>
+nmap \c :noh<CR><Esc>
 
 "= Toggle hard wrapping by textwidth
-nnoremap \\ <Esc>:call vimrc#ToggleTextwidth()<CR>
+nmap \\ <Esc>:call vimrc#ToggleTextwidth()<CR>
 
 " Easy Expansion of the Active File Directory
 " Add the path of the current directory to the path of the file
@@ -401,16 +401,16 @@ map <Leader>et :tabe %%
 
 """" fzf mapping
 
-nnoremap <S-T> :Buffers<CR>
+nmap <S-T> :Buffers<CR>
 
 " Search file names
-nnoremap <C-p> :Files<CR>
+nmap <C-p> :Files<CR>
 
 " Search file content
-nnoremap <Leader>f :Find<Space>
+nmap <Leader>f :Find<Space>
 
 " Search lines
-nnoremap <Leader>s :BLines<CR>
+nmap <Leader>s :BLines<CR>
 
 
 """" easy-align mapping
@@ -424,12 +424,12 @@ nmap ga <Plug>(EasyAlign)
 
 """" markdown-preview.nvim mapping
 
-nnoremap <Leader>mp <Plug>MarkdownPreview
-nnoremap <Leader>ms <Plug>MarkdownPreviewStop
+nmap <Leader>mp <Plug>MarkdownPreview
+nmap <Leader>ms <Plug>MarkdownPreviewStop
 
 
 """" goyo mapping
-nnoremap <Leader>d :Goyo<CR>
+nmap <Leader>d :Goyo<CR>
 
 
 """" git-gutter mapping
@@ -442,42 +442,45 @@ nmap [h <Plug>GitGutterPrevHunk
 " Using cmdline for other tasks: move, delete, stash, push, pull
 
 " Add all files
-nnoremap <Leader>ga :Git add .<CR>
+nmap <Leader>ga :Git add .<CR>
 
-nnoremap <Leader>gb :Gblame<CR>
-nnoremap <Leader>gs :Gstatus<CR>
+nmap <Leader>gb :Gblame<CR>
+nmap <Leader>gs :Gstatus<CR>
 
 " Commit after adding
-nnoremap <Leader>gc :Gcommit -v<CR>
+nmap <Leader>gc :Gcommit -v<CR>
 
 " Add the file then commit it
 " Take advantage of autocomplete in writing commit message
 " Hit Ctrl-n to autocomplete the word
-nnoremap <Leader>gC :Gcommit -v %<CR>
+nmap <Leader>gC :Gcommit -v %<CR>
+
+" Stage the current hunk and commit it
+nmap <Leader>gh ,hs,gc
 
 " Mydiff is a wrapper around Gdiff
-nnoremap <Leader>gd :Mydiff<CR>
+nmap <Leader>gd :Mydiff<CR>
 
 " Edit a fugitive-object, e.g. :% is the current file in the git index
 " :h fugitive-object to learn more
 " This map is to edit the current file in the git index
-nnoremap <Leader>ge :Gedit<CR>
+nmap <Leader>ge :Gedit<CR>
 
 " Similar to git-checkout on a work tree file
-nnoremap <Leader>gr :Gread<CR>
+nmap <Leader>gr :Gread<CR>
 
 " Similar to git-add on a work tree file
-nnoremap <Leader>gw :Gwrite<CR>
+nmap <Leader>gw :Gwrite<CR>
 
 " Load this file's commit history into the quickfix list
 " :copen to open the quickfix list
-nnoremap <Leader>gl :Glog -- %<CR><CR>:copen<CR>
+nmap <Leader>gl :Glog -- %<CR><CR>:copen<CR>
 
 " List all commit history
-nnoremap <Leader>gL :exe ':!cd ' . expand('%:p:h') . '; git lap'<CR>
+nmap <Leader>gL :exe ':!cd ' . expand('%:p:h') . '; git lap'<CR>
 
 " Rename the file, the new location is relative to the current file path
-nnoremap <Leader>gm :Gmove<Space>
+nmap <Leader>gm :Gmove<Space>
 
 " Delete the file
-nnoremap <Leader>gM :Gremove<CR>
+nmap <Leader>gM :Gremove<CR>
