@@ -346,8 +346,10 @@ command! -nargs=* Mydiff filetype plugin off | let g:vim_markdown_folding_disabl
 """"""""""""""""""""""""""""
 
 " paste and recopy
-xnoremap p pgvy
+xmap p pgvy
 
+" diffupdate
+nmap du :diffupdate<CR>
 
 """" Moving lines up or down
 
