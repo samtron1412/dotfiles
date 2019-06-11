@@ -57,7 +57,7 @@ Plug 'junegunn/limelight.vim'
 " Range, pattern, and substitute preview for Vim
 Plug 'markonm/traces.vim'
 
-"Plug 'Shougo/neocomplete.vim'
+"Plug 'Valloric/YouCompleteMe'
 "Plug 'jiangmiao/auto-pairs'
 "Plug 'junegunn/vim-easy-align'
 "Plug 'kana/vim-textobj-user'
@@ -447,8 +447,12 @@ nmap <Leader>d :Goyo<CR>
 
 """" git-gutter mapping
 
+" This mapping also works with vimdiff
 nmap ]h <Plug>GitGutterNextHunk
 nmap [h <Plug>GitGutterPrevHunk
+
+" Update the gutter
+nmap <Leader>G :GitGutter<CR>
 
 
 """" vim-fugitive mapping
