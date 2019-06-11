@@ -191,6 +191,7 @@ set incsearch       " Find the next match as we type the search
 set hlsearch        " Highlight searches by default
 set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
+set synmaxcol=200   " max # of cols to be highlighted
 
 
 " Indentation and Tabs
@@ -227,9 +228,9 @@ set statusline+=\ %l:%c         "Line and column numbers
 
 " Folding
 
-"set foldmethod=indent   "fold based on indent
-"set foldnestmax=6       "deepest fold levels
-"set nofoldenable        "dont fold by default
+set foldmethod=manual
+set foldnestmax=6       "deepest fold levels
+set nofoldenable        "dont fold by default
 
 
 " Change the cursor from box to line in the insert mode
@@ -306,11 +307,6 @@ let g:limelight_conceal_guifg = 'DarkGray'
 let g:limelight_conceal_guifg = '#777777'
 
 
-"""" git-gutter configuration
-
-set updatetime=100
-
-
 
 """"""""""""""""""""""""""""
 " Commands
@@ -324,9 +320,6 @@ autocmd FileType latex,tex,md,markdown setlocal spell spelllang=en_us
 " Integrate Goyo and LimeLight
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
-
-" Enable options after quitting vimdiff
-autocmd QuitPre * if &diff | filetype plugin on | let g:vim_markdown_folding_disabled = 0 | endif
 
 
 """" Custom commands
@@ -349,9 +342,6 @@ command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-h
 " Enable and disable soft wrap
 command! -nargs=* Wrap set wrap linebreak
 command! -nargs=* Nowrap set nowrap
-
-" Wrapping Gdiff to work with markdown files
-command! -nargs=* Mydiff filetype plugin off | let g:vim_markdown_folding_disabled = 1 | Gdiff
 
 
 
@@ -487,8 +477,7 @@ nmap <Leader>gh ,hs,gc
 " Stage the current hunk and commit it without invoking an editor
 nmap <Leader>ghh ,hs,gg
 
-" Mydiff is a wrapper around Gdiff
-nmap <Leader>gd :Mydiff<CR>
+nmap <Leader>gd :Gdiff<CR>
 
 " Edit a fugitive-object, e.g. :% is the current file in the git index
 " :h fugitive-object to learn more
