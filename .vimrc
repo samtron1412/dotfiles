@@ -466,21 +466,24 @@ nmap <Leader>gb :Gblame<CR>
 nmap <Leader>gs :Gstatus<CR>
 
 " Commit after adding
-nmap <Leader>gc :Gcommit -v<CR>
+nmap <Leader>gC :Gcommit -v<CR>
+
+" Commit after adding without invoking an editor
+nmap <Leader>gc :Gcommit -m ""<Left>
 
 " Add the file then commit it
 " Take advantage of autocomplete in writing commit message
 " Hit Ctrl-n to autocomplete the word
-nmap <Leader>gC :Gcommit % -v<CR>
+nmap <Leader>gG :Gcommit % -v<CR>
 
 " Commit without invoking an editor
 nmap <Leader>gg :Gcommit % -m ""<Left>
 
 " Stage the current hunk and commit it
-nmap <Leader>gh ,hs,gc
+nmap <Leader>gH ,hs,gC
 
 " Stage the current hunk and commit it without invoking an editor
-nmap <Leader>ghh ,hs,gg
+nmap <Leader>gh ,hs,gc
 
 nmap <Leader>gd :Gdiff<CR>
 
