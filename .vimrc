@@ -177,7 +177,7 @@ set showcmd             "Show incomplete cmds down the bottom
 set showmode            "Show current mode down the bottom
 set textwidth=72        "Set text width is 72 columns (hard wrap)
 set colorcolumn=+1      "Set color columns is textwidth + 1
-set number              "Show line numbers
+set relativenumber              "Show line numbers
 set background=dark     "Use the dark background
 set termguicolors       "Support 24-bit colors in terminals
 
