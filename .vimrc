@@ -120,7 +120,6 @@ set encoding=utf-8              "Set vim use utf-8
 set fileencoding=utf-8          "Force vim overwrite file encoding to utf-8
 set history=1000                "Store lots of :cmdline history
 set nrformats=                  "Treat all numerals as decimal
-set backspace=indent,eol,start  "Allow backspace in insert mode
 set mouse=a                     "Support mouse actions
 set autoread                    "Automatically reload buffers
 
