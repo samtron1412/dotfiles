@@ -360,6 +360,12 @@ nnoremap ; :
 " paste and recopy
 xmap p pgvy
 
+" Paste in the next line
+nnoremap <Leader>p o<Esc>p
+
+" Paste in the previous line
+nnoremap <Leader>P O<Esc>p
+
 " diffupdate
 nmap du :diffupdate<CR>
 
