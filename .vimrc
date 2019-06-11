@@ -32,6 +32,9 @@ call plug#begin('~/.vim/plugged')
 """" Utility
 """" Enhance or change behavior of core vim
 
+" Support FocusGained, FocusLost in tmux iterm2
+Plug 'tmux-plugins/vim-tmux-focus-events'
+
 " Fuzzy Finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -119,6 +122,7 @@ set history=1000                "Store lots of :cmdline history
 set nrformats=                  "Treat all numerals as decimal
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set mouse=a                     "Support mouse actions
+set autoread                    "Automatically reload buffers
 
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
@@ -316,9 +320,6 @@ set updatetime=100
 
 " Spell checking
 autocmd FileType latex,tex,md,markdown setlocal spell spelllang=en_us
-
-" Load the changes if cursor stop moving
-autocmd CursorHold * checktime
 
 " Integrate Goyo and LimeLight
 autocmd! User GoyoEnter Limelight
