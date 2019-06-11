@@ -80,7 +80,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 
 """" Programming Support
 
-"Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary'
 
 
 """" Git
