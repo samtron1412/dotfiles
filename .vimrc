@@ -170,7 +170,6 @@ set showmatch           " highlight matching [{()}]
 
 """" Theme / Interface
 
-colorscheme gruvbox     " Load colorscheme after vim-plug
 syntax on               " turn on syntax highlighting
 set visualbell          "No sounds
 set nowrap              "Set no soft wrapping
@@ -180,6 +179,7 @@ set textwidth=72        "Set text width is 72 columns (hard wrap)
 set colorcolumn=+1      "Set color columns is textwidth + 1
 set number              "Show line numbers
 set background=dark     "Use the dark background
+set termguicolors       "Support 24-bit colors in terminals
 
 " Set dark gray for the collumn marker
 highlight ColorColumn ctermbg=8
@@ -247,6 +247,7 @@ let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 """" gruvbox configuration
 
 let g:gruvbox_italic=1
+colorscheme gruvbox     " Load colorscheme after vim-plug and gruvbox configuration
 
 
 """" vim-markdown configuration
