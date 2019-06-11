@@ -350,6 +350,16 @@ command! -nargs=* Nowrap set nowrap
 " Mappings
 """"""""""""""""""""""""""""
 
+" Disable arrow keys in insert mode
+imap <Left> <Nop>
+imap <Right> <Nop>
+imap <Up> <Nop>
+imap <Down> <Nop>
+
+" Command history completion in the command line
+cmap <C-p> <Up>
+cmap <C-n> <Down>
+
 " Correct spelling mistakes while typing
 " <C-g>u: inset an undo break
 " <Esc>[s: go to the previous spelling error
