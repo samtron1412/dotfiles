@@ -316,7 +316,7 @@ let g:limelight_conceal_guifg = '#777777'
 """" Autocmd
 
 " Spell checking
-autocmd FileType latex,tex,md,markdown setlocal spell spelllang=en_us
+autocmd FileType latex,tex,md,markdown,vim setlocal spell spelllang=en_us
 
 " Integrate Goyo and LimeLight
 autocmd! User GoyoEnter Limelight
@@ -350,12 +350,16 @@ command! -nargs=* Nowrap set nowrap
 " Mappings
 """"""""""""""""""""""""""""
 
+" Correct spelling mistakes while typing
+" <C-g>u: inset an undo break
+" <Esc>[s: go to the previous spelling error
+" 1z=: replace the error by the first suggestion
+" `]: move to the last insert position
+imap <C-l> <C-g>u<Esc>[s1z=`]a<C-g>u
+
 " Formatting the current paragraph (or selection)
 vmap ff gq
 nmap ff gqap
-
-" One keystroke for colon
-nnoremap ; :
 
 " paste and recopy
 xmap p pgvy
