@@ -348,6 +348,9 @@ command! -nargs=* Nowrap set nowrap
 " Mappings
 """"""""""""""""""""""""""""
 
+" Zoom and restore window
+nnoremap <silent> <Leader>z <Esc>:call vimrc#ZoomToggle()<CR>
+
 " Set paste toggle mapping
 set pastetoggle=<F2>
 
