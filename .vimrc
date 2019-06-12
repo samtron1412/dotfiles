@@ -364,6 +364,12 @@ inoremap <Right> <Nop>
 inoremap <Up> <Nop>
 inoremap <Down> <Nop>
 
+" Disable arrow movement, resize splits instead.
+nnoremap <Up>    :resize +2<CR>
+nnoremap <Down>  :resize -2<CR>
+nnoremap <Left>  :vertical resize +2<CR>
+nnoremap <Right> :vertical resize -2<CR>
+
 " Command history completion in the command line
 cmap <C-p> <Up>
 cmap <C-n> <Down>
