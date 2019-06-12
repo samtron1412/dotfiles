@@ -94,6 +94,9 @@ Plug 'tpope/vim-fugitive'
 " GitHub support
 Plug 'tpope/vim-rhubarb'
 
+" Helping making vim plugins
+Plug 'tpope/vim-scriptease'
+
 " A git commit browser
 Plug 'junegunn/gv.vim'
 
