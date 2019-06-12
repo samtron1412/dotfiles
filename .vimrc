@@ -534,4 +534,4 @@ nmap <Leader>gm :Gmove<Space>
 nmap <Leader>gM :Gremove<CR>
 
 nmap <Leader>gp :Gpush<CR>
-nmap <Leader>gl :Gpull<CR>
+nmap <Leader>gL :Gpull<CR>
