@@ -345,11 +345,18 @@ command! -nargs=* Nowrap set nowrap
 " Mappings
 """"""""""""""""""""""""""""
 
+" Set paste toggle mapping
+set pastetoggle=<F2>
+
+" Disable Backspace and Delete keys
+inoremap <BS> <Nop>
+inoremap <Del> <Nop>
+
 " Disable arrow keys in insert mode
-imap <Left> <Nop>
-imap <Right> <Nop>
-imap <Up> <Nop>
-imap <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
+inoremap <Up> <Nop>
+inoremap <Down> <Nop>
 
 " Command history completion in the command line
 cmap <C-p> <Up>
