@@ -146,13 +146,6 @@ set autoread                    "Automatically reload buffers
 set hidden
 
 
-" Scrolling
-
-set scrolloff=8         "Start scrolling when we're 8 lines away from margins
-set sidescrolloff=15    "Side scrolling (horizontal)
-set sidescroll=1
-
-
 " Completion
 
 set wildignorecase      "enable ignore case
