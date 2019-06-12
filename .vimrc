@@ -316,6 +316,9 @@ let g:limelight_conceal_guifg = '#777777'
 
 """" Autocmd
 
+" Create non-existent directory
+autocmd BufWritePre * :call vimrc#MkNonExDir(expand('<afile>'), +expand('<abuf>'))
+
 " Spell checking
 autocmd FileType latex,tex,md,markdown,vim setlocal spell spelllang=en_us
 
