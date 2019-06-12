@@ -45,6 +45,9 @@ Plug 'tpope/vim-repeat'
 " Add, change, delete surrounding pairs
 Plug 'tpope/vim-surround'
 
+" Readline style insertion
+Plug 'tpope/vim-rsi'
+
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
