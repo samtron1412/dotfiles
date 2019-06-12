@@ -348,6 +348,9 @@ command! -nargs=* Nowrap set nowrap
 " Mappings
 """"""""""""""""""""""""""""
 
+" Update syntax highlighting when it breaks
+nnoremap <Leader>u <Esc>:syntax sync fromstart<CR>
+
 " Zoom and restore window
 nnoremap <silent> <Leader>z <Esc>:call vimrc#ZoomToggle()<CR>
 
