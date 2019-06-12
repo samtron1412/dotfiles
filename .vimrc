@@ -48,6 +48,12 @@ Plug 'tpope/vim-surround'
 " Readline style insertion
 Plug 'tpope/vim-rsi'
 
+" Helping making vim plugins
+Plug 'tpope/vim-scriptease'
+
+" Complementary pairs of mappings
+Plug 'tpope/vim-unimpaired'
+
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
@@ -93,9 +99,6 @@ Plug 'tpope/vim-fugitive'
 
 " GitHub support
 Plug 'tpope/vim-rhubarb'
-
-" Helping making vim plugins
-Plug 'tpope/vim-scriptease'
 
 " A git commit browser
 Plug 'junegunn/gv.vim'
@@ -421,11 +424,7 @@ imap <A-k> <Esc>:m .-2<CR>==gi
 vmap <A-j> :m '>+1<CR>gv=gv
 vmap <A-k> :m '<-2<CR>gv=gv
 
-" Moving in the buffer list
-nmap <silent> [b :bprevious<CR>
-nmap <silent> ]b :bnext<CR>
-nmap <silent> [B :bfirst<CR>
-nmap <silent> ]B :blast<CR>
+" Edit the alternate file
 nmap <BS> <C-^>
 
 " Clear highlight searches when press escape
