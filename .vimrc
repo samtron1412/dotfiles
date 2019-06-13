@@ -464,7 +464,7 @@ map <Leader>et :tabe %%
 
 """" fzf mapping
 
-nmap <S-T> :Buffers<CR>
+nmap <Leader>b :Buffers<CR>
 
 " Search file names
 nmap <C-p> :Files<CR>
