@@ -139,6 +139,9 @@ set nrformats=                  "Treat all numerals as decimal
 set mouse=a                     "Support mouse actions
 set autoread                    "Automatically reload buffers
 
+" Save buffers, the last 100 files, etc.
+set viminfo=%20,'100,<1000,h
+
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
 " http://items.sjbach.com/319/configuring-vim-right
