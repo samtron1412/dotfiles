@@ -122,6 +122,10 @@ call plug#end()
 " Reload .vimrc and :PlugInstall to install plugins.
 
 
+"""" Manually load plugins
+runtime! ftplugin/man.vim
+
+
 
 """"""""""""""""""""""""""""
 " Vim Configuration
