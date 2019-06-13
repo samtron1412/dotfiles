@@ -66,6 +66,9 @@ Plug 'junegunn/limelight.vim'
 " Range, pattern, and substitute preview for Vim
 Plug 'markonm/traces.vim'
 
+" Jump to a position on the screen by two keys
+Plug 'justinmk/vim-sneak'
+
 "Plug 'Valloric/YouCompleteMe'
 "Plug 'jiangmiao/auto-pairs'
 "Plug 'junegunn/vim-easy-align'
