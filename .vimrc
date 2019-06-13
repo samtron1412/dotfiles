@@ -213,7 +213,6 @@ set list listchars=eol:¬,tab:▸-,trail:·,space:·
 
 
 """" Statusline
-set ruler                       "Show line and collumn number of the cursor
 set laststatus=2                "Always show the status line at the bottom
 set statusline=
 set statusline+=%#PmenuSel#     "Highlight the git branch
@@ -233,7 +232,7 @@ set statusline+=\ %l:%c         "Line and column numbers
 
 set foldmethod=manual
 set foldnestmax=6       "deepest fold levels
-set nofoldenable        "dont fold by default
+set nofoldenable        "don't fold by default
 
 
 " Change the cursor from box to line in the insert mode
