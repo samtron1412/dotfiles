@@ -418,12 +418,6 @@ imap <C-l> <C-g>u<Esc>[s1z=`]a<C-g>u
 vmap ff gq
 nmap ff gqap
 
-" Paste in the next line
-nnoremap <Leader>p o<Esc>p
-
-" Paste in the previous line
-nnoremap <Leader>P O<Esc>p
-
 " diffupdate
 nmap du :diffupdate<CR>
 
