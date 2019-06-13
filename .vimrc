@@ -410,9 +410,6 @@ imap <C-l> <C-g>u<Esc>[s1z=`]a<C-g>u
 vmap ff gq
 nmap ff gqap
 
-" paste and recopy
-xmap p pgvy
-
 " Paste in the next line
 nnoremap <Leader>p o<Esc>p
 
