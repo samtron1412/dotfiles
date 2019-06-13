@@ -406,6 +406,7 @@ set pastetoggle=<F2>
 
 " Disable Backspace and Delete keys
 inoremap <BS> <Nop>
+cnoremap <BS> <Nop>
 inoremap <Del> <Nop>
 
 " Disable arrow keys in insert mode
