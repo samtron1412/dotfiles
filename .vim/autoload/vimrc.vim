@@ -1,3 +1,14 @@
+" The winsaveview() will save the current view, which includes the
+" cursor position, folds, jumps, etc. The winrestview() at the end will
+" restore this from the saved variable.
+" The :keeppatterns prevents the \s\+$ pattern from being added to the
+" search history.
+function! vimrc#TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+
 " Toggle textwidth
 function! vimrc#ToggleTextwidth()
   if &textwidth > 0
