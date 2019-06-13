@@ -421,10 +421,6 @@ nnoremap <Down>  :resize -2<CR>
 nnoremap <Left>  :vertical resize +2<CR>
 nnoremap <Right> :vertical resize -2<CR>
 
-" Command history completion in the command line
-cmap <C-p> <Up>
-cmap <C-n> <Down>
-
 " Correct spelling mistakes while typing
 " <C-g>u: inset an undo break
 " <Esc>[s: go to the previous spelling error
