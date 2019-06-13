@@ -353,6 +353,9 @@ command! -nargs=* Nowrap set nowrap
 " Mappings
 """"""""""""""""""""""""""""
 
+" Change a word at the cursor in Insert mode
+inoremap <C-c> <Esc>caw
+
 " Window navigation
 map <C-j> <C-W>j
 map <C-k> <C-W>k
