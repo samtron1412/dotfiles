@@ -227,6 +227,7 @@ set laststatus=2                "Always show the status line at the bottom
 set statusline=
 set statusline+=%#PmenuSel#     "Highlight the git branch
 set statusline+=%{FugitiveStatusline()} "Git branch of this file
+set statusline+=%{ObsessionStatus()}    "Indicator for sessions: 'S': stop, '$': running
 set statusline+=%#LineNr#       "Erase highlight for other parts
 set statusline+=\ %f            "A whitespace followed by file path
 set statusline+=%m              "Modified flag
