@@ -198,6 +198,12 @@ set termguicolors       "Support 24-bit colors in terminals
 " Set dark gray for the collumn marker
 highlight ColorColumn ctermbg=8
 
+" Display tabs and trailing spaces visually
+set list listchars=eol:¬,tab:▸-,trail:·,space:·
+
+" :h fo-table to learn more about options
+set formatoptions=tcrqnljp
+
 
 " Search
 
@@ -217,9 +223,6 @@ set shiftwidth=4
 set softtabstop=4
 set tabstop=4
 set expandtab
-
-" Display tabs and trailing spaces visually
-set list listchars=eol:¬,tab:▸-,trail:·,space:·
 
 
 """" Statusline
