@@ -405,11 +405,6 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-" Keep cursor at the middle of the screen
-nnoremap j jzz
-nnoremap k kzz
-nnoremap G Gzz
-
 " Update syntax highlighting when it breaks
 nnoremap <Leader>u <Esc>:syntax sync fromstart<CR>
 
