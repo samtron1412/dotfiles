@@ -54,6 +54,9 @@ Plug 'tpope/vim-scriptease'
 " Complementary pairs of mappings
 Plug 'tpope/vim-unimpaired'
 
+" Session managers
+Plug 'tpope/vim-obsession'
+
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
