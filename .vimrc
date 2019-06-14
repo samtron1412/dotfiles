@@ -399,9 +399,6 @@ cnoremap <C-N> <Down>
 cnoremap <C-P> <Up>
 
 
-" Change a word at the cursor in Insert mode
-inoremap <C-c> <Esc>ciw
-
 " Window navigation
 map <C-j> <C-W>j
 map <C-k> <C-W>k
