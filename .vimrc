@@ -135,15 +135,15 @@ runtime! ftplugin/man.vim
 """"""""""""""""""""""""""""
 
 filetype indent plugin on
-set encoding=utf-8              "Set vim use utf-8
-set fileencoding=utf-8          "Force vim overwrite file encoding to utf-8
-set history=1000                "Store lots of :cmdline history
-set nrformats=                  "Treat all numerals as decimal
-set mouse=a                     "Support mouse actions
-set autoread                    "Automatically reload buffers
+set encoding=utf-8          "Set vim use utf-8
+set fileencoding=utf-8      "Force vim overwrite file encoding to utf-8
+set history=1000            "Store lots of :cmdline history
+set nrformats=              "Treat all numerals as decimal
+set mouse=a                 "Support mouse actions
+set autoread                "Automatically reload buffers
 
 " Save buffers, the last 100 files, etc.
-set viminfo=%20,'100,<1000,h
+set viminfo=%20,'100,<1000,h,!
 
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
