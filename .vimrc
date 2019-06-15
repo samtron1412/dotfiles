@@ -222,8 +222,8 @@ set synmaxcol=200   " max # of cols to be highlighted
 set autoindent
 set smartindent
 set smarttab
-set shiftwidth=4
-set softtabstop=4
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 
 
@@ -341,13 +341,13 @@ let g:limelight_conceal_guifg = '#777777'
 """" Autocmd
 
 augroup vimrc
-    au!
+  au!
 
-    " Automatically remove trailing spaces
-    autocmd BufWritePre * :call vimrc#TrimWhitespace()
+  " Automatically remove trailing spaces
+  autocmd BufWritePre * :call vimrc#TrimWhitespace()
 
-    " Create non-existent directory
-    autocmd BufWritePre * :call vimrc#MkNonExDir(expand('<afile>'), +expand('<abuf>'))
+  " Create non-existent directory
+  autocmd BufWritePre * :call vimrc#MkNonExDir(expand('<afile>'), +expand('<abuf>'))
 augroup END
 
 " Integrate Goyo and LimeLight
