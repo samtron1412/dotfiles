@@ -260,7 +260,7 @@ let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 " Plugin Configuration
 """"""""""""""""""""""""""""
 
-let g:netrw_fastbrowse=0    "Close the netrw after open files
+let g:netrw_fastbrowse=0    "Close the netrw after opening files
 
 """" gruvbox configuration
 
