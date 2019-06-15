@@ -195,6 +195,7 @@ set colorcolumn=+1      "Set color columns is textwidth + 1
 set relativenumber              "Show line numbers
 set background=dark     "Use the dark background
 set termguicolors       "Support 24-bit colors in terminals
+set scrolloff=3         "Keep lines from the top and bottom
 
 " Set dark gray for the collumn marker
 highlight ColorColumn ctermbg=8
