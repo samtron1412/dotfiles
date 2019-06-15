@@ -70,3 +70,6 @@ ultisnip
 unstage
 untracked
 autocmd
+FileType
+filetype
+ftplugin
