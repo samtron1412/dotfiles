@@ -274,6 +274,9 @@ colorscheme gruvbox     " Load colorscheme after vim-plug and gruvbox configurat
 
 """" vim-markdown configuration
 
+" Enable TOC window auto-fit
+let g:vim_markdown_toc_autofit = 1
+
 " code blocks
 let g:vim_markdown_conceal_code_blocks = 0
 let g:vim_markdown_fenced_languages = ['csharp=cs']
