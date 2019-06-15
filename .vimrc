@@ -141,6 +141,7 @@ set history=1000            "Store lots of :cmdline history
 set nrformats=              "Treat all numerals as decimal
 set mouse=a                 "Support mouse actions
 set autoread                "Automatically reload buffers
+set completeopt=menuone,longest,preview
 
 " Save buffers, the last 100 files, etc.
 set viminfo=%20,'100,<1000,h,!
