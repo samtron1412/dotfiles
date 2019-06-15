@@ -262,10 +262,7 @@ let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 " Plugin Configuration
 """"""""""""""""""""""""""""
 
-" let g:netrw_fastbrowse=0    "Close the netrw after opening files
-" Disable netrw
-let g:loaded_netrw       = 1
-let g:loaded_netrwPlugin = 1
+let g:netrw_fastbrowse=0    "Close the netrw after opening files
 
 """" gruvbox configuration
 
@@ -274,6 +271,16 @@ colorscheme gruvbox     " Load colorscheme after vim-plug and gruvbox configurat
 
 
 """" vim-markdown configuration
+
+" Follow named anchors
+let g:vim_markdown_follow_anchor = 1
+
+" Auto-write when following links
+let g:vim_markdown_autowrite = 1
+
+" Disable auto add bullet points
+let g:vim_markdown_auto_insert_bullets = 0
+let g:vim_markdown_new_list_item_indent = 0
 
 " Enable TOC window auto-fit
 let g:vim_markdown_toc_autofit = 1
