@@ -244,7 +244,7 @@ set statusline+=\ %l:%c         "Line and column numbers
 
 " Folding
 
-set foldmethod=manual
+set foldmethod=indent
 set foldnestmax=6       "deepest fold levels
 set nofoldenable        "don't fold by default
 
