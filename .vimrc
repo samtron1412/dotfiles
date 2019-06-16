@@ -545,6 +545,13 @@ map <Leader>et :tabe %%
 " Plugin Mappings
 """"""""""""""""""""""""""""
 
+"""" vim-markdown-toc mapping
+
+nmap <Leader>mT :GenTocGFM<CR>
+" markdown undo toc
+nmap <Leader>mut :RemoveToc<CR>
+
+
 """" fzf mapping
 
 nmap <Leader>b :Buffers<CR>
