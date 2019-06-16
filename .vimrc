@@ -72,7 +72,6 @@ Plug 'markonm/traces.vim'
 " Jump to a position on the screen by two keys
 Plug 'justinmk/vim-sneak'
 
-"Plug 'Valloric/YouCompleteMe'
 "Plug 'jiangmiao/auto-pairs'
 "Plug 'junegunn/vim-easy-align'
 "Plug 'kana/vim-textobj-user'
@@ -278,7 +277,6 @@ let g:gutentags_project_root = ['Makefile']
 
 """" YouCompleteMe configuration
 
-let g:ycm_auto_trigger = 0  "Use <C-Space> to trigger YCM
 let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_collect_identifiers_from_tags_files = 1
 
@@ -367,7 +365,7 @@ let g:mkdp_auto_close = 0
 """" ultisnips configuration
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<Tab>"  " use <Tab> trigger autocompletion
+let g:UltiSnipsExpandTrigger="<C-Space>"  " use <Tab> trigger autocompletion
 let g:UltiSnipsJumpForwardTrigger="<C-f>"
 let g:UltiSnipsJumpBackwardTrigger="<C-b>"
 
