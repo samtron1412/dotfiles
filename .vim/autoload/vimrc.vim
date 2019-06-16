@@ -1,3 +1,48 @@
+" vim-gitgutter's functions
+" Cycle through hunks in all buffers
+function! NextHunkAllBuffers()
+  let line = line('.')
+  GitGutterNextHunk
+  if line('.') != line
+    return
+  endif
+
+  let bufnr = bufnr('')
+  while 1
+    bnext
+    if bufnr('') == bufnr
+      return
+    endif
+    if !empty(GitGutterGetHunks())
+      normal! 1G
+      GitGutterNextHunk
+      return
+    endif
+  endwhile
+endfunction
+
+function! PrevHunkAllBuffers()
+  let line = line('.')
+  GitGutterPrevHunk
+  if line('.') != line
+    return
+  endif
+
+  let bufnr = bufnr('')
+  while 1
+    bprevious
+    if bufnr('') == bufnr
+      return
+    endif
+    if !empty(GitGutterGetHunks())
+      normal! G
+      GitGutterPrevHunk
+      return
+    endif
+  endwhile
+endfunction
+
+
 " The winsaveview() will save the current view, which includes the
 " cursor position, folds, jumps, etc. The winrestview() at the end will
 " restore this from the saved variable.
@@ -9,6 +54,7 @@ function! vimrc#TrimWhitespace()
     call winrestview(l:save)
 endfun
 
+
 " Toggle textwidth
 function! vimrc#ToggleTextwidth()
   if &textwidth > 0
@@ -17,6 +63,7 @@ function! vimrc#ToggleTextwidth()
     set textwidth=72
   endif
 endfunction
+
 
 " Zoom / Restore window.
 function! vimrc#ZoomToggle() abort
@@ -30,6 +77,7 @@ function! vimrc#ZoomToggle() abort
         let t:zoomed = 1
     endif
 endfunction
+
 
 " Create non-existent directory
 function vimrc#MkNonExDir(file, buf)
