@@ -1,6 +1,6 @@
 " vim-gitgutter's functions
 " Cycle through hunks in all buffers
-function! NextHunkAllBuffers()
+function! vimrc#NextHunkAllBuffers()
   let line = line('.')
   GitGutterNextHunk
   if line('.') != line
@@ -21,7 +21,7 @@ function! NextHunkAllBuffers()
   endwhile
 endfunction
 
-function! PrevHunkAllBuffers()
+function! vimrc#PrevHunkAllBuffers()
   let line = line('.')
   GitGutterPrevHunk
   if line('.') != line
