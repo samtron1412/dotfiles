@@ -92,6 +92,9 @@ Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
 " Full feature preview
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 
+" Generate TOC
+Plug 'mzlogin/vim-markdown-toc'
+
 
 """" Programming Support
 
