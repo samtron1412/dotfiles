@@ -592,6 +592,9 @@ nmap [h <Plug>GitGutterPrevHunk
 " Update the gutter
 nmap <Leader>G :GitGutter<CR>
 
+" Toggle folding for all unchanged lines
+nmap <Leader>gf :GitGutterFold<CR>
+
 
 """" vim-fugitive mapping
 " Using cmdline for other tasks: move, delete, stash, push, pull
