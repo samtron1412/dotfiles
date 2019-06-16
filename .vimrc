@@ -99,6 +99,7 @@ Plug 'mzlogin/vim-markdown-toc'
 """" Programming Support
 
 Plug 'tpope/vim-commentary'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 
 """" Git
@@ -174,6 +175,7 @@ set hidden
 
 set wildignorecase      "enable ignore case
 set wildmenu            "enable ctrl-n and ctrl-p to scroll thru matches
+set wildmode=longest,list:longest
 set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
 set wildignore+=*vim/backups*
 set wildignore+=*sass-cache*
@@ -264,6 +266,25 @@ let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 """"""""""""""""""""""""""""
 " Plugin Configuration
 """"""""""""""""""""""""""""
+
+"""" YouCompleteMe configuration
+
+let g:ycm_auto_trigger = 0  "Use <C-Space> to triggle YCM
+let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_filetype_blacklist = {
+      \ 'tagbar': 1,
+      \ 'notes': 1,
+      \ 'markdown': 1,
+      \ 'netrw': 1,
+      \ 'unite': 1,
+      \ 'text': 1,
+      \ 'vimwiki': 1,
+      \ 'pandoc': 1,
+      \ 'infolog': 1,
+      \ 'mail': 1
+      \}
+
 
 """" fzf.vim configuration
 
