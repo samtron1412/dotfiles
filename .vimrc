@@ -109,9 +109,6 @@ Plug 'tpope/vim-fugitive'
 " GitHub support
 Plug 'tpope/vim-rhubarb'
 
-" A git commit browser
-Plug 'junegunn/gv.vim'
-
 " Shows git diff in the gutter (sign column)
 Plug 'airblade/vim-gitgutter'
 
