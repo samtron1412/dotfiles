@@ -586,14 +586,24 @@ nmap <Leader>d :Goyo<CR>
 """" git-gutter mapping
 
 " This mapping also works with vimdiff
-nmap ]h <Plug>GitGutterNextHunk
-nmap [h <Plug>GitGutterPrevHunk
+nmap ]H <Plug>GitGutterNextHunk
+nmap [H <Plug>GitGutterPrevHunk
 
 " Update the gutter
 nmap <Leader>G :GitGutter<CR>
 
 " Toggle folding for all unchanged lines
 nmap <Leader>gf :GitGutterFold<CR>
+
+" Hunk text objects
+omap ih <Plug>GitGutterTextObjectInnerPending
+omap ah <Plug>GitGutterTextObjectOuterPending
+xmap ih <Plug>GitGutterTextObjectInnerVisual
+xmap ah <Plug>GitGutterTextObjectOuterVisual
+
+" Cycle through hunks in all buffers
+nmap ]h :call vimrc#NextHunkAllBuffers()<CR>
+nmap [h :call vimrc#PrevHunkAllBuffers()<CR>
 
 
 """" vim-fugitive mapping
