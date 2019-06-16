@@ -109,6 +109,9 @@ Plug 'tpope/vim-fugitive'
 " GitHub support
 Plug 'tpope/vim-rhubarb'
 
+" A git commit browser
+Plug 'junegunn/gv.vim'
+
 " Shows git diff in the gutter (sign column)
 Plug 'airblade/vim-gitgutter'
 
@@ -657,10 +660,13 @@ nmap <Leader>gw :Gwrite<CR>
 
 " Load this file's commit history into the quickfix list
 " :copen to open the quickfix list
-nmap <Leader>gl :Glog -- %<CR><CR>:copen<CR>
+nmap <Leader>gv :GV!<CR>
 
 " List all commit history
-nmap <Leader>gL :exe ':!cd ' . expand('%:p:h') . '; git lap'<CR>
+nmap <Leader>gV :GV<CR>
+
+" List all revisions of this file
+nmap <Leader>go :0Glog<CR>:copen<CR>
 
 " Rename the file, the new location is relative to the current file path
 nmap <Leader>gm :Gmove<Space>
