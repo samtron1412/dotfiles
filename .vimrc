@@ -100,6 +100,7 @@ Plug 'mzlogin/vim-markdown-toc'
 
 Plug 'tpope/vim-commentary'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'ludovicchabant/vim-gutentags'
 
 
 """" Git
@@ -238,6 +239,7 @@ set statusline=
 set statusline+=%#PmenuSel#     "Highlight the git branch
 set statusline+=%{FugitiveStatusline()} "Git branch of this file
 set statusline+=%{ObsessionStatus()}    "Indicator for sessions: 'S': stop, '$': running
+set statusline+=%{gutentags#statusline('[',']')}
 set statusline+=%#LineNr#       "Erase highlight for other parts
 set statusline+=\ %f            "A whitespace followed by file path
 set statusline+=%m              "Modified flag
@@ -266,6 +268,13 @@ let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 """"""""""""""""""""""""""""
 " Plugin Configuration
 """"""""""""""""""""""""""""
+
+"""" vim-gutentags configuration
+
+" Activate Gutentags when opening a file that’s somewhere under a
+" directory that contains a Makefile file or folder.
+let g:gutentags_project_root = ['Makefile']
+
 
 """" YouCompleteMe configuration
 
