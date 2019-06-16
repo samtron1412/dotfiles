@@ -49,9 +49,11 @@ endfunction
 " The :keeppatterns prevents the \s\+$ pattern from being added to the
 " search history.
 function! vimrc#TrimWhitespace()
+  if !&readonly
     let l:save = winsaveview()
     keeppatterns %s/\s\+$//e
     call winrestview(l:save)
+  endif
 endfun
 
 
