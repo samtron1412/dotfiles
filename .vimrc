@@ -530,6 +530,14 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 
+"""" vim-markdown mapping
+nmap <Leader>mf :TableFormat<CR>
+xmap <Leader>mf :TableFormat<CR>
+nmap <Leader>mt :Toc<CR>
+xmap <Leader>mi :HeaderIncrease<CR>
+xmap <Leader>md :HeaderDecrease<CR>
+
+
 """" markdown-preview.nvim mapping
 
 nmap <Leader>mp <Plug>MarkdownPreview
