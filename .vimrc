@@ -82,7 +82,7 @@ Plug 'junegunn/vim-easy-align'
 "Plug 'lervag/vimtex'
 
 
-"""" Markdown / Writing
+"""" Markdown
 
 Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
 "Plug 'JamshedVesuna/vim-markdown-preview'  " Minimalist
@@ -96,9 +96,20 @@ Plug 'mzlogin/vim-markdown-toc'
 
 """" Programming Support
 
+" Working with comments
 Plug 'tpope/vim-commentary'
+
+" Auto completion engine
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+
+" Working with ctags
 Plug 'ludovicchabant/vim-gutentags'
+
+" Working with tests and build systems
+Plug 'tpope/vim-dispatch'
+
+" Syntax checking
+Plug 'vim-syntastic/syntastic'
 
 
 """" Git
