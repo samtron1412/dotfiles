@@ -60,6 +60,9 @@ Plug 'tpope/vim-obsession'
 " Enhance text objects
 Plug 'wellle/targets.vim'
 
+" Enhance matchit
+Plug 'andymass/vim-matchup'
+
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
