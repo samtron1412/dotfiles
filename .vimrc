@@ -109,8 +109,7 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'tpope/vim-dispatch'
 
 " Syntax checking
-Plug 'vim-syntastic/syntastic'
-
+Plug 'w0rp/ale'
 
 """" Git
 
@@ -254,9 +253,6 @@ set statusline+=%#LineNr#       "Erase highlight for other parts
 set statusline+=\ %f            "A whitespace followed by file path
 set statusline+=%m              "Modified flag
 set statusline+=%=              "Separation point between left and right items
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 set statusline+=\ %y            "A whitespace followed by file type
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding} "File encoding
 set statusline+=\ [%{&fileformat}]   "File format: unix, dos, mac
@@ -281,13 +277,6 @@ let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 """"""""""""""""""""""""""""
 " Plugin Configuration
 """"""""""""""""""""""""""""
-
-"""" syntastic configuration
-
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
 
 """" vim-gutentags configuration
 
