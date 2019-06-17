@@ -70,10 +70,11 @@ Plug 'markonm/traces.vim'
 " Jump to a position on the screen by two keys
 Plug 'justinmk/vim-sneak'
 
-"Plug 'jiangmiao/auto-pairs'
-"Plug 'junegunn/vim-easy-align'
-"Plug 'kana/vim-textobj-user'
-"Plug 'kana/vim-textobj-entire'
+" easily search for, substitute, and abbreviate multiple variants of a word
+Plug 'tpope/vim-abolish'
+
+" Alignment plugin
+Plug 'junegunn/vim-easy-align'
 
 
 """" LaTeX
