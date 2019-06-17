@@ -2,6 +2,7 @@
   editor = vim
   pager = less -x2
   autocrlf = input
+  excludesfile = $HOME/.global_ignore
 [user]
   email = sontran@berkeley.edu
   name = Son Tran
