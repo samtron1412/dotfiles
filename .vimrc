@@ -235,7 +235,6 @@ set synmaxcol=200   " max # of cols to be highlighted
 " Convert existing tabs to spaces by :retab
 
 set autoindent
-set smartindent
 set smarttab
 set shiftwidth=2
 set softtabstop=2
