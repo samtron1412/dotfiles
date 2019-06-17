@@ -88,7 +88,7 @@ endfunction
 
 
 " Create non-existent directory
-function vimrc#MkNonExDir(file, buf) abort
+function! vimrc#MkNonExDir(file, buf) abort
   if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
     let dir=fnamemodify(a:file, ':h')
     if !isdirectory(dir)
