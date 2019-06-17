@@ -1,6 +1,6 @@
 " vim-gitgutter's functions
 " Cycle through hunks in all buffers
-function! vimrc#NextHunkAllBuffers()
+function! vimrc#NextHunkAllBuffers() abort
   let line = line('.')
   GitGutterNextHunk
   if line('.') != line
@@ -21,7 +21,7 @@ function! vimrc#NextHunkAllBuffers()
   endwhile
 endfunction
 
-function! vimrc#PrevHunkAllBuffers()
+function! vimrc#PrevHunkAllBuffers() abort
   let line = line('.')
   GitGutterPrevHunk
   if line('.') != line
@@ -48,7 +48,7 @@ endfunction
 " restore this from the saved variable.
 " The :keeppatterns prevents the \s\+$ pattern from being added to the
 " search history.
-function! vimrc#TrimWhitespace()
+function! vimrc#TrimWhitespace() abort
   if !&readonly
     let l:save = winsaveview()
     keeppatterns %s/\s\+$//e
@@ -58,7 +58,7 @@ endfun
 
 
 " Toggle textwidth
-function! vimrc#ToggleTextwidth()
+function! vimrc#ToggleTextwidth() abort
   if &textwidth > 0
     set textwidth=0
   else
@@ -82,7 +82,7 @@ endfunction
 
 
 " Create non-existent directory
-function vimrc#MkNonExDir(file, buf)
+function vimrc#MkNonExDir(file, buf) abort
     if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
         let dir=fnamemodify(a:file, ':h')
         if !isdirectory(dir)
