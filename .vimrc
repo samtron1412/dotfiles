@@ -57,6 +57,9 @@ Plug 'tpope/vim-unimpaired'
 " Session managers
 Plug 'tpope/vim-obsession'
 
+" Enhance text objects
+Plug 'wellle/targets.vim'
+
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
