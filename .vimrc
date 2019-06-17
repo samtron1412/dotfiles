@@ -439,6 +439,14 @@ endif
 " Mappings
 """"""""""""""""""""""""""""
 
+"""" ctags
+
+" Ctrl+\ - Open the definition in a new tab
+" Alt+] - Open the definition in a vertical split
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+
+
 """" Emacs-style editing on the command-line
 " start of line
 cnoremap <C-A> <Home>
