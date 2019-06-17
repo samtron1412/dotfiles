@@ -2,14 +2,6 @@
 " Son Tran Vim Configuration
 """"""""""""""""""""""""""""
 
-"""" Init
-
-" Set 'nocompatible' to ward off unexpected things that your distro might
-" have made, as well as sanely reset options when re-sourcing .vimrc
-" This must be first, because it changes other options as a side effect.
-set nocompatible
-
-
 """"""""""""""""""""""""""""
 " vim-plug: plugins
 """"""""""""""""""""""""""""
