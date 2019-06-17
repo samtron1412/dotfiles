@@ -253,6 +253,9 @@ set statusline+=%#LineNr#       "Erase highlight for other parts
 set statusline+=\ %f            "A whitespace followed by file path
 set statusline+=%m              "Modified flag
 set statusline+=%=              "Separation point between left and right items
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 set statusline+=\ %y            "A whitespace followed by file type
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding} "File encoding
 set statusline+=\ [%{&fileformat}]   "File format: unix, dos, mac
