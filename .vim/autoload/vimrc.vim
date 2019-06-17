@@ -1,3 +1,9 @@
+" Custom the colorscheme
+function! vimrc#MyHighlights() abort
+  " Set dark gray for the collumn marker
+  highlight ColorColumn ctermbg=8
+endfunction
+
 " vim-gitgutter's functions
 " Cycle through hunks in all buffers
 function! vimrc#NextHunkAllBuffers() abort

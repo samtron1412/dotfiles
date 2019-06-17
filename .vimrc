@@ -213,8 +213,11 @@ set background=dark     "Use the dark background
 set termguicolors       "Support 24-bit colors in terminals
 set scrolloff=3         "Keep lines from the top and bottom
 
-" Set dark gray for the collumn marker
-highlight ColorColumn ctermbg=8
+" Custom the colorscheme
+augroup MyColors
+  autocmd!
+  autocmd ColorScheme * call vimrc#MyHighlights()
+augroup END
 
 " Display tabs and trailing spaces visually
 set list listchars=eol:¬,tab:▸-,trail:·,space:·
