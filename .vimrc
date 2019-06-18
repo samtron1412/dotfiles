@@ -710,10 +710,10 @@ nnoremap <Leader>gG :Gcommit % -v<CR>
 nnoremap <Leader>gg :Gcommit % -m ""<Left>
 
 " Stage the current hunk and commit it
-nmap <Leader>gH ,hs,gC
+nmap <special> <Leader>gH <Leader>hs<Leader>gC
 
 " Stage the current hunk and commit it without invoking an editor
-nmap <Leader>gh ,hs,gc
+nmap <special> <Leader>gh <Leader>hs<Leader>gc
 
 nnoremap <Leader>gd :Gdiff<CR>
 
