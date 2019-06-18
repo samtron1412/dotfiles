@@ -232,6 +232,12 @@ set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
 set synmaxcol=200   " max # of cols to be highlighted
 
+" Enhance grep by using ag
+if executable("ag")
+  set grepprg=ag\ --nogroup\ --nocolor\ --ignore-case\ --column
+  set grepformat=%f:%l:%c:%m,%f:%l:%m
+endif
+
 
 " Indentation and Tabs
 " Convert existing tabs to spaces by :retab
@@ -253,6 +259,8 @@ set statusline+=%{gutentags#statusline('[',']')}
 set statusline+=%#LineNr#       "Erase highlight for other parts
 set statusline+=\ %f            "A whitespace followed by file path
 set statusline+=%m              "Modified flag
+set statusline+=%r              "Read only flag
+set statusline+=%w              "Preview window flag
 set statusline+=%=              "Separation point between left and right items
 set statusline+=\ %y            "A whitespace followed by file type
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding} "File encoding
