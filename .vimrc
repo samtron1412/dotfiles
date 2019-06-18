@@ -465,8 +465,8 @@ endif
 
 " Ctrl+\ - Open the definition in a new tab
 " Alt+] - Open the definition in a vertical split
-map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
-map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+nnoremap <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+nnoremap <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 
 """" Emacs-style editing on the command-line
@@ -487,10 +487,10 @@ cnoremap <C-P> <Up>
 
 
 " Window navigation
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-h> <C-W>h
+nnoremap <C-l> <C-W>l
 
 " Update syntax highlighting when it breaks
 nnoremap <Leader>u <Esc>:syntax sync fromstart<CR>
@@ -523,14 +523,14 @@ nnoremap <Right> :vertical resize -2<CR>
 " <Esc>[s: go to the previous spelling error
 " 1z=: replace the error by the first suggestion
 " `]: move to the last insert position
-imap <C-l> <C-g>u<Esc>[s1z=`]a<C-g>u
+inoremap <C-l> <C-g>u<Esc>[s1z=`]a<C-g>u
 
 " Formatting the current paragraph (or selection)
-vmap ff gq
-nmap ff gqap
+vnoremap ff gq
+nnoremap ff gqap
 
 " diffupdate
-nmap du :diffupdate<CR>
+nnoremap du :diffupdate<CR>
 
 """" Moving lines up or down
 
@@ -546,31 +546,31 @@ endif
 
 set timeout ttimeoutlen=50
 
-nmap <A-j> :m .+1<CR>==
-nmap <A-k> :m .-2<CR>==
-imap <A-j> <Esc>:m .+1<CR>==gi
-imap <A-k> <Esc>:m .-2<CR>==gi
-vmap <A-j> :m '>+1<CR>gv=gv
-vmap <A-k> :m '<-2<CR>gv=gv
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
 
 " Edit the alternate file
-nmap <BS> <C-^>
+nnoremap <BS> <C-^>
 
 " Clear highlight searches when press escape
-nmap \c :noh<CR><Esc>
+nnoremap \c :noh<CR><Esc>
 
 "= Toggle hard wrapping by textwidth
-nmap \\ <Esc>:call vimrc#ToggleTextwidth()<CR>
+nnoremap \\ <Esc>:call vimrc#ToggleTextwidth()<CR>
 
 " Easy Expansion of the Active File Directory
 " Add the path of the current directory to the path of the file
 let mapleader=','
 " cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<CR>
-map <Leader>ew :e %%
-map <Leader>es :sp %%
-map <Leader>ev :vsp %%
-map <Leader>et :tabe %%
+nnoremap <Leader>ew :e %%
+nnoremap <Leader>es :sp %%
+nnoremap <Leader>ev :vsp %%
+nnoremap <Leader>et :tabe %%
 
 
 
@@ -580,24 +580,24 @@ map <Leader>et :tabe %%
 
 """" vim-markdown-toc mapping
 
-nmap <Leader>mT :GenTocGFM<CR>
+nnoremap <Leader>mT :GenTocGFM<CR>
 " markdown undo toc
-nmap <Leader>mut :RemoveToc<CR>
+nnoremap <Leader>mut :RemoveToc<CR>
 
 
 """" fzf mapping
 
-nmap <Leader>b :Buffers<CR>
+nnoremap <Leader>b :Buffers<CR>
 
 " Search file names
-nmap <C-p> :Files<CR>
+nnoremap <C-p> :Files<CR>
 
 " Search file content
-nmap <Leader>f :Find<Space>
+nnoremap <Leader>f :Find<Space>
 
 " Search lines
-nmap <Leader>s :BLines<CR>
 
+nnoremap <Leader>s :BLines<CR>
 " Mapping selecting mappings
 nmap <leader><tab> <plug>(fzf-maps-n)
 xmap <leader><tab> <plug>(fzf-maps-x)
@@ -622,11 +622,11 @@ nmap ga <Plug>(EasyAlign)
 
 
 """" vim-markdown mapping
-nmap <Leader>mf :TableFormat<CR>
-xmap <Leader>mf :TableFormat<CR>
-nmap <Leader>mt :Toc<CR>
-xmap <Leader>mi :HeaderIncrease<CR>
-xmap <Leader>md :HeaderDecrease<CR>
+nnoremap <Leader>mf :TableFormat<CR>
+xnoremap <Leader>mf :TableFormat<CR>
+nnoremap <Leader>mt :Toc<CR>
+xnoremap <Leader>mi :HeaderIncrease<CR>
+xnoremap <Leader>md :HeaderDecrease<CR>
 
 
 """" markdown-preview.nvim mapping
@@ -636,7 +636,7 @@ nmap <Leader>ms <Plug>MarkdownPreviewStop
 
 
 """" goyo mapping
-nmap <Leader>d :Goyo<CR>
+nnoremap <Leader>d :Goyo<CR>
 
 
 """" git-gutter mapping
@@ -646,10 +646,10 @@ nmap ]H <Plug>GitGutterNextHunk
 nmap [H <Plug>GitGutterPrevHunk
 
 " Update the gutter
-nmap <Leader>G :GitGutter<CR>
+nnoremap <Leader>G :GitGutter<CR>
 
 " Toggle folding for all unchanged lines
-nmap <Leader>gf :GitGutterFold<CR>
+nnoremap <Leader>gf :GitGutterFold<CR>
 
 " Hunk text objects
 omap ih <Plug>GitGutterTextObjectInnerPending
@@ -658,67 +658,67 @@ xmap ih <Plug>GitGutterTextObjectInnerVisual
 xmap ah <Plug>GitGutterTextObjectOuterVisual
 
 " Cycle through hunks in all buffers
-nmap ]h :call vimrc#NextHunkAllBuffers()<CR>
-nmap [h :call vimrc#PrevHunkAllBuffers()<CR>
+nnoremap ]h :call vimrc#NextHunkAllBuffers()<CR>
+nnoremap [h :call vimrc#PrevHunkAllBuffers()<CR>
 
 
 """" vim-fugitive mapping
 " Using cmdline for other tasks: move, delete, stash, push, pull
 
 " Add all files
-nmap <Leader>ga :Git add .<CR>
+nnoremap <Leader>ga :Git add .<CR>
 
-nmap <Leader>gb :Gblame<CR>
-nmap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gb :Gblame<CR>
+nnoremap <Leader>gs :Gstatus<CR>
 
 " Commit after adding
-nmap <Leader>gC :Gcommit -v<CR>
+nnoremap <Leader>gC :Gcommit -v<CR>
 
 " Commit after adding without invoking an editor
-nmap <Leader>gc :Gcommit -m ""<Left>
+nnoremap <Leader>gc :Gcommit -m ""<Left>
 
 " Add the file then commit it
 " Take advantage of autocomplete in writing commit message
 " Hit Ctrl-n to autocomplete the word
-nmap <Leader>gG :Gcommit % -v<CR>
+nnoremap <Leader>gG :Gcommit % -v<CR>
 
 " Commit without invoking an editor
-nmap <Leader>gg :Gcommit % -m ""<Left>
+nnoremap <Leader>gg :Gcommit % -m ""<Left>
 
 " Stage the current hunk and commit it
-nmap <Leader>gH ,hs,gC
+nnoremap <Leader>gH ,hs,gC
 
 " Stage the current hunk and commit it without invoking an editor
-nmap <Leader>gh ,hs,gc
+nnoremap <Leader>gh ,hs,gc
 
-nmap <Leader>gd :Gdiff<CR>
+nnoremap <Leader>gd :Gdiff<CR>
 
 " Edit a fugitive-object, e.g. :% is the current file in the git index
 " :h fugitive-object to learn more
 " This map is to edit the current file in the git index
-nmap <Leader>ge :Gedit<CR>
+nnoremap <Leader>ge :Gedit<CR>
 
 " Similar to git-checkout on a work tree file
-nmap <Leader>gr :Gread<CR>
+nnoremap <Leader>gr :Gread<CR>
 
 " Similar to git-add on a work tree file
-nmap <Leader>gw :Gwrite<CR>
+nnoremap <Leader>gw :Gwrite<CR>
 
 " Load this file's commit history into the quickfix list
 " :copen to open the quickfix list
-nmap <Leader>gv :GV!<CR>
+nnoremap <Leader>gv :GV!<CR>
 
 " List all commit history
-nmap <Leader>gV :GV<CR>
+nnoremap <Leader>gV :GV<CR>
 
 " List all revisions of this file
-nmap <Leader>go :0Glog<CR>:copen<CR>
+nnoremap <Leader>go :0Glog<CR>:copen<CR>
 
 " Rename the file, the new location is relative to the current file path
-nmap <Leader>gm :Gmove<Space>
+nnoremap <Leader>gm :Gmove<Space>
 
 " Delete the file
-nmap <Leader>gM :Gremove<CR>
+nnoremap <Leader>gM :Gremove<CR>
 
-nmap <Leader>gp :Gpush<CR>
-nmap <Leader>gL :Gpull<CR>
+nnoremap <Leader>gp :Gpush<CR>
+nnoremap <Leader>gL :Gpull<CR>
