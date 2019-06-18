@@ -668,8 +668,8 @@ nnoremap <Leader>d :Goyo<CR>
 """" git-gutter mapping
 
 " This mapping also works with vimdiff
-nmap ]H <Plug>GitGutterNextHunk
-nmap [H <Plug>GitGutterPrevHunk
+nmap ]h <Plug>GitGutterNextHunk
+nmap [h <Plug>GitGutterPrevHunk
 
 " Update the gutter
 nnoremap <Leader>G :GitGutter<CR>
@@ -684,8 +684,8 @@ xmap ih <Plug>GitGutterTextObjectInnerVisual
 xmap ah <Plug>GitGutterTextObjectOuterVisual
 
 " Cycle through hunks in all buffers
-nnoremap ]h :call vimrc#NextHunkAllBuffers()<CR>
-nnoremap [h :call vimrc#PrevHunkAllBuffers()<CR>
+nnoremap ]H :call vimrc#NextHunkAllBuffers()<CR>
+nnoremap [H :call vimrc#PrevHunkAllBuffers()<CR>
 
 
 """" vim-fugitive mapping
