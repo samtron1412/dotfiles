@@ -278,6 +278,11 @@ let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 " Plugin Configuration
 """"""""""""""""""""""""""""
 
+"""" ale configuration
+
+let g:ale_enabled = 0   " Disable ALE at beginning
+
+
 """" vim-gutentags configuration
 
 " Activate Gutentags when opening a file that’s somewhere under a
@@ -577,6 +582,12 @@ nnoremap <Leader>et :tabe %%
 """"""""""""""""""""""""""""
 " Plugin Mappings
 """"""""""""""""""""""""""""
+
+"""" ale mapping
+
+nmap <Leader>at <Plug>(ale_toggle)
+nmap <Leader>aT <Plug>(ale_toggle_buffer)
+
 
 """" vim-markdown-toc mapping
 
