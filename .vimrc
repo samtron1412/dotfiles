@@ -222,12 +222,19 @@ augroup END
 set list listchars=eol:¬,tab:▸-,trail:·,space:·
 
 " :h fo-table to learn more about options
-set formatoptions=tcrqnljp
+if has('nvim')
+  set formatoptions=tcrqnlj
+else
+  set formatoptions=tcrqnljp
+endif
 
 
 " Search
 
 set incsearch       " Find the next match as we type the search
+if has('nvim')
+  set nohlsearch
+endif
 set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
 set synmaxcol=200   " max # of cols to be highlighted
