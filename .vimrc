@@ -651,6 +651,8 @@ xnoremap <Leader>mf :TableFormat<CR>
 nnoremap <Leader>mt :Toc<CR>
 xnoremap <Leader>mi :HeaderIncrease<CR>
 xnoremap <Leader>md :HeaderDecrease<CR>
+nnoremap <Leader>mi I#<Esc>
+nnoremap <Leader>md 0x
 
 
 """" markdown-preview.nvim mapping
