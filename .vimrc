@@ -156,6 +156,7 @@ set mouse=a                 "Support mouse actions
 set autoread                "Automatically reload buffers
 set completeopt=menuone,longest,preview
 set spell spelllang=en_us   "Enable spell check
+set timeout ttimeoutlen=50
 
 " Save buffers, the last 100 files, etc.
 set viminfo=%20,'100,<1000,h,!
@@ -272,6 +273,7 @@ let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
 let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 
+let mapleader=','
 
 
 """"""""""""""""""""""""""""
@@ -549,8 +551,6 @@ if !has('nvim')
   endw
 endif
 
-set timeout ttimeoutlen=50
-
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
 inoremap <A-j> <Esc>:m .+1<CR>==gi
@@ -569,7 +569,6 @@ nnoremap \\ <Esc>:call vimrc#ToggleTextwidth()<CR>
 
 " Easy Expansion of the Active File Directory
 " Add the path of the current directory to the path of the file
-let mapleader=','
 " cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<CR>
 nnoremap <Leader>ew :e %%
@@ -697,10 +696,10 @@ nnoremap <Leader>gG :Gcommit % -v<CR>
 nnoremap <Leader>gg :Gcommit % -m ""<Left>
 
 " Stage the current hunk and commit it
-nnoremap <Leader>gH ,hs,gC
+nmap <Leader>gH ,hs,gC
 
 " Stage the current hunk and commit it without invoking an editor
-nnoremap <Leader>gh ,hs,gc
+nmap <Leader>gh ,hs,gc
 
 nnoremap <Leader>gd :Gdiff<CR>
 
