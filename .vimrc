@@ -153,6 +153,12 @@ set completeopt=menuone,longest,preview
 set spell spelllang=en_us   "Enable spell check
 set timeout ttimeoutlen=50
 
+" Set macmeta for MacVim
+if has('gui_macvim')
+  set macmeta
+endif
+
+
 " Save buffers, the last 100 files, etc.
 set viminfo=%20,'100,<1000,h,!
 
