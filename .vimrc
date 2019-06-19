@@ -283,6 +283,9 @@ let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
 let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 
+" Use space as leader key
+nnoremap <Space> <nop>
+let g:mapleader = "\<Space>"
 
 
 """"""""""""""""""""""""""""
@@ -732,4 +735,4 @@ nnoremap <Leader>gm :Gmove<Space>
 nnoremap <Leader>gM :Gremove<CR>
 
 nnoremap <Leader>gp :Gpush<CR>
-nnoremap <Leader>gL :Gpull<CR>
+nnoremap <Leader>gl :Gpull<CR>
