@@ -384,8 +384,8 @@ let g:mkdp_auto_close = 0
 
 """" ultisnips configuration
 
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<C-Space>"  " use <Tab> trigger autocompletion
+" Trigger configuration.
+let g:UltiSnipsExpandTrigger="<Tab>"
 let g:UltiSnipsJumpForwardTrigger="<C-f>"
 let g:UltiSnipsJumpBackwardTrigger="<C-b>"
 
