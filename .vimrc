@@ -291,6 +291,12 @@ let g:mapleader = "\<Space>"
 " Plugin Configuration
 """"""""""""""""""""""""""""
 
+"""" vimtex configuration
+
+let g:matchup_override_vimtex = 1
+let g:matchup_matchparen_deferred = 1
+
+
 """" ale configuration
 
 let g:ale_enabled = 0   " Disable ALE at beginning
