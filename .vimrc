@@ -464,7 +464,7 @@ endif
 " Terminals send a confused sequence to Vim, so <C-Space> is interpreted
 " as <C-@>
 inoremap <C-Space> <C-x><C-o>
-inoremap <C-@> <C-Space>
+imap <C-@> <C-Space>
 
 
 """" ctags
