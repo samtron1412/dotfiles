@@ -124,8 +124,6 @@ Plug 'airblade/vim-gitgutter'
 
 
 """" Theme / Interface
-Plug 'patstockwell/vim-monokai-tasty'
-Plug 'phanviet/vim-monokai-pro'
 Plug 'morhetz/gruvbox'
 
 
