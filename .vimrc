@@ -289,8 +289,11 @@ let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
 let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 
-" Use space as leader key
+" Use space as global leader key
 let g:mapleader = "\<Space>"
+
+" Use back slash key as local leader key
+let maplocalleader = "\\"
 
 
 """"""""""""""""""""""""""""
