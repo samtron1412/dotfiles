@@ -572,10 +572,10 @@ nnoremap \\ <Esc>:call vimrc#ToggleTextwidth()<CR>
 " Add the path of the current directory to the path of the file
 " cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<CR>
-nnoremap <Leader>ew :e %%
-nnoremap <Leader>es :sp %%
-nnoremap <Leader>ev :vsp %%
-nnoremap <Leader>et :tabe %%
+nmap <Leader>ew :e %%
+nmap <Leader>es :sp %%
+nmap <Leader>ev :vsp %%
+nmap <Leader>et :tabe %%
 
 
 
