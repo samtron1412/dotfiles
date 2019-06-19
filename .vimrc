@@ -459,6 +459,14 @@ endif
 " Mappings
 """"""""""""""""""""""""""""
 
+"""" omni completion mappings
+
+" Terminals send a confused sequence to Vim, so <C-Space> is interpreted
+" as <C-@>
+inoremap <C-Space> <C-x><C-o>
+inoremap <C-@> <C-Space>
+
+
 """" ctags
 
 " Ctrl+\ - Open the definition in a new tab
