@@ -79,7 +79,7 @@ Plug 'junegunn/vim-easy-align'
 
 """" LaTeX
 
-"Plug 'lervag/vimtex'
+Plug 'lervag/vimtex'
 
 
 """" Markdown
