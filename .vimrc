@@ -99,9 +99,6 @@ Plug 'mzlogin/vim-markdown-toc'
 " Working with comments
 Plug 'tpope/vim-commentary'
 
-" Auto completion engine
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
-
 " Working with ctags
 Plug 'ludovicchabant/vim-gutentags'
 
@@ -304,24 +301,6 @@ let g:ale_enabled = 0   " Disable ALE at beginning
 " Activate Gutentags when opening a file that’s somewhere under a
 " directory that contains a Makefile file or folder.
 let g:gutentags_project_root = ['Makefile']
-
-
-"""" YouCompleteMe configuration
-
-let g:ycm_seed_identifiers_with_syntax = 1
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_filetype_blacklist = {
-      \ 'tagbar': 1,
-      \ 'notes': 1,
-      \ 'markdown': 1,
-      \ 'netrw': 1,
-      \ 'unite': 1,
-      \ 'text': 1,
-      \ 'vimwiki': 1,
-      \ 'pandoc': 1,
-      \ 'infolog': 1,
-      \ 'mail': 1
-      \}
 
 
 """" fzf.vim configuration
