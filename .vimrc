@@ -282,6 +282,7 @@ set statusline+=\ %l:%c         "Line and column numbers
 set foldmethod=indent
 set foldnestmax=6       "deepest fold levels
 set nofoldenable        "don't fold by default
+set conceallevel=1
 
 
 " Change the cursor from box to line in the insert mode
@@ -302,8 +303,11 @@ let maplocalleader = "\\"
 
 """" vimtex configuration
 
+let g:tex_flavor='latex'
 let g:matchup_override_vimtex = 1
 let g:matchup_matchparen_deferred = 1
+let g:vimtex_view_method = 'skim'
+let g:tex_conceal = 'abdmgs'
 
 
 """" ale configuration
@@ -373,7 +377,6 @@ let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_conceal = 0
 
 " disable math tex conceal feature
-let g:tex_conceal = ""
 let g:vim_markdown_math = 1
 
 " support front matter of various format
