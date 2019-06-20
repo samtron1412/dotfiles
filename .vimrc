@@ -406,8 +406,7 @@ let g:mkdp_auto_close = 0
 """" ultisnips configuration
 
 " Trigger configuration.
-let g:UltiSnipsExpandTrigger="<Tab>"
-let g:UltiSnipsJumpForwardTrigger="<C-f>"
+let g:UltiSnipsJumpForwardTrigger="<Tab>"
 let g:UltiSnipsJumpBackwardTrigger="<C-b>"
 
 
