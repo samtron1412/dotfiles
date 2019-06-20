@@ -408,6 +408,7 @@ let g:mkdp_auto_close = 0
 " Trigger configuration.
 let g:UltiSnipsJumpForwardTrigger="<Tab>"
 let g:UltiSnipsJumpBackwardTrigger="<C-b>"
+let g:UltiSnipsEnableSnipMate=0
 
 
 """" limelight configuration
