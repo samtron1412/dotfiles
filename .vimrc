@@ -152,6 +152,7 @@ set autoread                "Automatically reload buffers
 set completeopt=menuone,longest,preview
 set spell spelllang=en_us   "Enable spell check
 set timeout ttimeoutlen=50
+set sessionoptions-=help
 
 " Set macmeta for MacVim
 if has('gui_macvim')
