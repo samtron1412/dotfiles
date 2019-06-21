@@ -1,7 +1,6 @@
-source ~/.zsh/.env
-source ~/.zsh/.inputrc
-source ~/.zsh/.alias
-source ~/.zsh/.func
+source "$XDG_CONFIG_HOME/zsh/inputrc"
+source "$XDG_CONFIG_HOME/zsh/alias"
+source "$XDG_CONFIG_HOME/zsh/func"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 

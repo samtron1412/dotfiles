@@ -1,6 +1,6 @@
-#===============================================================================
-# ENVIROMENT VARIABLES
-#===============================================================================
+########################################################################
+#                        ENVIRONMENT VARIABLES                         #
+########################################################################
 
 # Add additional directories to the path.
 pathadd() {
@@ -40,6 +40,9 @@ export XDG_CONFIG_DIRS="/etc/xdg"
 export XDG_DATA_DIRS="/usr/local/share/:/usr/share/"
 export XDG_CACHE_HOME="$HOME/.cache"
 
+# ZSH configuration
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+
 # Change root directory
 export CHROOT="$HOME/chroot"
 
@@ -77,3 +80,8 @@ export TERM="xterm-256color-italic"
 
 # Fuzzy search command
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden --follow --glob "!.git"'
+
+# Setting up Python virtual environment for Vim
+if [[ -n $VIRTUAL_ENV && -e "${VIRTUAL_ENV}/bin/activate" ]]; then
+  source "${VIRTUAL_ENV}/bin/activate"
+fi
