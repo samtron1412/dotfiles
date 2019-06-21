@@ -2,7 +2,6 @@
   editor = vim
   pager = less -x2
   autocrlf = input
-  excludesfile = $HOME/.global_ignore
 [user]
   email = sontran@berkeley.edu
   name = Son Tran
@@ -47,5 +46,5 @@
   suppresscc = self
   confirm = always
 [alias]
-    la = log --oneline --all --decorate --graph
-    lap = log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --all
+  la = log --oneline --all --decorate --graph
+  lap = log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --all
