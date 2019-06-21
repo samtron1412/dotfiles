@@ -1,18 +1,34 @@
+#### Uncomment the following lines to profile ZSH
+# zmodload zsh/datetime
+# setopt PROMPT_SUBST
+# PS4='+$EPOCHREALTIME %N:%i> '
+
+# logfile=$(mktemp zsh_profile.XXXXXXXX)
+# echo "Logging to $logfile"
+# exec 3>&2 2>$logfile
+# setopt XTRACE
+#### Uncomment the above lines to profile ZSH
+
+
+
 ########################################################################
 #                        ENVIRONMENT VARIABLES                         #
 ########################################################################
 
 # Add additional directories to the path.
 pathadd() {
-  [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]] && PATH="${PATH:+"$PATH:"}$1"
+  [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]] && PATH="$PATH:$1"
 }
 
 # Personal scripts and binaries
 pathadd $HOME/bin
 
-# Most of them are Python scripts
-pathadd $HOME/.local/bin
+# Python scripts
 pathadd $HOME/Library/Python/3.7/bin
+
+# openssl: run 'brew --prefix openssl' to find the path
+# Using hardcode path is much faster than using brew
+pathadd "/usr/local/opt/openssl/bin"
 
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -63,9 +79,6 @@ export VIFM="~/.config/vifm"
 if hash pyenv 2>/dev/null; then
   eval "$(pyenv init -)"
 fi
-
-# openssl
-export PATH=$(brew --prefix openssl)/bin:$PATH
 
 # vim
 export VIMCONFIG=~/.vim
@@ -288,3 +301,10 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # Load fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+
+#### Uncomment the following line to profile ZSH
+# unsetopt XTRACE
+# exec 2>&3 3>&-
+#### Uncomment the above lines to profile ZSH
