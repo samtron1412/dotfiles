@@ -66,10 +66,14 @@ ctermfg
 guifg
 guibg
 monokai
-ultisnip
+#ltisnip
 unstage
 untracked
 autocmd
 FileType
 filetype
 ftplugin
+augroup
+#utocmds
+autocmd's
+#ompaticle
