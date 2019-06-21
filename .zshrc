@@ -148,74 +148,9 @@ setopt extended_glob
 # For a full list of active aliases, run `alias`.
 
 
-############
-#  PACMAN  #
-############
-
-alias sudo='sudo '
-alias cu='checkupdates'
-alias po='poweroff'
-alias rb='reboot'
-alias pm='pacman'
-
-# Update the full system
-alias pmu='sudo pm -Syu'
-
-# Install a new package
-alias pms='sudo pm -S'
-
-# Search a online package
-alias pmss='pm -Ss'
-
-# Query the info of a online package
-alias pmsi='pm -Si'
-
-# Query the local package owner of a program
-alias pmqo='pm -Qo'
-
-# Query the info of a local package
-alias pmqi='pm -Qi'
-
-# Show the non official packages
-alias pmqm='pm -Qm'
-
-# Show the official packages
-alias pmqn='pm -Qn'
-
-# List all files owned by a package
-alias pmql='pm -Ql'
-
-# Search in local packages
-alias pmqs='pm -Qs'
-
-# Remove a package and leaving all of its dependencies
-alias pmr='sudo pm -R'
-
-# Remove a package and its dependencies
-alias pmrs='sudo pm -Rs'
-
-alias pmrsc='sudo pm -Rsc'
-alias pmro='sudo pm -Rns $(pm -Qtdq)'
-
-
 ##########
 #  APPS  #
 ##########
-
-# Take a screenshoot with a selection tool
-alias maims='maim -s ~/img/screen/$(date +%F-%T).png'
-
-# Connect to raspberry pi
-alias pi='ssh pi@192.168.2.36'
-
-# Connect to raspberry pi and use screen
-alias pis='ssh -t pi@192.168.2.36 screen -R'
-
-# Using netctl to connect to wifi with the encryption option
-alias wifi='sudo wifi-menu -o'
-
-# Using info to read manual with vi keybinding
-alias info='info --vi-keys'
 
 # List all directories
 alias ldi="ls -lah | egrep '^d'"
@@ -225,24 +160,6 @@ alias lfi="ls -lah | egrep '^-'"
 
 # List all symlinks
 alias lli="ls -lah | egrep '^l'"
-
-# Mount a new block device
-alias musb="udisksctl mount -b"
-
-# Unmount a block device
-alias uusb="udisksctl unmount -b"
-
-# Arranges for the device to be safely removed
-alias rmusb="udisksctl power-off -b"
-
-# Show detail information of a block device
-alias usbinfo="udisksctl info -b"
-
-# Start openvpn and wpa_cli at home
-alias home="systemctl start openvpn-client@la2.service && systemctl start wpa_cli.service"
-
-# Stop openvpn and wpa_cli at school
-alias school="systemctl stop openvpn-client@la2.service && systemctl stop wpa_cli.service"
 
 # jump plugin for zsh
 alias j="jump"
