@@ -407,7 +407,7 @@ let g:mkdp_auto_close = 0
 
 " Trigger configuration.
 let g:UltiSnipsJumpForwardTrigger="<Tab>"
-let g:UltiSnipsJumpBackwardTrigger="<C-b>"
+let g:UltiSnipsJumpBackwardTrigger="<BS>"
 let g:UltiSnipsEnableSnipMate=0
 
 
@@ -529,7 +529,6 @@ nnoremap <silent> <Leader>z <Esc>:call vimrc#ZoomToggle()<CR>
 set pastetoggle=<F2>
 
 " Disable Backspace and Delete keys
-inoremap <BS> <Nop>
 cnoremap <BS> <Nop>
 inoremap <Del> <Nop>
 
