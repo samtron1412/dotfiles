@@ -152,6 +152,11 @@ setopt extended_glob
 #  APPS  #
 ##########
 
+# docker
+alias dk="docker"
+alias dkm="docker-machine"
+alias dkc="docker-compose"
+
 # List all directories
 alias ldi="ls -lah | egrep '^d'"
 
