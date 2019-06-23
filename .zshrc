@@ -30,6 +30,10 @@ pathadd $HOME/Library/Python/3.7/bin
 # Using hardcode path is much faster than using brew
 pathadd "/usr/local/opt/openssl/bin"
 
+# homebrew
+pathadd "/usr/local/sbin"
+pathadd "/usr/local/miniconda3/bin"
+
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export EDITOR='vim'
