@@ -35,3 +35,4 @@ Session.vim
 # Persistent undo
 [._]*.un~
 
+*.zip
