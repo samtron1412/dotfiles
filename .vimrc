@@ -224,7 +224,7 @@ augroup END
 set list listchars=eol:¬,tab:▸-,trail:·,space:·
 
 " :h fo-table to learn more about options
-if has('nvim')
+if has('nvim') || (v:version < 801)
   set formatoptions=tcrqnlj
 else
   set formatoptions=tcrqnljp
