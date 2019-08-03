@@ -15,9 +15,15 @@
 #                        ENVIRONMENT VARIABLES                         #
 ########################################################################
 
+# Clear the PATH before sourcing /etc/profile to preserve PATH in tmux
+if [ -f /etc/profile ]; then
+    PATH=""
+    source /etc/profile
+fi
+
 # Add additional directories to the path.
 pathadd() {
-  [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]] && PATH="$PATH:$1"
+  [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]] && PATH="$1:$PATH"
 }
 
 # Personal scripts and binaries
@@ -32,7 +38,6 @@ pathadd "/usr/local/opt/openssl/bin"
 
 # homebrew
 pathadd "/usr/local/sbin"
-pathadd "/usr/local/miniconda3/bin"
 
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
