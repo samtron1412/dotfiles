@@ -351,6 +351,7 @@ let g:netrw_fastbrowse=0
 
 let g:gruvbox_italic=1
 colorscheme gruvbox     " Load colorscheme after vim-plug and gruvbox configuration
+set background=dark     " Using dark mode for grub-box
 
 
 """" vim-markdown configuration
