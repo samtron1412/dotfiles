@@ -53,12 +53,17 @@ snippet '([A-Za-z])_(\d\d)' "Auto Subscript2" wrA
 `!p snip.rv = match.group(1)`_{`!p snip.rv = match.group(2)`}
 endsnippet
 
-snippet compl "Complement" iA
+# Expand a character followed by `_` and other characters by tab
+snippet '([A-Za-z])_([A-Za-z]+)' "Subscript" r
+`!p snip.rv = match.group(1)`_{`!p snip.rv = match.group(2)`}
+endsnippet
+
+snippet compl "Complement" i
 ^{c}
 endsnippet
 
-snippet tp "To the pigit - Superscript" iA
-^{$1}$0
+snippet '([A-Za-z])\^(\d+)\s' "Auto Superscript" wrA
+`!p snip.rv = match.group(1)`^{`!p snip.rv = match.group(2)`} $0
 endsnippet
 
 # // => \frac{}{}
@@ -113,24 +118,24 @@ snip.rv = eval('latex(' + match.group(1).replace('\\', '') \
 endsnippet
 
 priority 10
-snippet "bar" "bar" riA
+snippet "bar" "bar" ri
 \overline{$1}$0
 endsnippet
 
 priority 100
-snippet "([a-zA-Z])bar" "bar" riA
+snippet "([a-zA-Z])bar" "bar" ri
 \overline{`!p snip.rv=match.group(1)`}
 endsnippet
 
-priority 10
-snippet "hat" "hat" riA
-\hat{$1}$0
-endsnippet
+# priority 10
+# snippet "hat" "hat" riA
+# \hat{$1}$0
+# endsnippet
 
-priority 100
-snippet "([a-zA-Z])hat" "hat" riA
-\hat{`!p snip.rv=match.group(1)`}
-endsnippet
+# priority 100
+# snippet "([a-zA-Z])hat" "hat" riA
+# \hat{`!p snip.rv=match.group(1)`}
+# endsnippet
 
 snippet "(\\?\w+)(,\.|\.,)" "Vector postfix" riA
 \vec{`!p snip.rv=match.group(1)`}
