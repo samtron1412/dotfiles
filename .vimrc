@@ -239,7 +239,7 @@ if has('nvim')
 endif
 set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
-set synmaxcol=200   " max # of cols to be highlighted
+set synmaxcol=500   " max # of cols to be highlighted
 
 " Enhance grep by using ag
 if executable("ag")
