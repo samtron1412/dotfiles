@@ -33,7 +33,7 @@ if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
     snip.rv = ' '
 else:
     snip.rv = ''
-`$2
+`$0
 endsnippet
 
 snippet dm "Display Math" wA
@@ -53,28 +53,31 @@ snippet '([A-Za-z])_(\d\d)' "Auto Subscript2" wrA
 `!p snip.rv = match.group(1)`_{`!p snip.rv = match.group(2)`}
 endsnippet
 
-# Expand a character followed by `_` and other characters by tab
-snippet '([A-Za-z])_([A-Za-z]+)' "Subscript" r
-`!p snip.rv = match.group(1)`_{`!p snip.rv = match.group(2)`}
+snippet '([A-Za-z])_{' "Auto Subscript3" wrA
+`!p snip.rv = match.group(1)`_{$1} $0
 endsnippet
 
-snippet compl "Complement" i
-^{c}
+snippet '([A-Za-z])\^' "Auto Superscript" wrA
+`!p snip.rv = match.group(1)`^{$1} $0
 endsnippet
 
-snippet '([A-Za-z])\^(\d+)\s' "Auto Superscript" wrA
-`!p snip.rv = match.group(1)`^{`!p snip.rv = match.group(2)`} $0
+snippet '([A-Za-z]){' "Auto Command" wrA
+`!p snip.rv = match.group(1)`{$1} $0
+endsnippet
+
+snippet '([A-Za-z])\(' "Auto Parenthesis" wrA
+`!p snip.rv = match.group(1)`($1) $0
 endsnippet
 
 # // => \frac{}{}
 snippet // "Fraction" iA
-\\frac{${1:${VISUAL}}}{$2}$0
+\\frac{${1:${VISUAL}}}{$2} $0
 endsnippet
 
 # 3/ => \frac{3}{}
 # 4\pi^2/ => \frac{4\pi^2}{}
 snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction" wrA
-\\frac{`!p snip.rv = match.group(1)`}{$1}$0
+\\frac{`!p snip.rv = match.group(1)`}{$1} $0
 endsnippet
 
 
@@ -94,12 +97,12 @@ while True:
         if depth == 0: break;
         i -= 1
 snip.rv = stripped[0:i] + "\\frac{" + stripped[i+1:-1] + "}"
-`{$1}$0
+`{$1} $0
 endsnippet
 
 # uses sympy to eval­u­ate math­e­mat­i­cal ex­pres­sions
 snippet sympy "sympy block " w
-sympy $1 sympy$0
+sympy $1 sympy $0
 endsnippet
 
 priority 10000
@@ -119,24 +122,15 @@ endsnippet
 
 priority 10
 snippet "bar" "bar" ri
-\overline{$1}$0
+\overline{$1} $0
 endsnippet
 
-priority 100
-snippet "([a-zA-Z])bar" "bar" ri
-\overline{`!p snip.rv=match.group(1)`}
+priority 10
+snippet "hat" "hat" ri
+\hat{$1} $0
 endsnippet
 
-# priority 10
-# snippet "hat" "hat" riA
-# \hat{$1}$0
-# endsnippet
-
-# priority 100
-# snippet "([a-zA-Z])hat" "hat" riA
-# \hat{`!p snip.rv=match.group(1)`}
-# endsnippet
-
+# ab,. or ab., => \vec{ab}
 snippet "(\\?\w+)(,\.|\.,)" "Vector postfix" riA
 \vec{`!p snip.rv=match.group(1)`}
 endsnippet
