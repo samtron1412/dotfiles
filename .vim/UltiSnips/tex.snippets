@@ -57,7 +57,7 @@ snippet '([A-Za-z])_{' "Auto Subscript3" wrA
 `!p snip.rv = match.group(1)`_{$1}$0
 endsnippet
 
-snippet '([A-Za-z])\^' "Auto Superscript" wrA
+snippet '([}\dA-Za-z])\^' "Auto Superscript" wrA
 `!p snip.rv = match.group(1)`^{$1}$0
 endsnippet
 
