@@ -480,6 +480,12 @@ endif
 " Mappings
 """"""""""""""""""""""""""""
 
+"""" useful mappings
+
+" Paste multiple times
+xnoremap p pgvy
+
+
 """" omni completion mappings
 
 " Terminals send a confused sequence to Vim, so <C-Space> is interpreted
