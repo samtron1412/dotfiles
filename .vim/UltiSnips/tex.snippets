@@ -65,9 +65,13 @@ endsnippet
 # `!p snip.rv = match.group(1)`{$1}$0
 # endsnippet
 
-# snippet '([A-Za-z])\(' "Auto Parenthesis" wrA
+# snippet '([0-9A-Za-z])\(' "Auto Parenthesis" wrA
 # `!p snip.rv = match.group(1)`($1)$0
 # endsnippet
+
+snippet '\(' "Auto Parenthesis" wrA
+($1)$0
+endsnippet
 
 # // => \frac{}{}
 snippet // "Fraction" iA
