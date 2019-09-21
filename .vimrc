@@ -535,8 +535,8 @@ nnoremap <silent> <Leader>z <Esc>:call vimrc#ZoomToggle()<CR>
 set pastetoggle=<F2>
 
 " Disable Backspace and Delete keys
-cnoremap <BS> <Nop>
-inoremap <Del> <Nop>
+" cnoremap <BS> <Nop>
+" inoremap <Del> <Nop>
 
 " Disable arrow keys in insert mode
 inoremap <Left> <Nop>
