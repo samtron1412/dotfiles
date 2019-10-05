@@ -100,7 +100,7 @@ Plug 'mzlogin/vim-markdown-toc'
 Plug 'tpope/vim-commentary'
 
 " Working with ctags
-Plug 'ludovicchabant/vim-gutentags'
+" Plug 'ludovicchabant/vim-gutentags'
 
 " Working with tests and build systems
 Plug 'tpope/vim-dispatch'
@@ -264,7 +264,7 @@ set statusline=
 set statusline+=%#PmenuSel#     "Highlight the git branch
 set statusline+=%{FugitiveStatusline()} "Git branch of this file
 set statusline+=%{ObsessionStatus()}    "Indicator for sessions: 'S': stop, '$': running
-set statusline+=%{gutentags#statusline('[',']')}
+" set statusline+=%{gutentags#statusline('[',']')}
 set statusline+=%#LineNr#       "Erase highlight for other parts
 set statusline+=\ %f            "A whitespace followed by file path
 set statusline+=%m              "Modified flag
@@ -319,7 +319,7 @@ let g:ale_enabled = 0   " Disable ALE at beginning
 
 " Activate Gutentags when opening a file that’s somewhere under a
 " directory that contains a Makefile file or folder.
-let g:gutentags_project_root = ['Makefile']
+" let g:gutentags_project_root = ['Makefile']
 
 
 """" fzf.vim configuration
@@ -498,8 +498,8 @@ imap <C-@> <C-Space>
 
 " Ctrl+\ - Open the definition in a new tab
 " Alt+] - Open the definition in a vertical split
-nnoremap <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
-nnoremap <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+" nnoremap <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+" nnoremap <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 
 """" Emacs-style editing on the command-line
