@@ -289,7 +289,9 @@ set conceallevel=0      "don't conceal text
 " Change the cursor from box to line in the insert mode
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
-let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+if exists('$TMUX')
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+endif
 
 " Use space as global leader key
 let g:mapleader = "\<Space>"
@@ -679,8 +681,8 @@ nnoremap <Leader>d :Goyo<CR>
 """" git-gutter mapping
 
 " This mapping also works with vimdiff
-nmap ]h <Plug>GitGutterNextHunk
-nmap [h <Plug>GitGutterPrevHunk
+nmap ]h <Plug>(GitGutterNextHunk)
+nmap [h <Plug>(GitGutterPrevHunk)
 
 " Update the gutter
 nnoremap <Leader>G :GitGutter<CR>
