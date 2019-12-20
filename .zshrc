@@ -39,6 +39,10 @@ pathadd "/usr/local/opt/openssl/bin"
 # homebrew
 pathadd "/usr/local/sbin"
 
+# ruby
+# export PATH=/usr/local/opt/ruby/bin:$PATH
+pathadd "/usr/local/opt/ruby/bin"
+
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export EDITOR='vim'
