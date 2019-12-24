@@ -1,4 +1,0 @@
-[Default Applications]
-x-scheme-handler/mailto=mutt.desktop
-text/html=chromium.desktop
-x-scheme-handler/tg=telegramdesktop.desktop

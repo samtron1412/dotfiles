@@ -26,7 +26,7 @@ set mail_check = 60
 # sort mail by threads
 set sort = threads
 # and sort threads by date
-set sort_aux = reverse-last-date-received
+set sort_aux = last-date-received
 
 # Security concern
 bind generic,alias,attach,browser,editor,index,compose,pager,pgp,postpone ':' noop
@@ -65,6 +65,9 @@ source $alias_file
 # Reply
 set fast_reply = yes
 set include = yes
+
+# Quit
+set quit = ask-no
 
 #==================================================================================
 # WORK ACCOUNT
