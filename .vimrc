@@ -100,7 +100,7 @@ Plug 'mzlogin/vim-markdown-toc'
 Plug 'tpope/vim-commentary'
 
 " Working with ctags
-Plug 'ludovicchabant/vim-gutentags'
+" Plug 'ludovicchabant/vim-gutentags'
 
 " Working with tests and build systems
 Plug 'tpope/vim-dispatch'
@@ -239,7 +239,7 @@ if has('nvim')
 endif
 set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
-set synmaxcol=200   " max # of cols to be highlighted
+set synmaxcol=500   " max # of cols to be highlighted
 
 " Enhance grep by using ag
 if executable("ag")
@@ -264,7 +264,7 @@ set statusline=
 set statusline+=%#PmenuSel#     "Highlight the git branch
 set statusline+=%{FugitiveStatusline()} "Git branch of this file
 set statusline+=%{ObsessionStatus()}    "Indicator for sessions: 'S': stop, '$': running
-set statusline+=%{gutentags#statusline('[',']')}
+" set statusline+=%{gutentags#statusline('[',']')}
 set statusline+=%#LineNr#       "Erase highlight for other parts
 set statusline+=\ %f            "A whitespace followed by file path
 set statusline+=%m              "Modified flag
@@ -283,13 +283,15 @@ set statusline+=\ %l:%c         "Line and column numbers
 set foldmethod=indent
 set foldnestmax=6       "deepest fold levels
 set nofoldenable        "don't fold by default
-set conceallevel=1
+set conceallevel=0      "don't conceal text
 
 
 " Change the cursor from box to line in the insert mode
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
-let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+if exists('$TMUX')
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+endif
 
 " Use space as global leader key
 let g:mapleader = "\<Space>"
@@ -308,7 +310,6 @@ let g:tex_flavor='latex'
 let g:matchup_override_vimtex = 1
 let g:matchup_matchparen_deferred = 1
 let g:vimtex_view_method = 'skim'
-let g:tex_conceal = 'abdmgs'
 
 
 """" ale configuration
@@ -320,7 +321,7 @@ let g:ale_enabled = 0   " Disable ALE at beginning
 
 " Activate Gutentags when opening a file that’s somewhere under a
 " directory that contains a Makefile file or folder.
-let g:gutentags_project_root = ['Makefile']
+" let g:gutentags_project_root = ['Makefile']
 
 
 """" fzf.vim configuration
@@ -408,7 +409,7 @@ let g:mkdp_auto_close = 0
 
 " Trigger configuration.
 let g:UltiSnipsJumpForwardTrigger="<Tab>"
-let g:UltiSnipsJumpBackwardTrigger="<BS>"
+let g:UltiSnipsJumpBackwardTrigger="<C-Tab>"
 let g:UltiSnipsEnableSnipMate=0
 
 
@@ -481,6 +482,12 @@ endif
 " Mappings
 """"""""""""""""""""""""""""
 
+"""" useful mappings
+
+" Paste multiple times
+xnoremap p pgvy
+
+
 """" omni completion mappings
 
 " Terminals send a confused sequence to Vim, so <C-Space> is interpreted
@@ -493,8 +500,8 @@ imap <C-@> <C-Space>
 
 " Ctrl+\ - Open the definition in a new tab
 " Alt+] - Open the definition in a vertical split
-nnoremap <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
-nnoremap <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+" nnoremap <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+" nnoremap <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 
 """" Emacs-style editing on the command-line
@@ -530,8 +537,8 @@ nnoremap <silent> <Leader>z <Esc>:call vimrc#ZoomToggle()<CR>
 set pastetoggle=<F2>
 
 " Disable Backspace and Delete keys
-cnoremap <BS> <Nop>
-inoremap <Del> <Nop>
+" cnoremap <BS> <Nop>
+" inoremap <Del> <Nop>
 
 " Disable arrow keys in insert mode
 inoremap <Left> <Nop>
@@ -674,8 +681,8 @@ nnoremap <Leader>d :Goyo<CR>
 """" git-gutter mapping
 
 " This mapping also works with vimdiff
-nmap ]h <Plug>GitGutterNextHunk
-nmap [h <Plug>GitGutterPrevHunk
+nmap ]h <Plug>(GitGutterNextHunk)
+nmap [h <Plug>(GitGutterPrevHunk)
 
 " Update the gutter
 nnoremap <Leader>G :GitGutter<CR>

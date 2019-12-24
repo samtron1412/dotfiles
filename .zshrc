@@ -39,6 +39,10 @@ pathadd "/usr/local/opt/openssl/bin"
 # homebrew
 pathadd "/usr/local/sbin"
 
+# ruby
+# export PATH=/usr/local/opt/ruby/bin:$PATH
+pathadd "/usr/local/opt/ruby/bin"
+
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export EDITOR='vim'
@@ -98,7 +102,7 @@ export VIMDATA=~/.vim
 export TERM="xterm-256color-italic"
 
 # Fuzzy search command
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden --follow --glob "!.git"'
+export FZF_DEFAULT_COMMAND='rg --files --no-messages --no-ignore-vcs --hidden --follow --glob "!.git"'
 
 
 
