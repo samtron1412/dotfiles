@@ -133,9 +133,9 @@ command! reload :write | restart
 fileviewer *.pdf pdftotext -nopgbrk %c -
 
 " PostScript
-filextype *.ps,*.eps,*.ps.gz
-        \ {View in zathura}
-        \ zathura %c %i &,
+" filextype *.ps,*.eps,*.ps.gz
+"         \ {View in zathura}
+"         \ zathura %c %i &,
 
 " Djvu
 " filextype *.djvu
