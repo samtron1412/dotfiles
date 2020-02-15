@@ -16,10 +16,10 @@
 ########################################################################
 
 # Clear the PATH before sourcing /etc/profile to preserve PATH in tmux
-if [ -f /etc/profile ]; then
-    PATH=""
-    source /etc/profile
-fi
+# if [ -f /etc/profile ]; then
+#     PATH=""
+#     source /etc/profile
+# fi
 
 # Add additional directories to the path.
 pathadd() {
@@ -104,6 +104,8 @@ export TERM="xterm-256color-italic"
 # Fuzzy search command
 export FZF_DEFAULT_COMMAND='rg --files --no-messages --no-ignore-vcs --hidden --follow --glob "!.git"'
 
+source /opt/ros/melodic/setup.zsh
+export ROS_MASTER_URI=http://locobot.local:11311
 
 
 ########################################################################
@@ -246,14 +248,14 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/usr/local/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/glider/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/usr/local/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/usr/local/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/glider/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/glider/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/usr/local/miniconda3/bin:$PATH"
+        export PATH="/home/glider/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
