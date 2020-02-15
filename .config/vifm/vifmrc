@@ -128,8 +128,7 @@ command! reload :write | restart
 " == DEFAULT PROGRAMS
 " ======================================================================
 " Pdf
-" filextype *.pdf zathura %c %i &, apvlv %c %i &, xpdf %c
-" filextype *.pdf open -a Preview %c
+filextype *.pdf zathura %c %i &, apvlv %c %i &, xpdf %c
 fileviewer *.pdf pdftotext -nopgbrk %c -
 
 " PostScript
@@ -138,11 +137,11 @@ filextype *.ps,*.eps,*.ps.gz
         \ zathura %c %i &,
 
 " Djvu
-" filextype *.djvu
-"         \ {View in zathura}
-"         \ zathura %c %i &,
-"         \ {View in apvlv}
-"         \ apvlv %c %i &,
+filextype *.djvu
+        \ {View in zathura}
+        \ zathura %c %i &,
+        \ {View in apvlv}
+        \ apvlv %c %i &,
 
 " Audio
 filetype *.wav,*.mp3,*.flac,*.ogg,*.m4a,*.wma,*.ape,*.ac3
