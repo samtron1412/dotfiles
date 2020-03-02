@@ -104,8 +104,8 @@ export TERM="xterm-256color-italic"
 # Fuzzy search command
 export FZF_DEFAULT_COMMAND='rg --files --no-messages --no-ignore-vcs --hidden --follow --glob "!.git"'
 
-source /opt/ros/melodic/setup.zsh
-export ROS_MASTER_URI=http://locobot.local:11311
+# export ROS_MASTER_URI=http://locobot.local:11311
+export ROS_MASTER_URI=http://localhost:11311
 
 
 ########################################################################
