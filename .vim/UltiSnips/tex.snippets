@@ -44,22 +44,22 @@ endsnippet
 
 # Using regex
 # Expand when type a character followed by a digit
-snippet '([A-Za-z])(\d)' "Auto Subscript" wrA
-`!p snip.rv = match.group(1)`_`!p snip.rv = match.group(2)`
-endsnippet
+# snippet '([A-Za-z])(\d)' "Auto Subscript" wrA
+# `!p snip.rv = match.group(1)`_`!p snip.rv = match.group(2)`
+# endsnippet
 
 # Expand when type a character followed by `_` and two digits
-snippet '([A-Za-z])_(\d\d)' "Auto Subscript2" wrA
-`!p snip.rv = match.group(1)`_{`!p snip.rv = match.group(2)`}
-endsnippet
+# snippet '([A-Za-z])_(\d\d)' "Auto Subscript2" wrA
+# `!p snip.rv = match.group(1)`_{`!p snip.rv = match.group(2)`}
+# endsnippet
 
-snippet '([A-Za-z])_{' "Auto Subscript3" wrA
-`!p snip.rv = match.group(1)`_{$1}$0
-endsnippet
+# snippet '([A-Za-z])_{' "Auto Subscript3" wrA
+# `!p snip.rv = match.group(1)`_{$1}$0
+# endsnippet
 
-snippet '([}\dA-Za-z])\^' "Auto Superscript" wrA
-`!p snip.rv = match.group(1)`^{$1}$0
-endsnippet
+# snippet '([}\dA-Za-z])\^' "Auto Superscript" wrA
+# `!p snip.rv = match.group(1)`^{$1}$0
+# endsnippet
 
 # snippet '([A-Za-z]){' "Auto Command" wrA
 # `!p snip.rv = match.group(1)`{$1}$0
@@ -68,6 +68,10 @@ endsnippet
 # snippet '([0-9A-Za-z])\(' "Auto Parenthesis" wrA
 # `!p snip.rv = match.group(1)`($1)$0
 # endsnippet
+
+snippet '{' "Auto Command" wrA
+{$1}$0
+endsnippet
 
 snippet '\(' "Auto Parenthesis" wrA
 ($1)$0
@@ -137,4 +141,21 @@ endsnippet
 # ab,. or ab., => \vec{ab}
 snippet "(\\?\w+)(,\.|\.,)" "Vector postfix" riA
 \vec{`!p snip.rv=match.group(1)`}
+endsnippet
+
+snippet "bl" "begin{} / end{}" ri
+\begin{${1:something}}${2:${VISUAL}}\end{$1}$0
+endsnippet
+
+snippet "code" "code typeset" br
+\begin{listing}
+\begin{minted}[linenos,numbersep=5pt,frame=lines,framesep=2mm]{${1:`!p
+snip.rv = match.group(3) if match.group(2) is not None else "language"`}}
+${2:${VISUAL:code}}
+\end{minted}
+\caption{${3:caption name}}
+\label{lst:${4:${3/\\\w+\{(.*?)\}|\\(.)|(\w+)|([^\w\\]+)/(?4:_:\L$1$2$3\E)/ga}}}
+\end{listing}
+
+$0
 endsnippet
