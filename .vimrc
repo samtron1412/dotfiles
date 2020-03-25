@@ -2,6 +2,13 @@
 " Son Tran Vim Configuration
 """"""""""""""""""""""""""""
 
+" for python 3.X
+set pythonthreehome=/usr/local/Cellar/python/3.7.7/Frameworks/Python.framework/Versions/3.7
+set pythonthreedll=/usr/local/Cellar/python/3.7.7/Frameworks/Python.framework/Versions/3.7/Python
+
+"if has('python3')
+"endif
+
 """"""""""""""""""""""""""""
 " vim-plug: plugins
 """"""""""""""""""""""""""""
