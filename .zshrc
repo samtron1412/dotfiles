@@ -103,7 +103,8 @@ export VIMDATA=~/.vim
 export TERM="xterm-256color-italic"
 
 # Fuzzy search command
-export FZF_DEFAULT_COMMAND='rg --files'
+export FZF_DEFAULT_COMMAND='rg --files --no-messages --hidden --follow --no-ignore'
+# export FZF_DEFAULT_COMMAND='fd -t f -L -I -H -i'
 
 
 
