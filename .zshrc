@@ -140,7 +140,7 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to $HOME/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(vi-mode git history-substring-search z jump colored-man-pages)
+plugins=(vi-mode git history-substring-search z jump colored-man-pages docker docker-compose)
 source $ZSH/oh-my-zsh.sh
 source $ZSH_CUSTOM/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
