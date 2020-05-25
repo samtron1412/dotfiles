@@ -237,6 +237,8 @@ else
   set formatoptions=tcrqnljp
 endif
 
+set comments+=fb:-,fb:+,fb:*
+
 
 " Search
 
@@ -372,7 +374,7 @@ let g:vim_markdown_autowrite = 1
 
 " Disable auto add bullet points
 let g:vim_markdown_auto_insert_bullets = 0
-let g:vim_markdown_new_list_item_indent = 0
+let g:vim_markdown_new_list_item_indent = 2
 
 " Enable TOC window auto-fit
 let g:vim_markdown_toc_autofit = 1
