@@ -538,7 +538,7 @@ nnoremap <C-h> <C-W>h
 nnoremap <C-l> <C-W>l
 
 " Update syntax highlighting when it breaks
-nnoremap <Leader>u <Esc>:syntax sync fromstart<CR>
+nnoremap <Leader>u :syntax sync fromstart<CR>
 
 " Zoom and restore window
 nnoremap <silent> <Leader>z <Esc>:call vimrc#ZoomToggle()<CR>
@@ -771,3 +771,7 @@ nnoremap <Leader>gM :Gremove<CR>
 
 nnoremap <Leader>gp :Gpush<CR>
 nnoremap <Leader>gl :Gpull<CR>
+
+" Source or Edit vimrc
+nnoremap <Leader>vs :source $MYVIMRC<CR>
+nnoremap <Leader>ve :vsplit $MYVIMRC<CR>
