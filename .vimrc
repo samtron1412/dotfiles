@@ -237,9 +237,6 @@ else
   set formatoptions=tcrqnljp
 endif
 
-set comments+=fb:-,fb:+,fb:*
-
-
 " Search
 
 set incsearch       " Find the next match as we type the search
