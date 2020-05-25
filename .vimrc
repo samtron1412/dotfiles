@@ -479,6 +479,14 @@ if !exists(":DiffOrig")
 endif
 
 
+" Log all autocmds that are triggered by vim to the file
+" /tmp/vim_log_autocommands
+" Usage: `:LogAutocmds`
+command! LogAutocmds call log#log_autocmds_toggle()
+
+" Redirect ex command outputs to a scratch window
+" Usage: `:Redir highlight`
+command! -nargs=1 -complete=command -bar -range Redir silent call redir#Redir(<q-args>, <range>, <line1>, <line2>)
 
 """"""""""""""""""""""""""""
 " Mappings
