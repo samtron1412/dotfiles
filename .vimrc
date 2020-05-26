@@ -563,10 +563,13 @@ nnoremap <Left>  :vertical resize +2<CR>
 nnoremap <Right> :vertical resize -2<CR>
 
 " Correct spelling mistakes while typing
-" <C-g>u: inset an undo break
+"
+" <C-g>u: insert an undo break
 " <Esc>[s: go to the previous spelling error
 " 1z=: replace the error by the first suggestion
 " `]: move to the last insert position
+" a: enter insert mode at append position
+" <C-g>u: insert another undo break
 inoremap <C-l> <C-g>u<Esc>[s1z=`]a<C-g>u
 
 " Formatting the current paragraph (or selection)
