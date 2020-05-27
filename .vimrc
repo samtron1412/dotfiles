@@ -775,3 +775,9 @@ nnoremap <Leader>gl :Gpull<CR>
 " Source or Edit vimrc
 nnoremap <Leader>vs :source $MYVIMRC<CR>
 nnoremap <Leader>ve :vsplit $MYVIMRC<CR>
+
+" Close all buffers except the current buffer
+nnoremap <Leader>w :%bd <bar> e#<CR>
+
+" Close all buffers
+nnoremap <Leader>W :%bd<CR>
