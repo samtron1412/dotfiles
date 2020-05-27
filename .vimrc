@@ -28,6 +28,9 @@ call plug#begin('~/.vim/plugged')
 """" Utility
 """" Enhance or change behavior of core vim
 
+" vim-orgmode
+Plug 'jceb/vim-orgmode'
+
 " Support FocusGained, FocusLost in tmux iterm2
 Plug 'tmux-plugins/vim-tmux-focus-events'
 
@@ -111,6 +114,7 @@ Plug 'tpope/vim-dispatch'
 
 " Syntax checking
 Plug 'w0rp/ale'
+
 
 """" Git
 
