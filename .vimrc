@@ -573,6 +573,9 @@ nnoremap <Right> :vertical resize -2<CR>
 " <C-g>u: insert another undo break
 inoremap <C-l> <C-g>u<Esc>[s1z=`]a<C-g>u
 
+" Add the word to dictionary
+inoremap <C-d> <C-g>u<Esc>[s1zg`]a<C-g>u
+
 " Formatting the current paragraph (or selection)
 vnoremap ff gq
 nnoremap ff gqap
