@@ -287,10 +287,11 @@ set statusline+=\ %l:%c         "Line and column numbers
 
 " Folding
 
-set foldmethod=indent
-set foldnestmax=6       "deepest fold levels
-set nofoldenable        "don't fold by default
-set conceallevel=0      "don't conceal text
+" set foldmethod=indent
+" set foldnestmax=6       "deepest fold levels
+" set nofoldenable        "don't fold by default
+" set conceallevel=0      "don't conceal text
+set conceallevel=2      "standard concealing
 
 
 " Change the cursor from box to line in the insert mode
@@ -371,28 +372,28 @@ let g:vim_markdown_follow_anchor = 1
 let g:vim_markdown_autowrite = 1
 
 " Disable auto add bullet points
-let g:vim_markdown_auto_insert_bullets = 0
+" let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_new_list_item_indent = 2
 
 " Enable TOC window auto-fit
 let g:vim_markdown_toc_autofit = 1
 
 " code blocks
-let g:vim_markdown_conceal_code_blocks = 0
+" let g:vim_markdown_conceal_code_blocks = 0
 
 " disable header folding
-let g:vim_markdown_folding_disabled = 1
+" let g:vim_markdown_folding_disabled = 1
 
 " do not use conceal feature
-let g:vim_markdown_conceal = 0
+" let g:vim_markdown_conceal = 0
 
 " disable math tex conceal feature
 let g:vim_markdown_math = 1
 
 " support front matter of various format
-let g:vim_markdown_frontmatter = 1  " for YAML format
-let g:vim_markdown_toml_frontmatter = 1  " for TOML format
-let g:vim_markdown_json_frontmatter = 1  " for JSON format
+" let g:vim_markdown_frontmatter = 1  " for YAML format
+" let g:vim_markdown_toml_frontmatter = 1  " for TOML format
+" let g:vim_markdown_json_frontmatter = 1  " for JSON format
 
 
 """" vim-markdown-preview configuration
