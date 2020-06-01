@@ -371,8 +371,9 @@ let g:vim_markdown_follow_anchor = 1
 " Auto-write when following links
 let g:vim_markdown_autowrite = 1
 
-" Disable auto add bullet points
-" let g:vim_markdown_auto_insert_bullets = 0
+" Disable auto add bullet points because when reformatting a long line,
+" it automatically add bullets => have to delete them later => more work
+let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_new_list_item_indent = 2
 
 " Enable TOC window auto-fit
