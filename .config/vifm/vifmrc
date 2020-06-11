@@ -97,6 +97,7 @@ mark C ~/Documents/schools/cal
 mark h ~/
 mark r ~/repo
 mark v /Volumes
+mark u /media
 
 
 " ======================================================================
