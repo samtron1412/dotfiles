@@ -573,10 +573,10 @@ nnoremap <Right> :vertical resize -2<CR>
 " `]: move to the last insert position
 " a: enter insert mode at append position
 " <C-g>u: insert another undo break
-inoremap <C-l> <C-g>u<Esc>[s1z=`]a<C-g>u
+inoremap <A-l> <C-g>u<Esc>[s1z=`]a<C-g>u
 
 " Add the word to dictionary
-inoremap <C-d> <C-g>u<Esc>[s1zg`]a<C-g>u
+inoremap <A-d> <C-g>u<Esc>[s1zg`]a<C-g>u
 
 " Formatting the current paragraph (or selection)
 vnoremap ff gq
