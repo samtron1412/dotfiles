@@ -307,6 +307,9 @@ let g:mapleader = "\<Space>"
 " Use back slash key as local leader key
 let maplocalleader = "\\"
 
+" Default to not read-only in vimdiff
+set noro
+
 
 """"""""""""""""""""""""""""
 " Plugin Configuration
