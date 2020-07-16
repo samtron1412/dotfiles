@@ -28,7 +28,7 @@ set undolevels=1000
 
 " If you installed the vim.txt help file set vimhelp.
 " If would rather use a plain text help file set novimhelp.
-set novimhelp
+set vimhelp
 
 " If you would like to run an executable file when you
 " press return on the file name set this.
@@ -82,6 +82,9 @@ set slowfs=curlftpfs
 " Set custom status line look
 set statusline="  %t%= %A %10u:%-7g %15E %20d  "
 
+" Set cpoptions, allow Ctrl-i to go forward in view history
+set cpoptions=fs
+
 " ======================================================================
 " == BOOKMARKS
 " ======================================================================
@@ -96,7 +99,6 @@ mark D ~/Documents
 mark C ~/Documents/schools/cal
 mark h ~/
 mark r ~/repo
-mark v /Volumes
 mark u /media
 
 
@@ -117,32 +119,32 @@ mark u /media
 
 command! df df -h %m 2> /dev/null
 command! diff vim -d %b
-command! zip zip -r %f.zip %f
-command! zips zip -r %a.zip %f
+command! zip zip -r %a.zip %f
+command! unzip unzip %f -d %f:r
 command! run !! ./%f
 command! make !!make %a
 command! mkcd :mkdir %a | cd %a
 command! vgrep vim "+grep %a"
-command! reload :write | restart
 
 " ======================================================================
 " == DEFAULT PROGRAMS
 " ======================================================================
 " Pdf
-filextype *.pdf zathura %c %i &, apvlv %c %i &, xpdf %c
+" filextype *.pdf zathura %c %i &, apvlv %c %i &, xpdf %c
+" filextype *.pdf open -a Preview %c
 fileviewer *.pdf pdftotext -nopgbrk %c -
 
 " PostScript
-filextype *.ps,*.eps,*.ps.gz
-        \ {View in zathura}
-        \ zathura %c %i &,
+" filextype *.ps,*.eps,*.ps.gz
+"         \ {View in zathura}
+"         \ zathura %c %i &,
 
 " Djvu
-filextype *.djvu
-        \ {View in zathura}
-        \ zathura %c %i &,
-        \ {View in apvlv}
-        \ apvlv %c %i &,
+" filextype *.djvu
+"         \ {View in zathura}
+"         \ zathura %c %i &,
+"         \ {View in apvlv}
+"         \ apvlv %c %i &,
 
 " Audio
 filetype *.wav,*.mp3,*.flac,*.ogg,*.m4a,*.wma,*.ape,*.ac3
@@ -341,11 +343,7 @@ set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
 
 " Customize view columns a bit (enable ellipsis for truncated file names)
 "
-" windo set viewcolumns=-{name}..,6{}.
-
-" Filter-out build and temporary files
-"
-" windo filter! /^.*\.(lo|o|d|class|py[co])$|.*~$/
+windo set viewcolumns=-{root}..,-5{ext},3{type},12{mtime},6{}.
 
 " ----------------------------------------------------------------------
 
@@ -379,9 +377,6 @@ nnoremap yf :!echo %c:p | xclip %i<cr>
 nnoremap I cw<c-a>
 nnoremap cc cw<c-u>
 nnoremap A cw
-
-" Open console in current directory
-nnoremap ,t :!urxvt &<cr>
 
 " Open editor to edit vifmrc and apply settings after returning to vifm
 nnoremap ,c :write | edit $MYVIFMRC | restart<cr>
