@@ -3,8 +3,8 @@
 """"""""""""""""""""""""""""
 
 " Set Python 3 as the default Python for Vim
-set pythonthreehome=/usr/local/Frameworks/Python.framework/Versions/3.7
-set pythonthreedll=/usr/local/Frameworks/Python.framework/Versions/3.7/Python
+set pythonthreehome=/usr/local/Frameworks/Python.framework/Versions/Current
+set pythonthreedll=/usr/local/Frameworks/Python.framework/Versions/Current/Python
 
 """"""""""""""""""""""""""""
 " vim-plug: plugins
