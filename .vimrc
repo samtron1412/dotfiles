@@ -288,11 +288,11 @@ set statusline+=\ %l:%c         "Line and column numbers
 
 " Folding
 
+set nofoldenable        "don't fold by default
+set conceallevel=0      "don't conceal text
 " set foldmethod=indent
 " set foldnestmax=6       "deepest fold levels
-" set nofoldenable        "don't fold by default
-" set conceallevel=0      "don't conceal text
-set conceallevel=2      "standard concealing
+" set conceallevel=2      "standard concealing
 
 
 " Change the cursor from box to line in the insert mode
@@ -387,7 +387,7 @@ let g:vim_markdown_toc_autofit = 1
 " let g:vim_markdown_conceal_code_blocks = 0
 
 " disable header folding
-" let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_folding_disabled = 1
 
 " do not use conceal feature
 " let g:vim_markdown_conceal = 0
