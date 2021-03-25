@@ -83,6 +83,9 @@ Plug 'tpope/vim-abolish'
 " Alignment plugin
 Plug 'junegunn/vim-easy-align'
 
+" Motion with labels
+Plug 'easymotion/vim-easymotion'
+
 
 """" LaTeX
 
