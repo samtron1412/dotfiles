@@ -740,18 +740,18 @@ nnoremap <Leader>gb :Gblame<CR>
 nnoremap <Leader>gs :Gstatus<CR>
 
 " Commit after adding
-nnoremap <Leader>gC :Gcommit -v<CR>
+nnoremap <Leader>gC :Git commit -v<CR>
 
 " Commit after adding without invoking an editor
-nnoremap <Leader>gc :Gcommit -m ""<Left>
+nnoremap <Leader>gc :Git commit -m ""<Left>
 
 " Add the file then commit it
 " Take advantage of autocomplete in writing commit message
 " Hit Ctrl-n to autocomplete the word
-nnoremap <Leader>gG :Gcommit % -v<CR>
+nnoremap <Leader>gG :Git commit % -v<CR>
 
 " Commit without invoking an editor
-nnoremap <Leader>gg :Gcommit % -m ""<Left>
+nnoremap <Leader>gg :Git commit % -m ""<Left>
 
 " Stage the current hunk and commit it
 nmap <special> <Leader>gH <Leader>hs<Leader>gC
