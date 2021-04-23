@@ -1,6 +1,7 @@
 *.swp
 .config/vifm/vifm-help.txt
 .config/vifm/vifminfo*
+.config/cmus/*
 .vim/.netrwhist
 .vim/autoload/plug*
 .vim/plugged/
