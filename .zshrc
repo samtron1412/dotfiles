@@ -1,3 +1,6 @@
+#### Uncomment this line and the line at the bottom to use built-in zsh profiling
+# zmodload zsh/zprof
+
 #### Uncomment the following lines to profile ZSH
 # zmodload zsh/datetime
 # setopt PROMPT_SUBST
@@ -261,3 +264,4 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# zprof
