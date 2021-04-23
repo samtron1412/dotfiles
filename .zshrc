@@ -17,35 +17,40 @@
 ########################################################################
 #                        ENVIRONMENT VARIABLES                         #
 ########################################################################
+#
+
+typeset -U path
+path=(~/bin ~/Library/Python/3.7/bin /usr/local/opt/opensshl/bin
+      /usr/local/sbin /usr/local/opt/ruby/bin ~/.gem/ruby/2.6.0/bin $path)
 
 # Clear the PATH before sourcing /etc/profile to preserve PATH in tmux
-if [ -f /etc/profile ]; then
-    PATH=""
-    source /etc/profile
-fi
+# if [ -f /etc/profile ]; then
+#     PATH=""
+#     source /etc/profile
+# fi
 
 # Add additional directories to the path.
-pathadd() {
-  [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]] && PATH="$1:$PATH"
-}
+# pathadd() {
+#   [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]] && PATH="$1:$PATH"
+# }
 
 # Personal scripts and binaries
-pathadd $HOME/bin
+# pathadd $HOME/bin
 
 # Python scripts
-pathadd $HOME/Library/Python/3.7/bin
+# pathadd $HOME/Library/Python/3.7/bin
 
 # openssl: run 'brew --prefix openssl' to find the path
 # Using hardcode path is much faster than using brew
-pathadd "/usr/local/opt/openssl/bin"
+# pathadd "/usr/local/opt/openssl/bin"
 
 # homebrew
-pathadd "/usr/local/sbin"
+# pathadd "/usr/local/sbin"
 
 # ruby
 # export PATH=/usr/local/opt/ruby/bin:$PATH
-pathadd "/usr/local/opt/ruby/bin"
-pathadd "$HOME/.gem/ruby/2.6.0/bin"
+# pathadd "/usr/local/opt/ruby/bin"
+# pathadd "$HOME/.gem/ruby/2.6.0/bin"
 
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -73,29 +78,11 @@ export XDG_CONFIG_DIRS="/etc/xdg"
 export XDG_DATA_DIRS="/usr/local/share/:/usr/share/"
 export XDG_CACHE_HOME="$HOME/.cache"
 
-# Change root directory
-export CHROOT="$HOME/chroot"
-
 # Weechat home directory
 export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
 
-# Browsers
-if [ -n "$DISPLAY" ]; then
-    export BROWSER=chromium
-else
-    export BROWSER=w3m
-fi
-
-# rclone
-export RCLONE_DRIVE_USE_TRASH=true
-
 # vifm
 export VIFM="~/.config/vifm"
-
-# pyenv
-if hash pyenv 2>/dev/null; then
-  eval "$(pyenv init -)"
-fi
 
 # vim
 export VIMCONFIG=~/.vim
@@ -171,9 +158,9 @@ setopt extended_glob
 ##########
 
 # docker
-alias dk="docker"
-alias dkm="docker-machine"
-alias dkc="docker-compose"
+# alias dk="docker"
+# alias dkm="docker-machine"
+# alias dkc="docker-compose"
 
 # List all directories
 alias ldi="ls -lah | egrep '^d'"
@@ -201,46 +188,46 @@ alias ssh='TERM=xterm-256color ssh'
 
 # Instal or upgrade a global Python package
 # Since we set require-virtualenv = true at Application Support/pip/pip.conf
-gpip(){
-   PIP_REQUIRE_VIRTUALENV="0" pip3 "$@"
-}
+# gpip(){
+#    PIP_REQUIRE_VIRTUALENV="0" pip3 "$@"
+# }
 
 # Create a new directory and enter it
-function mk() {
-  mkdir -p "$@" && cd "$@"
-}
+# function mk() {
+#   mkdir -p "$@" && cd "$@"
+# }
 
 # Extra many types of compressed packages
 # Credit: http://nparikh.org/notes/zshrc.txt
-extract() {
-  if [ -f "$1" ]; then
-    case "$1" in
-      *.rar)      unrar x "$1"                          ;;
-      *.tar.bz2)  tar -jxvf "$1"                        ;;
-      *.tar.gz)   tar -zxvf "$1"                        ;;
-      *.bz2)      bunzip2 "$1"                          ;;
-      *.dmg)      hdiutil mount "$1"                    ;;
-      *.gz)       gunzip "$1"                           ;;
-      *.tar)      tar -xvf "$1"                         ;;
-      *.tbz2)     tar -jxvf "$1"                        ;;
-      *.tgz)      tar -zxvf "$1"                        ;;
-      *.zip)      unzip "$1"                            ;;
-      *.ZIP)      unzip "$1"                            ;;
-      *.pax)      cat "$1" | pax -r                     ;;
-      *.pax.Z)    uncompress "$1" --stdout | pax -r     ;;
-      *.Z)        uncompress "$1"                       ;;
-      *) echo "'$1' cannot be extracted/mounted via extract()" ;;
-    esac
-  else
-     echo "'$1' is not a valid file to extract"
-  fi
-}
+# extract() {
+#   if [ -f "$1" ]; then
+#     case "$1" in
+#       *.rar)      unrar x "$1"                          ;;
+#       *.tar.bz2)  tar -jxvf "$1"                        ;;
+#       *.tar.gz)   tar -zxvf "$1"                        ;;
+#       *.bz2)      bunzip2 "$1"                          ;;
+#       *.dmg)      hdiutil mount "$1"                    ;;
+#       *.gz)       gunzip "$1"                           ;;
+#       *.tar)      tar -xvf "$1"                         ;;
+#       *.tbz2)     tar -jxvf "$1"                        ;;
+#       *.tgz)      tar -zxvf "$1"                        ;;
+#       *.zip)      unzip "$1"                            ;;
+#       *.ZIP)      unzip "$1"                            ;;
+#       *.pax)      cat "$1" | pax -r                     ;;
+#       *.pax.Z)    uncompress "$1" --stdout | pax -r     ;;
+#       *.Z)        uncompress "$1"                       ;;
+#       *) echo "'$1' cannot be extracted/mounted via extract()" ;;
+#     esac
+#   else
+#      echo "'$1' is not a valid file to extract"
+#   fi
+# }
 
 # iTerm2 integration
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # Load fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
 
