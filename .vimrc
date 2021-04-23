@@ -588,10 +588,6 @@ inoremap <A-l> <C-g>u<Esc>[s1z=`]a<C-g>u
 " Add the word to dictionary
 inoremap <A-d> <C-g>u<Esc>[s1zg`]a<C-g>u
 
-" Formatting the current paragraph (or selection)
-vnoremap ff gq
-nnoremap ff gqap
-
 " diffupdate
 nnoremap du :diffupdate<CR>
 
