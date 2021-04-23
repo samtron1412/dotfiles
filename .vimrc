@@ -784,8 +784,8 @@ nnoremap <Leader>gm :Gmove<Space>
 " Delete the file
 nnoremap <Leader>gM :Gremove<CR>
 
-nnoremap <Leader>gp :Gpush<CR>
-nnoremap <Leader>gl :Gpull<CR>
+nnoremap <Leader>gp :Git push<CR>
+nnoremap <Leader>gl :Git pull<CR>
 
 " Source or Edit vimrc
 nnoremap <Leader>vs :source $MYVIMRC<CR>
