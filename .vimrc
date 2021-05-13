@@ -758,10 +758,10 @@ nnoremap <Leader>gG :Git commit % -v<CR>
 nnoremap <Leader>gg :Git commit % -m ""<Left>
 
 " Stage the current hunk and commit it
-nmap <special> <Leader>gH <Leader>hs<Leader>gC
+map <special> <Leader>gH <Leader>hs<Leader>gC
 
 " Stage the current hunk and commit it without invoking an editor
-nmap <special> <Leader>gh <Leader>hs<Leader>gc
+map <special> <Leader>gh <Leader>hs<Leader>gc
 
 nnoremap <Leader>gd :Gdiff<CR>
 
