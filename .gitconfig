@@ -27,6 +27,7 @@
   default = upstream
 [pull]
   default = current
+	rebase = true
 [diff]
   tool = vimdiff
   mnemonicprefix = true
