@@ -251,4 +251,12 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# Amazon toolbox
+export PATH=$HOME/.toolbox/bin:$PATH
+
+# Autocompletion for AWS CLI
+autoload bashcompinit && bashcompinit
+autoload -Uz compinit && compinit
+complete -C '/usr/local/bin/aws_completer' aws
+
 # zprof
