@@ -109,10 +109,11 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in $HOME/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
-# ZSH_THEME="agnoster"
-# ZSH_THEME="amuse"
-# ZSH_THEME="ys"
+# ZSH_THEME="robbyrussell"
+# ZSH_THEME="afowler"
+# ZSH_THEME="clean"
+ZSH_THEME="geoffgarside"
+
 ZSH_CUSTOM=$HOME/.zsh-custom
 
 # _ and - will be interchangeable.
