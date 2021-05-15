@@ -3,7 +3,7 @@
   pager = less -x2
   autocrlf = input
 [user]
-  email = sontran@berkeley.edu
+  email = trnso@amazon.com
   name = Son Tran
 [color]
   branch = auto
@@ -39,13 +39,8 @@
   enabled = true
 [rebase]
   autosquash = true
-[sendemail]
-  smtpEncryption = tls
-  smtpServer = smtp.gmail.com
-  smtpUser = sontran@berkeley.edu
-  smtpServerPort = 587
-  suppresscc = self
-  confirm = always
 [alias]
   la = log --oneline --all --decorate --graph
   lap = log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --all
+[commit]
+	template = ~/.gitmessage
