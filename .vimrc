@@ -232,14 +232,6 @@ augroup MyColors
   autocmd ColorScheme * call vimrc#MyHighlights()
 augroup END
 
-" Configure cursor
-" highlight Cursor guifg=white guibg=black
-" highlight iCursor guifg=white guibg=steelblue
-" set guicursor=n-v-c:block-Cursor
-" set guicursor+=i:ver100-iCursor
-" set guicursor+=n-v-c:blinkon0
-" set guicursor+=i:blinkwait10
-
 " Display tabs and trailing spaces visually
 set list listchars=eol:¬,tab:▸-,trail:·,space:·
 
@@ -376,6 +368,16 @@ let g:netrw_fastbrowse=0
 let g:gruvbox_italic=1
 colorscheme gruvbox     " Load colorscheme after vim-plug and gruvbox configuration
 set background=dark     " Using dark mode for grub-box
+
+
+"""" Configure cursor
+highlight Cursor guifg=white guibg=black
+" set guicursor=n-v-c:block-Cursor
+" set guicursor+=i:ver100-iCursor
+" set guicursor+=n-v-c:blinkon0
+" set guicursor+=i:blinkwait10
+set cursorline
+" set cursorcolumn
 
 
 """" vim-markdown configuration
@@ -804,3 +806,4 @@ nnoremap <Leader>w :%bd <bar> e#<CR>
 
 " Close all buffers
 nnoremap <Leader>W :%bd<CR>
+
