@@ -742,8 +742,8 @@ nnoremap [H :call vimrc#PrevHunkAllBuffers()<CR>
 " Add all files
 nnoremap <Leader>ga :Git add .<CR>
 
-nnoremap <Leader>gb :Gblame<CR>
-nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gb :Git blame<CR>
+nnoremap <Leader>gs :Git status<CR>
 
 " Commit after adding
 nnoremap <Leader>gC :Git commit -v<CR>
