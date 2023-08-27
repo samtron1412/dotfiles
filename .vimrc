@@ -743,7 +743,9 @@ nnoremap [H :call vimrc#PrevHunkAllBuffers()<CR>
 nnoremap <Leader>ga :Git add .<CR>
 
 nnoremap <Leader>gb :Git blame<CR>
-nnoremap <Leader>gs :Git status<CR>
+
+" Git summary window
+nnoremap <Leader>gs :Git<CR>
 
 " Commit after adding
 nnoremap <Leader>gC :Git commit -v<CR>
