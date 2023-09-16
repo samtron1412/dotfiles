@@ -1,3 +1,6 @@
+### Compressed Files ***
+*.zip
+
 ### Tags ###
 # Ignore tags created by etags, ctags, gtags (GNU global) and cscope
 TAGS
@@ -15,13 +18,6 @@ cscope.files
 cscope.out
 cscope.in.out
 cscope.po.out
-
-
-*.zip
-
-
-###
-
 
 
 # Created by https://www.gitignore.io/api/vim,macos,clion+all,pycharm+all,intellij+all

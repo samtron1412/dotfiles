@@ -377,7 +377,7 @@ highlight Cursor guifg=white guibg=black
 " set guicursor+=n-v-c:blinkon0
 " set guicursor+=i:blinkwait10
 set cursorline
-" set cursorcolumn
+set cursorcolumn
 
 
 """" vim-markdown configuration
