@@ -100,6 +100,11 @@ Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
 " Full feature preview
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 
+" If you don't have nodejs and yarn
+" use pre build, add 'vim-plug' to the filetype list so vim-plug can update this plugin
+" see: https://github.com/iamcco/markdown-preview.nvim/issues/50
+" Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
 " Generate TOC
 Plug 'mzlogin/vim-markdown-toc'
 
@@ -136,6 +141,7 @@ Plug 'airblade/vim-gitgutter'
 
 """" Theme / Interface
 Plug 'morhetz/gruvbox'
+Plug 'tomasr/molokai'
 
 
 " Initialize plugin system
@@ -159,12 +165,24 @@ set fileencoding=utf-8      "Force vim overwrite file encoding to utf-8
 set history=1000            "Store lots of :cmdline history
 set nrformats=              "Treat all numerals as decimal
 set mouse=a                 "Support mouse actions
-set autoread                "Automatically reload buffers
 set completeopt=menuone,longest,preview
 set spell spelllang=en_us   "Enable spell check
 syntax spell toplevel       "Spell check even for undefined groups
 set timeout ttimeoutlen=50
 set sessionoptions-=help
+set shortmess-=S            "Show search counts
+set autoread                "Automatically reload buffers
+
+" Triger `autoread` when files changes on disk
+" https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
+" https://vi.stackexchange.com/questions/13692/prevent-focusgained-autocmd-running-in-command-line-editing-mode
+autocmd FocusGained,BufEnter,CursorHold,CursorHoldI *
+        \ if mode() !~ '\v(c|r.?|!|t)' && getcmdwintype() == '' | checktime | endif
+
+" Notification after file change
+" https://vi.stackexchange.com/questions/13091/autocmd-event-for-autoread
+autocmd FileChangedShellPost *
+  \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 
 " Set macmeta for MacVim
 if has('gui_macvim')
@@ -197,10 +215,10 @@ set hidden
 
 " Completion
 
-set wildignorecase      "enable ignore case
-set wildmenu            "enable ctrl-n and ctrl-p to scroll thru matches
+set wildignorecase          " enable ignore case
+set wildmenu                " enable ctrl-n and ctrl-p to scroll thru matches
 set wildmode=longest,list:longest
-set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
+set wildignore=*.o,*.obj,*~ " stuff to ignore when tab completing
 set wildignore+=*vim/backups*
 set wildignore+=*sass-cache*
 set wildignore+=*DS_Store*
@@ -210,21 +228,21 @@ set wildignore+=*.gem
 set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
-set showmatch           " highlight matching [{()}]
+set showmatch               " highlight matching [{()}]
 
 
 """" Theme / Interface
 
-syntax on               " turn on syntax highlighting
-set visualbell          "No sounds
-set nowrap              "Set no soft wrapping
-set showcmd             "Show incomplete cmds down the bottom
-set showmode            "Show current mode down the bottom
-set textwidth=72        "Set text width is 72 columns (hard wrap)
-set colorcolumn=+1      "Set color columns is textwidth + 1
-set relativenumber              "Show line numbers
-set termguicolors       "Support 24-bit colors in terminals
-set scrolloff=3         "Keep lines from the top and bottom
+syntax on          " turn on syntax highlighting
+set visualbell     " No sounds
+set nowrap         " Set no soft wrapping
+set showcmd        " Show incomplete cmds down the bottom
+set showmode       " Show current mode down the bottom
+set textwidth=72   " Set text width is 72 columns (hard wrap)
+set colorcolumn=+1 " Set color columns is textwidth + 1
+set relativenumber " Show line numbers
+set termguicolors  " Support 24-bit colors in terminals
+set scrolloff=3    " Keep lines from the top and bottom
 
 " Custom the colorscheme
 augroup MyColors
@@ -270,30 +288,35 @@ set expandtab
 
 
 """" Statusline
-set laststatus=2                "Always show the status line at the bottom
+set laststatus=2                                             " Always show the status line at the bottom
 set statusline=
-set statusline+=%#PmenuSel#     "Highlight the git branch
-set statusline+=%{FugitiveStatusline()} "Git branch of this file
-set statusline+=%{ObsessionStatus()}    "Indicator for sessions: 'S': stop, '$': running
-" set statusline+=%{gutentags#statusline('[',']')}
-set statusline+=%#LineNr#       "Erase highlight for other parts
-set statusline+=\ %f            "A whitespace followed by file path
-set statusline+=%m              "Modified flag
-set statusline+=%r              "Read only flag
-set statusline+=%w              "Preview window flag
-set statusline+=%=              "Separation point between left and right items
-set statusline+=\ %y            "A whitespace followed by file type
-set statusline+=\ %{&fileencoding?&fileencoding:&encoding} "File encoding
-set statusline+=\ [%{&fileformat}]   "File format: unix, dos, mac
-set statusline+=\ %p%%          "Percentage through file in lines
-set statusline+=\ %l:%c         "Line and column numbers
+set statusline+=%#DiffChange#                                " Highlight the git branch
+set statusline+=\ %{FugitiveStatusline()}\                   " Git branch of this file
+set statusline+=%#DiffAdd#                                   " Highlight the Obsession's status
+set statusline+=\ %{ObsessionStatus()}\                      " Indicator for sessions: 'S': stop, '$': running
+                                                             " set statusline+=%{gutentags#statusline('[',']')}
+set statusline+=%#StatusLine#                                " Highlight the status line
+set statusline+=\ %f                                         " A whitespace followed by file path
+set statusline+=%m                                           " Modified flag
+set statusline+=%r                                           " Read only flag
+set statusline+=%w                                           " Preview window flag
+set statusline+=%=                                           " Separation point between left and right items
+set statusline+=\ %Y\                                        " A whitespace followed by file type
+set statusline+=\|                                           " A bar to separate statuses
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}\  " File encoding
+set statusline+=\|                                           " A bar to separate statuses
+set statusline+=\ %{&fileformat}\                            " File format: unix, dos, mac
+set statusline+=%#DiffAdd#                                   " Highlight percentage
+set statusline+=\ %p%%\                                      " Percentage through file in lines
+set statusline+=%#DiffChange#                                " Highlight line and column numbers
+set statusline+=\ %l:%c\                                     " Line and column numbers
 
 
 " Folding
 
 set nofoldenable        "don't fold by default
-set conceallevel=0      "don't conceal text
-" set foldmethod=indent
+set foldmethod=syntax
+" set conceallevel=0      "don't conceal text
 " set foldnestmax=6       "deepest fold levels
 " set conceallevel=2      "standard concealing
 
@@ -367,17 +390,7 @@ let g:netrw_fastbrowse=0
 
 let g:gruvbox_italic=1
 colorscheme gruvbox     " Load colorscheme after vim-plug and gruvbox configuration
-set background=dark     " Using dark mode for grub-box
-
-
-"""" Configure cursor
-highlight Cursor guifg=white guibg=black
-" set guicursor=n-v-c:block-Cursor
-" set guicursor+=i:ver100-iCursor
-" set guicursor+=n-v-c:blinkon0
-" set guicursor+=i:blinkwait10
-set cursorline
-set cursorcolumn
+set background=dark     " Using dark mode for gruvbox
 
 
 """" vim-markdown configuration
@@ -400,7 +413,7 @@ let g:vim_markdown_toc_autofit = 1
 " let g:vim_markdown_conceal_code_blocks = 0
 
 " disable header folding
-let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_folding_disabled = 0
 
 " do not use conceal feature
 " let g:vim_markdown_conceal = 0
@@ -474,6 +487,9 @@ autocmd! User GoyoLeave Limelight!
 
 """" Custom commands
 
+" Create a new vertical buffer and then execute the whole file in sh shell.
+command! Exec set splitright | vnew | set filetype=sh | read !sh #
+
 " :Find <pattern>
 " Find the pattern in file contents
 " --fixed-strings: Search term as a literal string (no need to escape special characters)
@@ -497,7 +513,7 @@ command! -nargs=* Nowrap set nowrap
 " Only define it when not defined already.
 " Revert with: ":delcommand DiffOrig".
 if !exists(":DiffOrig")
-  command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
+  command! DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
         \ | wincmd p | diffthis
 endif
 
@@ -507,9 +523,16 @@ endif
 " Usage: `:LogAutocmds`
 command! LogAutocmds call log#log_autocmds_toggle()
 
-" Redirect ex command outputs to a scratch window
+" Redirect ex (external) command outputs to a scratch window
 " Usage: `:Redir highlight`
+
+" This command definition includes -bar, so that it is possible to "chain" Vim commands.
+" Side effect: double quotes can't be used in external commands
 command! -nargs=1 -complete=command -bar -range Redir silent call redir#Redir(<q-args>, <range>, <line1>, <line2>)
+
+" This command definition doesn't include -bar, so that it is possible to use double quotes in external commands.
+" Side effect: Vim commands can't be "chained".
+" command! -nargs=1 -complete=command -range Redir silent call Redir(<q-args>, <range>, <line1>, <line2>)
 
 """"""""""""""""""""""""""""
 " Mappings
@@ -570,8 +593,10 @@ nnoremap <silent> <Leader>z <Esc>:call vimrc#ZoomToggle()<CR>
 set pastetoggle=<F2>
 
 " Disable Backspace and Delete keys
-" cnoremap <BS> <Nop>
-" inoremap <Del> <Nop>
+cnoremap <BS> <Nop>
+inoremap <BS> <Nop>
+cnoremap <Del> <Nop>
+inoremap <Del> <Nop>
 
 " Disable arrow keys in insert mode
 inoremap <Left> <Nop>
@@ -582,8 +607,8 @@ inoremap <Down> <Nop>
 " Disable arrow movement, resize splits instead.
 nnoremap <Up>    :resize +2<CR>
 nnoremap <Down>  :resize -2<CR>
-nnoremap <Left>  :vertical resize +2<CR>
-nnoremap <Right> :vertical resize -2<CR>
+nnoremap <Left>  :vertical resize -2<CR>
+nnoremap <Right> :vertical resize +2<CR>
 
 " Correct spelling mistakes while typing
 "
@@ -617,8 +642,8 @@ nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
 inoremap <A-j> <Esc>:m .+1<CR>==gi
 inoremap <A-k> <Esc>:m .-2<CR>==gi
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
+xnoremap <A-j> :m '>+1<CR>gv=gv
+xnoremap <A-k> :m '<-2<CR>gv=gv
 
 " Edit the alternate file
 nnoremap <BS> <C-^>
@@ -633,6 +658,7 @@ nnoremap \\ <Esc>:call vimrc#ToggleTextwidth()<CR>
 " Add the path of the current directory to the path of the file
 " cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<CR>
+
 nmap <Leader>ew :e %%
 nmap <Leader>es :sp %%
 nmap <Leader>ev :vsp %%
@@ -646,8 +672,8 @@ nmap <Leader>et :tabe %%
 
 """" ale mapping
 
-nmap <Leader>at <Plug>(ale_toggle)
-nmap <Leader>aT <Plug>(ale_toggle_buffer)
+nnoremap <Leader>at <Plug>(ale_toggle)
+nnoremap <Leader>aT <Plug>(ale_toggle_buffer)
 
 
 """" vim-markdown-toc mapping
@@ -659,44 +685,50 @@ nnoremap <Leader>mut :RemoveToc<CR>
 
 """" fzf mapping
 
-nnoremap <Leader>b :Buffers<CR>
+nnoremap <Leader>fb :Buffers<CR>
 
 " Search file names
 nnoremap <C-p> :Files<CR>
 
 " Search file content
-nnoremap <Leader>f :Find<CR>
+nnoremap <Leader>ff :Find<CR>
 
 " Search lines
+nnoremap <Leader>fs :BLines<CR>
 
-nnoremap <Leader>s :BLines<CR>
 " Mapping selecting mappings
-nmap <leader><tab> <plug>(fzf-maps-n)
-xmap <leader><tab> <plug>(fzf-maps-x)
-omap <leader><tab> <plug>(fzf-maps-o)
+nnoremap <leader><tab> <plug>(fzf-maps-n)
+xnoremap <leader><tab> <plug>(fzf-maps-x)
+onoremap <leader><tab> <plug>(fzf-maps-o)
 
 " Insert mode completion
-imap <c-x><c-k> <plug>(fzf-complete-word)
+inoremap <c-x><c-k> <plug>(fzf-complete-word)
 " Advanced customization using autoload functions
 " inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
-imap <c-x><c-f> <plug>(fzf-complete-path)
-imap <c-x><c-j> <plug>(fzf-complete-file-rg)
-imap <c-x><c-l> <plug>(fzf-complete-line)
+inoremap <c-x><c-f> <plug>(fzf-complete-path)
+inoremap <c-x><c-j> <plug>(fzf-complete-file-rg)
+inoremap <c-x><c-l> <plug>(fzf-complete-line)
 
 
 """" easy-align mapping
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
+xnoremap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
+nnoremap ga <Plug>(EasyAlign)
 
 
 """" vim-markdown mapping
+
+" Format Markdown tables in normal and visual mode.
 nnoremap <Leader>mf :TableFormat<CR>
 xnoremap <Leader>mf :TableFormat<CR>
+
+" Show the table of content.
 nnoremap <Leader>mt :Toc<CR>
+
+" Increase and decrease headers in visual and normal modes.
 xnoremap <Leader>mi :HeaderIncrease<CR>
 xnoremap <Leader>md :HeaderDecrease<CR>
 nnoremap <Leader>mi I#<Esc>
@@ -704,9 +736,8 @@ nnoremap <Leader>md 0x
 
 
 """" markdown-preview.nvim mapping
-
-nmap <Leader>mp <Plug>MarkdownPreview
-nmap <Leader>ms <Plug>MarkdownPreviewStop
+nnoremap <Leader>mp <Plug>MarkdownPreview
+nnoremap <Leader>ms <Plug>MarkdownPreviewStop
 
 
 """" goyo mapping
@@ -716,8 +747,8 @@ nnoremap <Leader>d :Goyo<CR>
 """" git-gutter mapping
 
 " This mapping also works with vimdiff
-nmap ]h <Plug>(GitGutterNextHunk)
-nmap [h <Plug>(GitGutterPrevHunk)
+nnoremap ]h <Plug>(GitGutterNextHunk)
+nnoremap [h <Plug>(GitGutterPrevHunk)
 
 " Update the gutter
 nnoremap <Leader>G :GitGutter<CR>
@@ -726,10 +757,10 @@ nnoremap <Leader>G :GitGutter<CR>
 nnoremap <Leader>gf :GitGutterFold<CR>
 
 " Hunk text objects
-omap ih <Plug>GitGutterTextObjectInnerPending
-omap ah <Plug>GitGutterTextObjectOuterPending
-xmap ih <Plug>GitGutterTextObjectInnerVisual
-xmap ah <Plug>GitGutterTextObjectOuterVisual
+onoremap ih <Plug>GitGutterTextObjectInnerPending
+onoremap ah <Plug>GitGutterTextObjectOuterPending
+xnoremap ih <Plug>GitGutterTextObjectInnerVisual
+xnoremap ah <Plug>GitGutterTextObjectOuterVisual
 
 " Cycle through hunks in all buffers
 nnoremap ]H :call vimrc#NextHunkAllBuffers()<CR>
@@ -743,8 +774,6 @@ nnoremap [H :call vimrc#PrevHunkAllBuffers()<CR>
 nnoremap <Leader>ga :Git add .<CR>
 
 nnoremap <Leader>gb :Git blame<CR>
-
-" Git summary window
 nnoremap <Leader>gs :Git<CR>
 
 " Commit after adding
@@ -803,9 +832,53 @@ nnoremap <Leader>gl :Git pull<CR>
 nnoremap <Leader>vs :source $MYVIMRC<CR>
 nnoremap <Leader>ve :vsplit $MYVIMRC<CR>
 
+" Close the current buffer
+nnoremap <Leader>w :bd<CR>
+
+" Forcefully close the current buffer
+nnoremap <Leader>W :bd!<CR>
+
 " Close all buffers except the current buffer
-nnoremap <Leader>w :%bd <bar> e#<CR>
+nnoremap <Leader>bd :%bd <bar> e#<CR>
 
 " Close all buffers
-nnoremap <Leader>W :%bd<CR>
+nnoremap <Leader>BD :%bd<CR>
 
+" Create a new vertical blank window
+" Use the default `<C-w>n` to create a new horizontal blank window
+nnoremap <C-w>N :vnew<CR>
+
+" Configure cursor
+highlight Cursor guifg=white guibg=black
+set cursorline
+set cursorcolumn
+
+" Set default font size for MacVim
+set guifont=Menlo\ Regular:h16
+
+" Execute selected text in a bash shell and output to a new vertical
+" buffer.
+
+xnoremap <Leader>r :Redir !bash<CR>
+
+" Alternative solution for the Redir
+" - Cons:
+"   + the buffer is laying around with normal `:q`, needs `:q!`
+"   + need to `set modifiable` to modify the content
+"   + need to set other configurations such as syntax, etc.
+"   + mess up with alternative buffers
+"
+" xnoremap <Leader>r :rightb vert term ++open<CR>
+
+" Set JSON filetype for the current buffer.
+nnoremap <Leader>sj :set filetype=json<CR>
+
+" Set Markdown filetype for the current buffer.
+nnoremap <Leader>sm :set filetype=markdown<CR>
+
+
+""" Abbreviations
+iabbrev @@ samtron1412@gmail.com
+iabbrev adn and
+iabbrev waht what
+iabbrev tehn then
